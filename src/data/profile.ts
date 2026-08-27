@@ -29,7 +29,7 @@ export const profile = {
   location: 'Chennai',
   headline: 'Back-end developer building practical web applications.',
   summary:
-    'Rohit works with Python, Django, Django REST Framework, Flask, JavaScript, and CSS. This portfolio keeps the current public content focused and easy to update as newer projects are added.',
+    'Rohit works with Python, Django, DRF, Flask, JavaScript, and CSS. The project data is ready for newer work as it is provided.',
   image: {
     src: '/assets/rohit-profile.webp',
     alt: 'Portrait of Rohit J',
@@ -68,7 +68,7 @@ export const focusAreas: FocusArea[] = [
   {
     title: 'Django and REST APIs',
     description:
-      'Project work centered on Django, DRF, authentication flows, and application data models.',
+      'Project work centered on Django, DRF, and application data models.',
   },
   {
     title: 'Clean project handoff',
