@@ -4,15 +4,28 @@ import type { Project } from '../data/profile'
 
 type ProjectsProps = {
   projects: Project[]
+  id?: string
+  title?: string
+  intro?: string
+  limit?: number
 }
 
-export function Projects({ projects }: ProjectsProps) {
+export function Projects({
+  projects,
+  id = 'projects',
+  title = 'Provisional project list.',
+  intro,
+  limit,
+}: ProjectsProps) {
+  const visibleProjects = typeof limit === 'number' ? projects.slice(0, limit) : projects
+
   return (
-    <section id="projects" className="section projects-section" aria-labelledby="projects-title">
+    <section id={id} className="section projects-section" aria-labelledby={`${id}-title`}>
       <div className="section-heading projects-heading">
         <div>
           <p className="section-kicker">Projects</p>
-          <h2 id="projects-title">Provisional project list.</h2>
+          <h2 id={`${id}-title`}>{title}</h2>
+          {intro && <p className="section-intro">{intro}</p>}
         </div>
         <a className="text-link" href="https://github.com/Rohit10jr" target="_blank" rel="noreferrer">
           GitHub profile
@@ -21,7 +34,7 @@ export function Projects({ projects }: ProjectsProps) {
       </div>
 
       <div className="project-grid">
-        {projects.map((project) => (
+        {visibleProjects.map((project) => (
           <article key={project.repositoryName} className="project-card">
             <div className="project-meta">
               <span>{project.repositoryName}</span>

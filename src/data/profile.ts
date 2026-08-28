@@ -63,7 +63,7 @@ export const focusAreas: FocusArea[] = [
   {
     title: 'Backend-first web apps',
     description:
-      'Server-rendered and API-backed projects shaped around practical workflows.',
+      'Django and API-backed projects shaped around practical workflows.',
   },
   {
     title: 'Django and REST APIs',
@@ -71,9 +71,9 @@ export const focusAreas: FocusArea[] = [
       'Project work centered on Django, DRF, and application data models.',
   },
   {
-    title: 'Clean project handoff',
+    title: 'Simple web interfaces',
     description:
-      'A simple portfolio structure with editable data so projects can be replaced without touching layout code.',
+      'JavaScript and CSS interfaces that keep project workflows understandable.',
   },
 ]
 

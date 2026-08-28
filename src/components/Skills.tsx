@@ -2,14 +2,25 @@ import type { SkillGroup } from '../data/profile'
 
 type SkillsProps = {
   skillGroups: SkillGroup[]
+  id?: string
+  title?: string
+  intro?: string
 }
 
-export function Skills({ skillGroups }: SkillsProps) {
+export function Skills({
+  skillGroups,
+  id = 'skills',
+  title = 'Tools Rohit currently shows on the portfolio.',
+  intro,
+}: SkillsProps) {
   return (
-    <section id="skills" className="section skills-section" aria-labelledby="skills-title">
+    <section id={id} className="section skills-section" aria-labelledby={`${id}-title`}>
       <div className="section-heading">
         <p className="section-kicker">Skills</p>
-        <h2 id="skills-title">Tools Rohit currently shows on the portfolio.</h2>
+        <div>
+          <h2 id={`${id}-title`}>{title}</h2>
+          {intro && <p className="section-intro">{intro}</p>}
+        </div>
       </div>
       <div className="skill-groups">
         {skillGroups.map((group) => (
