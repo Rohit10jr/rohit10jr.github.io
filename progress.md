@@ -2,18 +2,19 @@
 
 ## Timebox
 
-- Start time: `2026-08-28T23:30:40+05:30`
-- Stop time recorded: `2026-08-29T00:06:05+05:30`
-- Elapsed: about 35 minutes 25 seconds
-- Required stop deadline: `2026-08-29T02:00:40+05:30`
-- Closeout threshold: `2026-08-29T01:50:40+05:30`
+- Route handoff start time: `2026-08-28T23:30:40+05:30`
+- Route handoff stop time: `2026-08-29T00:06:05+05:30`
+- Style refresh start time: `2026-08-29T00:26:06+05:30`
+- Latest stop time recorded: `2026-08-29T00:35:08+05:30`
+- Latest style-pass elapsed: about 9 minutes 2 seconds
+- Required route-handoff stop deadline: `2026-08-29T02:00:40+05:30`
 
 ## Branches
 
 - Archive branch: `archive/static-html-before-react`
 - Archive commit: `fa7d44a098603c2e060eb2cb3d074d5ce87d2c26`
 - Redesign branch: `redesign/react-typescript-portfolio`
-- Latest implementation commit before this progress note: `8c558f890863ea96831f1f3aeb604015e3b73415`
+- Latest implementation commit before this progress note: `49ecb941b1b47d2c95a274721eb24d5d6ea14399`
 - No merge or deployment was performed.
 
 ## Commits
@@ -24,7 +25,9 @@
 - `83fb732` `chore: add pages build workflow`
 - `938f54b` `docs: add redesign progress summary`
 - `8c558f8` `feat: add multi-page portfolio routes`
-- This file is the required lowercase closeout progress note and is committed after the route work.
+- `047afd4` `docs: update redesign progress`
+- `49ecb94` `style: refine portfolio typography and layout`
+- This file is the required lowercase progress note and is committed again after the style refresh.
 
 ## Areas Changed
 
@@ -37,6 +40,8 @@
 - Added a Resume page using only supported profile, skills, social links, and provisional project content.
 - Updated responsive CSS for desktop and mobile route layouts, focus states, project cards, skill chips, and print handling.
 - Added `public/404.html` and an `index.html` redirect restore script for GitHub Pages direct-route fallback.
+- Replaced the previous decorative grid-heavy CSS with a quieter Peter/Cheng-inspired system: readable sans stack, serif resume headings, narrow prose width, flatter list/card treatment, compact header, and document-like resume layout.
+- Removed the decorative radial background accent and kept only a subtle top wash.
 
 ## Checks
 
@@ -44,8 +49,8 @@
 | --- | --- |
 | Build | `npm run build` passed |
 | Route smoke test | `/`, `/about`, `/resume`, and `/posts` returned `200` from the local Vite server |
-| Visual smoke test | Desktop and mobile screenshots checked for Home, About, Resume, and Posts |
-| Mobile overflow | Fixed About intro overflow and Resume skill-chip/card overflow |
+| Visual smoke test | Desktop and mobile screenshots checked for Home, About, Resume, and Posts after the route work and after the CSS refresh |
+| Mobile overflow | Fixed About intro/prose overflow and Resume skill-chip/card overflow |
 | Forbidden surface scan | No matches for contact form, Formsubmit, newsletter, signup, subscription, generated-by text, or attribution-trailer text in `src`, `index.html`, or `public` |
 | Link check | GitHub profile, listed linked repositories, and GitHub Activity image returned `200`; LinkedIn returned `999` to scripted GET and was preserved as the original public URL |
 | Branch safety | Work remained on `redesign/react-typescript-portfolio`; archive branch remained intact |
