@@ -21,7 +21,6 @@ function getInitialTheme(): Theme {
 }
 
 export function App() {
-  const [menuOpen, setMenuOpen] = useState(false)
   const [theme, setTheme] = useState<Theme>(getInitialTheme)
   const [route, setRoute] = useState<RoutePath>(() =>
     normalizeRoute(window.location.pathname),
@@ -38,7 +37,6 @@ export function App() {
   useEffect(() => {
     function handlePopState() {
       setRoute(normalizeRoute(window.location.pathname))
-      setMenuOpen(false)
     }
 
     window.addEventListener('popstate', handlePopState)
@@ -51,7 +49,6 @@ export function App() {
     }
 
     setRoute(path)
-    setMenuOpen(false)
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
   }
 
@@ -59,11 +56,7 @@ export function App() {
     <>
       <Header
         currentPath={route}
-        socialLinks={profile.socialLinks}
-        menuOpen={menuOpen}
         theme={theme}
-        onMenuToggle={() => setMenuOpen((current) => !current)}
-        onNavigate={() => setMenuOpen(false)}
         onThemeToggle={() =>
           setTheme((current) => (current === 'dark' ? 'light' : 'dark'))
         }

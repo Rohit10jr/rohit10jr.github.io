@@ -1,59 +1,71 @@
 import { ArrowUpRight } from 'lucide-react'
 import { ConnectBlock } from '../components/ConnectBlock'
-import { FocusAreas } from '../components/FocusAreas'
 import { focusAreas, profile } from '../data/profile'
 
 export function AboutPage() {
   return (
-    <article className="page-shell about-page">
-      <header className="page-hero about-page-hero">
-        <div>
+    <article className="page-shell about-page minimal-about">
+      <header className="about-header">
+        <div className="about-heading">
           <p className="section-kicker">About</p>
-          <h1>Practical backend work, improved in useful increments.</h1>
+          <h1>About Rohit J</h1>
           <p>
-            Rohit's current public portfolio is intentionally narrow: Chennai,
-            back-end development, Python, Django, DRF, Flask, JavaScript, CSS,
-            and a set of provisional project links.
+            Rohit is a back-end developer based in Chennai. This portfolio keeps
+            the public story intentionally narrow: the facts that are already
+            supported, the skills currently shown, and clear room for stronger
+            project detail later.
           </p>
         </div>
         <img
+          className="about-avatar"
           src={profile.image.src}
           alt={profile.image.alt}
-          width="420"
-          height="420"
+          width="176"
+          height="176"
         />
       </header>
 
       <section className="prose-section" aria-labelledby="about-work-title">
-        <h2 id="about-work-title">Engineer-owned and easy to revise.</h2>
+        <h2 id="about-work-title">A practical portfolio, kept editable.</h2>
         <p>
-          This redesign keeps the story direct. It presents what is already
-          supported by the old site and leaves clear places for better project
-          detail when Rohit provides it.
+          The site is built around simple typed data and direct page components.
+          Skills, links, project placeholders, and future notes can be revised
+          without changing the whole layout.
         </p>
         <p>
-          The structure favors data files over hidden page copy. Updating skills,
-          projects, links, and future notes should be possible without changing
-          the layout components.
+          For now, the copy stays close to the confirmed source material:
+          Python, Django, DRF, Flask, JavaScript, CSS, Chennai, GitHub, LinkedIn,
+          and provisional project links from the previous portfolio.
         </p>
       </section>
 
-      <aside className="philosophy-callout" aria-labelledby="about-philosophy">
+      <section
+        className="prose-section philosophy-callout"
+        aria-labelledby="about-philosophy"
+      >
         <p className="section-kicker">Working note</p>
         <h2 id="about-philosophy">Progress beats perfection</h2>
         <p>
-          The useful path is to ship a clear increment, get feedback, and improve
-          the next version. That is how this portfolio is structured: honest
-          today, ready for stronger project evidence tomorrow.
+          The useful path is to ship a clear increment, listen to feedback, and
+          improve from there. This version follows that idea: honest today, easy
+          to update when better project evidence is ready.
         </p>
-      </aside>
+      </section>
 
-      <section className="section" aria-labelledby="about-focus-title">
-        <div className="section-heading">
-          <p className="section-kicker">Focus</p>
-          <h2 id="about-focus-title">The work areas currently supported by the source content.</h2>
-        </div>
-        <FocusAreas items={focusAreas} />
+      <section
+        className="prose-section about-focus"
+        aria-labelledby="about-focus-title"
+      >
+        <p className="section-kicker">Current focus</p>
+        <h2 id="about-focus-title">What the current content supports.</h2>
+        <ul className="about-note-list">
+          {focusAreas.map((item) => (
+            <li key={item.title}>
+              <strong>{item.title}</strong>
+              <span>{item.description}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="github-activity" aria-labelledby="github-activity-title">
