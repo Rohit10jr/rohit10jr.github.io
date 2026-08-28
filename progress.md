@@ -5,8 +5,10 @@
 - Route handoff start time: `2026-08-28T23:30:40+05:30`
 - Route handoff stop time: `2026-08-29T00:06:05+05:30`
 - Style refresh start time: `2026-08-29T00:26:06+05:30`
-- Latest stop time recorded: `2026-08-29T00:35:08+05:30`
+- Minimal navbar/about pass start time: `2026-08-29T00:47:20+05:30`
+- Latest stop time recorded: `2026-08-29T00:58:52+05:30`
 - Latest style-pass elapsed: about 9 minutes 2 seconds
+- Latest minimal-pass elapsed: about 11 minutes 32 seconds
 - Required route-handoff stop deadline: `2026-08-29T02:00:40+05:30`
 
 ## Branches
@@ -14,7 +16,8 @@
 - Archive branch: `archive/static-html-before-react`
 - Archive commit: `fa7d44a098603c2e060eb2cb3d074d5ce87d2c26`
 - Redesign branch: `redesign/react-typescript-portfolio`
-- Latest implementation commit before this progress note: `49ecb941b1b47d2c95a274721eb24d5d6ea14399`
+- Minimal version branch: `redesign/minimal-navbar-about`
+- Latest implementation commit before this progress note: `b51dc13f12ea1ede57f196655165def6e5b85b70`
 - No merge or deployment was performed.
 
 ## Commits
@@ -27,7 +30,9 @@
 - `8c558f8` `feat: add multi-page portfolio routes`
 - `047afd4` `docs: update redesign progress`
 - `49ecb94` `style: refine portfolio typography and layout`
-- This file is the required lowercase progress note and is committed again after the style refresh.
+- `a9dcbc2` `docs: record css refresh progress`
+- `b51dc13` `feat: simplify navbar and about page`
+- This file is the required lowercase progress note and is committed again after the minimal navbar/About pass.
 
 ## Areas Changed
 
@@ -42,6 +47,10 @@
 - Added `public/404.html` and an `index.html` redirect restore script for GitHub Pages direct-route fallback.
 - Replaced the previous decorative grid-heavy CSS with a quieter Peter/Cheng-inspired system: readable sans stack, serif resume headings, narrow prose width, flatter list/card treatment, compact header, and document-like resume layout.
 - Removed the decorative radial background accent and kept only a subtle top wash.
+- Created `redesign/minimal-navbar-about` from the current redesign branch for the minimal version.
+- Simplified the navbar to a Cheng-inspired text logo, visible route links, and an inline theme icon.
+- Removed header social icons and the hamburger/dropdown state from the navbar.
+- Reworked About into a Peter-inspired prose-first page with a modest profile image, narrow copy, simple focus list, GitHub Activity, and the existing connect links.
 
 ## Checks
 
@@ -50,10 +59,11 @@
 | Build | `npm run build` passed |
 | Route smoke test | `/`, `/about`, `/resume`, and `/posts` returned `200` from the local Vite server |
 | Visual smoke test | Desktop and mobile screenshots checked for Home, About, Resume, and Posts after the route work and after the CSS refresh |
-| Mobile overflow | Fixed About intro/prose overflow and Resume skill-chip/card overflow |
+| Minimal pass visual smoke test | Checked Home mobile navbar plus About desktop and mobile on the fresh local server |
+| Mobile overflow | Fixed About intro/prose overflow and Resume skill-chip/card overflow; minimal About mobile remained within the viewport |
 | Forbidden surface scan | No matches for contact form, Formsubmit, newsletter, signup, subscription, generated-by text, or attribution-trailer text in `src`, `index.html`, or `public` |
 | Link check | GitHub profile, listed linked repositories, and GitHub Activity image returned `200`; LinkedIn returned `999` to scripted GET and was preserved as the original public URL |
-| Branch safety | Work remained on `redesign/react-typescript-portfolio`; archive branch remained intact |
+| Branch safety | Original redesign work remained on `redesign/react-typescript-portfolio`; minimal pass work moved to `redesign/minimal-navbar-about`; archive branch remained intact |
 
 ## Route Smoke Results
 
@@ -61,6 +71,10 @@
 - `http://127.0.0.1:5175/about` -> `200`
 - `http://127.0.0.1:5175/resume` -> `200`
 - `http://127.0.0.1:5175/posts` -> `200`
+- `http://127.0.0.1:5176/` -> `200`
+- `http://127.0.0.1:5176/about` -> `200`
+- `http://127.0.0.1:5176/resume` -> `200`
+- `http://127.0.0.1:5176/posts` -> `200`
 
 ## Boundary
 
