@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { About } from './components/About'
-import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
-import { Hero } from './components/Hero'
-import { Projects } from './components/Projects'
-import { Skills } from './components/Skills'
-import { focusAreas, profile, projects, skillGroups } from './data/profile'
+import { profile } from './data/profile'
+import { AboutPage } from './pages/AboutPage'
+import { HomePage } from './pages/HomePage'
+import { PostsPage } from './pages/PostsPage'
+import { ResumePage } from './pages/ResumePage'
+import { normalizeRoute, routeTitles, type RoutePath } from './routes'
 
 type Theme = 'light' | 'dark'
 
@@ -23,14 +23,42 @@ function getInitialTheme(): Theme {
 export function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [theme, setTheme] = useState<Theme>(getInitialTheme)
+  const [route, setRoute] = useState<RoutePath>(() =>
+    normalizeRoute(window.location.pathname),
+  )
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
   }, [theme])
 
+  useEffect(() => {
+    document.title = routeTitles[route]
+  }, [route])
+
+  useEffect(() => {
+    function handlePopState() {
+      setRoute(normalizeRoute(window.location.pathname))
+      setMenuOpen(false)
+    }
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  function navigate(path: RoutePath) {
+    if (window.location.pathname !== path) {
+      window.history.pushState({}, '', path)
+    }
+
+    setRoute(path)
+    setMenuOpen(false)
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }
+
   return (
     <>
       <Header
+        currentPath={route}
         socialLinks={profile.socialLinks}
         menuOpen={menuOpen}
         theme={theme}
@@ -39,15 +67,15 @@ export function App() {
         onThemeToggle={() =>
           setTheme((current) => (current === 'dark' ? 'light' : 'dark'))
         }
+        onRouteNavigate={navigate}
       />
-      <main id="main">
-        <Hero profile={profile} />
-        <About summary={profile.summary} focusAreas={focusAreas} />
-        <Skills skillGroups={skillGroups} />
-        <Projects projects={projects} />
-        <Contact socialLinks={profile.socialLinks} />
+      <main id="main" className="page-main">
+        {route === '/' && <HomePage onNavigate={navigate} />}
+        {route === '/about' && <AboutPage />}
+        {route === '/resume' && <ResumePage />}
+        {route === '/posts' && <PostsPage />}
       </main>
-      <Footer socialLinks={profile.socialLinks} />
+      <Footer socialLinks={profile.socialLinks} onNavigate={navigate} />
     </>
   )
 }

@@ -1,31 +1,29 @@
 import { Menu, Moon, Sun, X } from 'lucide-react'
 import { BrandIcon } from './BrandIcon'
+import { PageLink } from './PageLink'
 import type { SocialLink } from '../data/profile'
+import { routeItems, type RoutePath } from '../routes'
 
 type HeaderProps = {
+  currentPath: RoutePath
   socialLinks: SocialLink[]
   menuOpen: boolean
   theme: 'light' | 'dark'
   onMenuToggle: () => void
   onNavigate: () => void
   onThemeToggle: () => void
+  onRouteNavigate: (path: RoutePath) => void
 }
 
-const navItems = [
-  { href: '#about', label: 'About' },
-  { href: '#focus', label: 'Focus' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' },
-]
-
 export function Header({
+  currentPath,
   socialLinks,
   menuOpen,
   theme,
   onMenuToggle,
   onNavigate,
   onThemeToggle,
+  onRouteNavigate,
 }: HeaderProps) {
   return (
     <header className="site-header">
@@ -33,13 +31,13 @@ export function Header({
         Skip to content
       </a>
       <div className="header-inner">
-        <a className="brand" href="#top" onClick={onNavigate}>
+        <PageLink className="brand" to="/" onNavigate={onRouteNavigate}>
           <span className="brand-mark">RJ</span>
           <span className="brand-text">
             Rohit J
             <span>Back-end developer</span>
           </span>
-        </a>
+        </PageLink>
 
         <button
           className="icon-button menu-button"
@@ -57,10 +55,19 @@ export function Header({
           className={`site-nav ${menuOpen ? 'is-open' : ''}`}
           aria-label="Main navigation"
         >
-          {navItems.map((item) => (
-            <a key={item.href} href={item.href} onClick={onNavigate}>
+          {routeItems.map((item) => (
+            <PageLink
+              key={item.path}
+              to={item.path}
+              onNavigate={(path) => {
+                onRouteNavigate(path)
+                onNavigate()
+              }}
+              ariaLabel={`Open ${item.label} page`}
+              ariaCurrent={currentPath === item.path ? 'page' : undefined}
+            >
               {item.label}
-            </a>
+            </PageLink>
           ))}
         </nav>
 

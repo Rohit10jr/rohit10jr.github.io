@@ -8,6 +8,16 @@
       content="Portfolio for Rohit J, a back-end developer based in Chennai."
     />
     <title>Rohit J - Back-end Developer</title>
+    <script>
+      ;(() => {
+        const redirectPath = sessionStorage.getItem('spa-redirect')
+
+        if (redirectPath) {
+          sessionStorage.removeItem('spa-redirect')
+          history.replaceState(null, '', redirectPath)
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
