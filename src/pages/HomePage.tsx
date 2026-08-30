@@ -63,7 +63,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       <ConnectBlock
         title="Connect with Rohit"
-        body="GitHub for source work, LinkedIn for professional updates, email for anything else."
+        body="GitHub for source work, LinkedIn and X for updates, email for anything else."
         socialLinks={profile.socialLinks}
       />
     </>

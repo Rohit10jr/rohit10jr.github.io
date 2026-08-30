@@ -63,7 +63,7 @@ export function AboutPage() {
           height="140"
         />
         <p>
-          I build what I am curious about and leave the source open.
+          I build what I am curious about and leave the source code open.
         </p>
         <p>
           <a
@@ -81,7 +81,7 @@ export function AboutPage() {
 
       <ConnectBlock
         title="Stay connected"
-        body="GitHub for the source work, LinkedIn for professional updates, or email for anything else."
+        body="GitHub for the source work, LinkedIn and X for updates, or email for anything else."
         socialLinks={profile.socialLinks}
       />
     </article>
