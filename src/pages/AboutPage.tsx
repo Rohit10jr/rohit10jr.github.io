@@ -33,8 +33,8 @@ export function AboutPage() {
             interface matters.
           </p>
           <p>
-            Right now I am going deeper on scalable backend architecture,
-            cloud-ready deployments, and agent-based systems.
+            Right now I am going deeper on scalable backend architecture, cloud
+            infrastructure, and agent-based systems.
           </p>
           <p>
             Away from the keyboard it is usually the gym, a long walk, a book or
