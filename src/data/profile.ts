@@ -58,6 +58,11 @@ export const profile = {
   ] satisfies SocialLink[],
 }
 
+// mailto: links open the mail client, not a new tab, and get no external marker.
+export function isExternalLink(href: string): boolean {
+  return !href.startsWith('mailto:')
+}
+
 export const skillGroups: SkillGroup[] = [
   {
     title: 'Backend',

@@ -1,6 +1,6 @@
 import { ArrowUpRight } from 'lucide-react'
 import { BrandIcon } from './BrandIcon'
-import type { SocialLink } from '../data/profile'
+import { isExternalLink, type SocialLink } from '../data/profile'
 
 type ConnectBlockProps = {
   title: string
@@ -21,19 +21,22 @@ export function ConnectBlock({
         <p>{body}</p>
       </div>
       <div className="connect-actions" aria-label="Connect links">
-        {socialLinks.map((link) => (
-          <a
-            key={link.href}
-            className="button primary-button"
-            href={link.href}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <BrandIcon kind={link.kind} />
-            {link.label}
-            <ArrowUpRight aria-hidden="true" size={17} />
-          </a>
-        ))}
+        {socialLinks.map((link) => {
+          const isExternal = isExternalLink(link.href)
+
+          return (
+            <a
+              key={link.href}
+              className="button primary-button"
+              href={link.href}
+              {...(isExternal && { target: '_blank', rel: 'noreferrer' })}
+            >
+              <BrandIcon kind={link.kind} />
+              {link.label}
+              {isExternal && <ArrowUpRight aria-hidden="true" size={17} />}
+            </a>
+          )
+        })}
       </div>
     </section>
   )
