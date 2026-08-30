@@ -339,20 +339,24 @@ li {
 
 .theme-toggle {
   position: relative;
-  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
   width: 2rem;
   height: 2rem;
   padding: 0;
   border: 0;
+  border-radius: 6px;
   background: transparent;
   color: var(--ink);
 }
 
 .theme-toggle svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  grid-area: 1 / 1;
   display: block;
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.25;
   transition-property: opacity, transform, filter;
   transition-duration: 150ms;
   transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
@@ -361,8 +365,8 @@ li {
 [data-theme='light'] .moon,
 [data-theme='dark'] .sun {
   opacity: 1;
-  filter: blur(0);
-  transform: translate(-50%, -50%) scale(1);
+  filter: blur(0px);
+  transform: scale(1);
 }
 
 [data-theme='dark'] .moon,
@@ -370,45 +374,7 @@ li {
   opacity: 0;
   filter: blur(4px);
   pointer-events: none;
-  transform: translate(-50%, -50%) scale(0.25);
-}
-
-.icon-button {
-  width: 34px;
-  height: 34px;
-  display: inline-grid;
-  place-items: center;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--muted);
-}
-
-.icon-button:hover {
-  border-color: var(--line-strong);
-  background: var(--surface);
-  color: var(--ink);
-}
-
-.theme-toggle {
-  width: 32px;
-  height: 32px;
-  display: inline-grid;
-  flex: 0 0 auto;
-  place-items: center;
-  border: 0;
-  border-radius: 6px;
-  padding: 0;
-  background: transparent;
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.icon-button svg,
-.theme-toggle svg {
-  width: 18px;
-  height: 18px;
-  stroke-width: 2.25;
+  transform: scale(0.25);
 }
 
 .page-main,
