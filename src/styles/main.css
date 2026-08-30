@@ -828,13 +828,12 @@ li {
 }
 
 .about-avatar {
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
   width: 100%;
+  height: auto;
   border: 0;
   border-radius: var(--radius);
   object-fit: cover;
-  object-position: 48% 38%;
-  filter: grayscale(1);
 }
 
 .prose-section {
