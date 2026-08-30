@@ -931,10 +931,12 @@ li {
   padding-top: 28px;
 }
 
-.minimal-about .prose-section h2,
-.minimal-about .github-activity h2 {
+/* Section headings sit at ~64% of the 2.35rem page title, so the hierarchy
+   reads as two clear levels. */
+.minimal-about .github-activity h2,
+.minimal-about .connect-block h2 {
   max-width: none;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   line-height: 1.25;
 }
 
