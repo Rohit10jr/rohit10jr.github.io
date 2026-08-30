@@ -21,7 +21,7 @@ export function AboutPage() {
         </figure>
         <div className="about-prose">
           <p>
-            I am a software engineer in Chennai, building full-stack products,
+            I am a software engineer in India, building full-stack products,
             backend systems, and agent-powered workflows.
           </p>
           <p>
