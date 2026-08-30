@@ -516,8 +516,11 @@ li {
 
 .footer-links {
   grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: end;
-  gap: 6px;
+  gap: 2px;
   margin-inline-end: -8px;
 }
 
@@ -600,7 +603,6 @@ li {
 
 .hero-actions,
 .hero-links,
-.footer-links,
 .project-actions,
 .resume-actions {
   display: flex;
@@ -1087,7 +1089,7 @@ li {
 }
 
 .site-footer p {
-  font-size: 0.93rem;
+  font-size: 1.02rem;
 }
 
 @media (max-width: 960px) {
