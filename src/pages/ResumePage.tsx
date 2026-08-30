@@ -2,6 +2,7 @@ import { ArrowUpRight, Printer } from 'lucide-react'
 import { BrandIcon } from '../components/BrandIcon'
 import { Projects } from '../components/Projects'
 import { Skills } from '../components/Skills'
+import { PrivateResume } from '../components/PrivateResume'
 import { isExternalLink, profile, projects, skillGroups } from '../data/profile'
 
 export function ResumePage() {
@@ -67,6 +68,8 @@ export function ResumePage() {
           <li>A real resume file, if a download should be offered later.</li>
         </ul>
       </section>
+      <PrivateResume />
+
     </article>
   )
 }
