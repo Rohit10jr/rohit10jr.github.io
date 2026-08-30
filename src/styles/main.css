@@ -514,6 +514,11 @@ li {
   text-decoration-color: currentColor;
 }
 
+.footer-links {
+  grid-column: 2;
+  gap: 4px;
+}
+
 .footer-links a {
   display: inline-grid;
   place-items: center;
@@ -1255,6 +1260,10 @@ li {
 
   .site-footer {
     grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    grid-column: 1;
   }
 }
 

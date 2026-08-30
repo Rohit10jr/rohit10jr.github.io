@@ -39,7 +39,7 @@ export function Footer({ socialLinks, onNavigate }: FooterProps) {
               isExternalLink(link.href) ? link.label : 'Email Rohit J'
             }
           >
-            <BrandIcon kind={link.kind} size={20} />
+            <BrandIcon kind={link.kind} size={24} />
           </a>
         ))}
       </div>
