@@ -13,10 +13,10 @@ export const routeItems: RouteItem[] = [
 ]
 
 export const routeTitles: Record<RoutePath, string> = {
-  '/': 'Rohit J - Back-end Developer',
-  '/about': 'About Rohit J',
-  '/resume': 'Resume - Rohit J',
-  '/posts': 'Posts - Rohit J',
+  '/': 'Rohit J — Engineer',
+  '/about': 'About — Rohit J',
+  '/resume': 'Resume — Rohit J',
+  '/posts': 'Posts — Rohit J',
 }
 
 export function normalizeRoute(pathname: string): RoutePath {
