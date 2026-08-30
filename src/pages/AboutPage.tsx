@@ -20,16 +20,23 @@ export function AboutPage() {
           />
         </figure>
         <div className="about-prose">
-          <p>I am a back-end developer based in Chennai.</p>
           <p>
-            I work mostly in Python — Django, Django REST Framework, and Flask —
-            with the JavaScript and CSS I need to finish the front end.
+            I am a software engineer in Chennai, building backend systems,
+            full-stack products, and agent-powered workflows.
           </p>
           <p>
-            Most of what I have built is application-shaped: a real-time chat app
-            over WebSockets, an e-commerce site, a blog, a school management
-            system. The projects listed here are from my earlier site, and I am
-            replacing them as newer work lands.
+            Most of my work is Python — Django, Django REST Framework, FastAPI,
+            and Flask — with React and TypeScript on the front end, and
+            PostgreSQL, MySQL, or MongoDB behind it.
+          </p>
+          <p>
+            Right now I am going deeper on scalable backend architecture,
+            cloud-ready deployments, and agent-based systems.
+          </p>
+          <p>
+            The problems I like are the ones where automation removes real
+            friction: SaaS products, developer tools, CRM systems, and job
+            platforms.
           </p>
           <p>
             Away from the keyboard I am usually walking uphill. That photo is
@@ -64,7 +71,7 @@ export function AboutPage() {
 
       <ConnectBlock
         title="Stay connected"
-        body="GitHub for the source work, LinkedIn for everything else."
+        body="GitHub for the source work, LinkedIn for professional updates, or email for anything else."
         socialLinks={profile.socialLinks}
       />
     </article>
