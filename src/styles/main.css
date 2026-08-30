@@ -1,12 +1,12 @@
 :root {
   color-scheme: light;
-  --bg: #fdfdfd;
+  --bg: #faf9f6;
   --surface: #ffffff;
-  --surface-soft: #f7f7f5;
-  --ink: #242424;
-  --muted: #686868;
-  --line: #e7e4df;
-  --line-strong: #cac5bd;
+  --surface-soft: #f2f1ec;
+  --ink: #1e1e1e;
+  --muted: #6c6c6c;
+  --line: #e6e3dc;
+  --line-strong: #c9c4ba;
   --accent: #006cac;
   --accent-strong: #004f7e;
   --accent-soft: #edf6fb;
@@ -70,7 +70,7 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(231, 228, 223, 0.45), transparent 22rem);
+  background: linear-gradient(180deg, rgba(226, 222, 212, 0.28), transparent 22rem);
 }
 
 ::selection {
