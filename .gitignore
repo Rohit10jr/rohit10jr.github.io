@@ -25,3 +25,6 @@ dist-ssr
 
 # Original full-size photos kept locally, not served or committed
 assets-source
+
+# Private CV source - never commit the plaintext
+private/
