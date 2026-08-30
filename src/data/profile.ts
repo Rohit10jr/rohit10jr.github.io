@@ -26,7 +26,7 @@ export type FocusArea = {
 export const profile = {
   name: 'Rohit J',
   role: 'Software engineer',
-  location: 'Chennai',
+  location: 'India',
   headline:
     'Software engineer building backend systems, full-stack products, and agent-powered workflows.',
   summary:
