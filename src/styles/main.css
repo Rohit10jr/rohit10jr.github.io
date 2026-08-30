@@ -16,6 +16,9 @@
   --content-width: 900px;
   --wide-width: 1120px;
   --prose-width: 720px;
+  --nav-width: 1024px;
+  --header-height: 60px;
+  --gap: 24px;
   --radius: 8px;
   --font-sans: "Atkinson Hyperlegible", Atkinson, ui-sans-serif, system-ui,
     -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -177,15 +180,17 @@ li {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid var(--line);
+  min-height: var(--header-height);
+  border-bottom: 1px solid color-mix(in srgb, var(--line), transparent 25%);
   background: color-mix(in srgb, var(--bg), transparent 4%);
   backdrop-filter: blur(16px);
 }
 
 .header-inner,
 .site-footer {
-  width: min(var(--wide-width), calc(100% - 48px));
+  width: min(calc(var(--nav-width) + var(--gap) * 2), 100%);
   margin: 0 auto;
+  padding-inline: var(--gap);
 }
 
 .page-main {
@@ -195,11 +200,11 @@ li {
 }
 
 .header-inner {
-  min-height: 64px;
+  min-height: var(--header-height);
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 22px;
+  column-gap: var(--gap);
 }
 
 .brand {
@@ -213,18 +218,21 @@ li {
 
 .nav-logo {
   width: fit-content;
-  font-size: 1.02rem;
+  font-size: 1.04rem;
   font-weight: 800;
+  line-height: var(--header-height);
   white-space: nowrap;
 }
 
 .site-nav {
   display: flex;
   justify-self: end;
-  gap: 24px;
+  align-items: center;
+  gap: var(--gap);
   min-width: 0;
   overflow-x: auto;
   scrollbar-width: none;
+  white-space: nowrap;
 }
 
 .site-nav::-webkit-scrollbar {
@@ -235,7 +243,7 @@ li {
 .site-nav button,
 .footer-nav a {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 650;
   letter-spacing: 0;
   text-decoration: none;
@@ -269,8 +277,8 @@ li {
 }
 
 .theme-toggle {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   display: inline-grid;
   flex: 0 0 auto;
   place-items: center;
@@ -698,37 +706,41 @@ li {
 .minimal-about {
   width: min(var(--prose-width), 100%);
   margin: 0 auto;
-  gap: 42px;
+  gap: 46px;
 }
 
-.about-header {
+.about-title h1 {
+  max-width: none;
+  font-size: 2.35rem;
+  line-height: 1.16;
+}
+
+.about-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 176px;
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
   gap: 32px;
   align-items: start;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 30px;
 }
 
-.about-heading {
+.about-photo {
+  margin: 0;
+}
+
+.about-prose {
   min-width: 0;
+  display: grid;
+  gap: 14px;
 }
 
-.about-heading h1 {
-  max-width: none;
-  font-size: 2.45rem;
-  line-height: 1.12;
-}
-
-.about-heading p {
-  max-width: 62ch;
-  margin-top: 12px;
+.about-prose p {
+  color: var(--ink);
+  line-height: 1.72;
 }
 
 .about-avatar {
   aspect-ratio: 1;
-  width: 176px;
-  border: 1px solid var(--line);
+  width: 100%;
+  border: 0;
   border-radius: var(--radius);
   object-fit: cover;
   object-position: 48% 38%;
@@ -747,14 +759,9 @@ li {
 
 .minimal-about .prose-section {
   width: 100%;
-  gap: 14px;
+  gap: 16px;
   border-top: 1px solid var(--line);
-  padding-top: 24px;
-}
-
-.minimal-about .prose-section:first-of-type {
-  border-top: 0;
-  padding-top: 0;
+  padding-top: 28px;
 }
 
 .minimal-about .prose-section h2,
@@ -768,7 +775,7 @@ li {
   max-width: none;
   border-color: var(--line);
   background: transparent;
-  padding: 24px 0 0;
+  padding: 28px 0 0;
 }
 
 .about-note-list {
@@ -802,7 +809,14 @@ li {
 
 .minimal-about .github-activity {
   border-top: 1px solid var(--line);
-  padding-top: 24px;
+  padding-top: 28px;
+}
+
+.minimal-about .github-activity img {
+  min-height: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
 }
 
 .github-activity img {
@@ -932,11 +946,25 @@ li {
   justify-content: end;
 }
 
+@media (min-width: 1200px) {
+  .nav-logo {
+    position: fixed;
+    top: 0;
+    left: max(var(--gap), calc((100vw - var(--content-width)) / 2 - 188px));
+    z-index: 11;
+  }
+}
+
 @media (max-width: 960px) {
   .header-inner {
     grid-template-columns: minmax(0, 1fr) auto;
     row-gap: 8px;
     padding: 12px 0 10px;
+  }
+
+  .header-inner,
+  .site-footer {
+    padding-inline: 0;
   }
 
   .site-nav {
@@ -960,7 +988,7 @@ li {
   }
 
   .hero-section,
-  .about-header,
+  .about-intro,
   .resume-hero,
   .connect-block {
     grid-template-columns: 1fr;
@@ -1035,7 +1063,7 @@ li {
   }
 
   .hero-summary,
-  .about-heading p,
+  .about-prose p,
   .page-hero p,
   .section-intro,
   .prose-section p,
@@ -1065,13 +1093,16 @@ li {
   }
 
   .profile-visual,
-  .about-avatar,
   .focus-grid,
   .skill-groups,
   .project-grid,
   .post-list {
     width: 100%;
     max-width: 320px;
+  }
+
+  .about-avatar {
+    width: min(100%, 320px);
   }
 
   .focus-card,
