@@ -598,7 +598,6 @@ li {
 
 .hero-actions,
 .hero-links,
-.connect-actions,
 .footer-links,
 .footer-nav,
 .project-actions,
@@ -821,9 +820,7 @@ li {
 .connect-block {
   min-width: 0;
   display: grid;
-  grid-template-columns: minmax(min(100%, 26ch), 1fr) minmax(0, auto);
-  gap: 24px;
-  align-items: center;
+  gap: 10px;
 }
 
 .connect-block > * {
@@ -833,10 +830,6 @@ li {
 .connect-block p {
   max-width: 62ch;
   margin-top: 8px;
-}
-
-.connect-actions {
-  justify-content: end;
 }
 
 .page-hero {
@@ -1152,7 +1145,6 @@ li {
     grid-template-columns: 1fr;
   }
 
-  .connect-actions,
   .footer-nav,
   .footer-links {
     justify-content: start;
@@ -1200,7 +1192,6 @@ li {
   }
 
   .hero-actions,
-  .connect-actions,
   .resume-actions {
     align-items: stretch;
   }

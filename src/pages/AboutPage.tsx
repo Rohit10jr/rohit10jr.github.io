@@ -81,8 +81,7 @@ export function AboutPage() {
 
       <ConnectBlock
         title="Stay connected"
-        body="GitHub for the source work, LinkedIn and X for updates, or email for anything else."
-        socialLinks={profile.socialLinks}
+        body="If you would like to connect or have questions about my work, feel free to reach out through any of the links below. GitHub for the source work, LinkedIn and X for updates, or email for anything else."
       />
     </article>
   )

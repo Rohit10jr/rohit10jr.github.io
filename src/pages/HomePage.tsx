@@ -62,9 +62,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       <ConnectBlock
-        title="Connect with Rohit"
-        body="GitHub for source work, LinkedIn and X for updates, email for anything else."
-        socialLinks={profile.socialLinks}
+        title="Stay connected"
+        body="If you would like to connect or have questions about my work, feel free to reach out through any of the links below. GitHub for the source work, LinkedIn and X for updates, or email for anything else."
       />
     </>
   )
