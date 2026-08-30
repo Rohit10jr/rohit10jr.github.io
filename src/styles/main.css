@@ -514,6 +514,22 @@ li {
   text-decoration-color: currentColor;
 }
 
+/* Same treatment as .text-link, but flows inside a sentence: stays inline
+   and inherits the surrounding font size. */
+.prose-link {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.34rem;
+}
+
+.prose-link:hover {
+  color: var(--accent-strong);
+  text-decoration-color: currentColor;
+}
+
 .footer-links {
   grid-column: 2;
   display: flex;
