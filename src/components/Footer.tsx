@@ -35,9 +35,11 @@ export function Footer({ socialLinks, onNavigate }: FooterProps) {
                 ? `Open Rohit J on ${link.label}`
                 : 'Email Rohit J'
             }
+            title={
+              isExternalLink(link.href) ? link.label : 'Email Rohit J'
+            }
           >
-            <BrandIcon kind={link.kind} />
-            {link.label}
+            <BrandIcon kind={link.kind} size={20} />
           </a>
         ))}
       </div>

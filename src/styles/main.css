@@ -494,7 +494,6 @@ li {
 
 .text-link,
 .hero-links a,
-.footer-links a,
 .project-actions a {
   display: inline-flex;
   align-items: center;
@@ -510,10 +509,28 @@ li {
 
 .text-link:hover,
 .hero-links a:hover,
-.footer-links a:hover,
 .project-actions a:hover {
   color: var(--accent-strong);
   text-decoration-color: currentColor;
+}
+
+.footer-links a {
+  display: inline-grid;
+  place-items: center;
+  padding: 6px;
+  border-radius: 6px;
+  color: var(--ink);
+  opacity: 0.9;
+  text-decoration: none;
+  transition-property: transform, color, opacity;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  opacity: 1;
+  transform: rotate(6deg);
 }
 
 .button {
@@ -799,7 +816,7 @@ li {
 .connect-block {
   min-width: 0;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(min(100%, 26ch), 1fr) minmax(0, auto);
   gap: 24px;
   align-items: center;
 }
