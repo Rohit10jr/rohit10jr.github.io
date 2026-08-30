@@ -1,7 +1,7 @@
 export type SocialLink = {
   label: string
   href: string
-  kind: 'github' | 'linkedin' | 'email'
+  kind: 'github' | 'linkedin' | 'twitter' | 'email'
 }
 
 export type SkillGroup = {
@@ -49,6 +49,11 @@ export const profile = {
       label: 'LinkedIn',
       href: 'https://www.linkedin.com/in/rohit-j/',
       kind: 'linkedin',
+    },
+    {
+      label: 'X',
+      href: 'https://x.com/imrohit_jr',
+      kind: 'twitter',
     },
     {
       label: 'Email',
