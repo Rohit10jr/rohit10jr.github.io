@@ -1,7 +1,7 @@
 export type SocialLink = {
   label: string
   href: string
-  kind: 'github' | 'linkedin'
+  kind: 'github' | 'linkedin' | 'email'
 }
 
 export type SkillGroup = {
@@ -25,11 +25,12 @@ export type FocusArea = {
 
 export const profile = {
   name: 'Rohit J',
-  role: 'Back-end developer',
+  role: 'Software engineer',
   location: 'Chennai',
-  headline: 'Back-end developer building practical web applications.',
+  headline:
+    'Software engineer building backend systems, full-stack products, and agent-powered workflows.',
   summary:
-    'Rohit works with Python, Django, DRF, Flask, JavaScript, and CSS. The project data is ready for newer work as it is provided.',
+    'Backend systems, full-stack products, and agent-powered workflows, built mostly with Python, Django, FastAPI, React, and TypeScript.',
   image: {
     src: '/assets/rohit-profile.webp',
     alt: 'Portrait of Rohit J',
@@ -49,17 +50,39 @@ export const profile = {
       href: 'https://www.linkedin.com/in/rohit-j/',
       kind: 'linkedin',
     },
+    {
+      label: 'Email',
+      href: 'mailto:rohitjworkspace@gmail.com',
+      kind: 'email',
+    },
   ] satisfies SocialLink[],
 }
 
 export const skillGroups: SkillGroup[] = [
   {
     title: 'Backend',
-    skills: ['Python', 'Django', 'Django REST Framework', 'Flask'],
+    skills: ['Python', 'Django', 'Django REST Framework', 'FastAPI', 'Flask'],
   },
   {
     title: 'Frontend',
-    skills: ['JavaScript', 'CSS'],
+    skills: [
+      'JavaScript',
+      'TypeScript',
+      'React',
+      'HTML',
+      'CSS',
+      'Tailwind CSS',
+      'Bootstrap',
+      'Sass',
+    ],
+  },
+  {
+    title: 'Databases',
+    skills: ['PostgreSQL', 'MySQL', 'MongoDB'],
+  },
+  {
+    title: 'Tooling',
+    skills: ['Git'],
   },
 ]
 
