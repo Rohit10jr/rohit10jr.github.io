@@ -34,6 +34,10 @@ export const profile = {
     src: '/assets/rohit-profile.webp',
     alt: 'Portrait of Rohit J',
   },
+  aboutImage: {
+    src: '/assets/rohit-kedar.webp',
+    alt: 'Rohit J standing on a mountain summit above a layer of cloud',
+  },
   socialLinks: [
     {
       label: 'GitHub',
