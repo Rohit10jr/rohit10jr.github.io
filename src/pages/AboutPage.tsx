@@ -39,6 +39,10 @@ export function AboutPage() {
             platforms.
           </p>
           <p>
+            Mostly I am chasing the front edge of technology and AI. I build
+            things to understand them, and the exploring is the point.
+          </p>
+          <p>
             Away from the keyboard I am usually walking uphill. That photo is
             from the Kedar summit.
           </p>
@@ -58,15 +62,21 @@ export function AboutPage() {
           width="840"
           height="140"
         />
-        <a
-          className="text-link"
-          href="https://github.com/Rohit10jr"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Open GitHub profile
-          <ArrowUpRight aria-hidden="true" size={17} />
-        </a>
+        <p>
+          I build what I am curious about and leave the source open.
+        </p>
+        <p>
+          <a
+            className="text-link"
+            href="https://github.com/Rohit10jr"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Follow me on GitHub
+            <ArrowUpRight aria-hidden="true" size={17} />
+          </a>{' '}
+          to catch new projects as they land.
+        </p>
       </section>
 
       <ConnectBlock
