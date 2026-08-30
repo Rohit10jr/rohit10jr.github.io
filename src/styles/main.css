@@ -237,7 +237,7 @@ li {
 
 .logo a {
   font-family: var(--font-logo);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 400;
   display: flex;
   align-items: center;
@@ -266,7 +266,7 @@ li {
 }
 
 .menu a {
-  font-size: 16px;
+  font-size: 17px;
   line-height: var(--header-height);
   color: var(--ink);
 }
