@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Original full-size photos kept locally, not served or committed
+assets-source
