@@ -43,8 +43,8 @@ export function AboutPage() {
             things to understand them, and the exploring is the point.
           </p>
           <p>
-            Away from the keyboard I am usually walking uphill. That photo is
-            from the Kedar summit.
+            Away from the keyboard it is usually the gym, a long walk, or a book
+            or a film. That photo is from the Kedarkantha summit.
           </p>
           <p>
             Progress beats perfection. I would rather ship a clear increment,

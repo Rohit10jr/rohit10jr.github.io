@@ -37,7 +37,7 @@ export const profile = {
   },
   aboutImage: {
     src: '/assets/rohit-kedar.webp',
-    alt: 'Rohit J standing on a mountain summit above a layer of cloud',
+    alt: 'Rohit J at the Kedarkantha summit, above a layer of cloud',
   },
   socialLinks: [
     {
