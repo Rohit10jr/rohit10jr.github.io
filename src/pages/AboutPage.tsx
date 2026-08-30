@@ -1,6 +1,6 @@
-import { ArrowUpRight } from 'lucide-react'
-import { ConnectBlock } from '../components/ConnectBlock'
-import { profile } from '../data/profile'
+import { ArrowUpRight } from "lucide-react";
+import { ConnectBlock } from "../components/ConnectBlock";
+import { profile } from "../data/profile";
 
 export function AboutPage() {
   return (
@@ -21,30 +21,24 @@ export function AboutPage() {
         </figure>
         <div className="about-prose">
           <p>
-            I am a software engineer in Chennai, building backend systems,
-            full-stack products, and agent-powered workflows.
+            I am a software engineer in Chennai, building full-stack products,
+            backend systems, and agent-powered workflows.
           </p>
           <p>
-            Most of my work is Python — Django, Django REST Framework, FastAPI,
-            and Flask — with React and TypeScript on the front end, and
-            PostgreSQL, MySQL, or MongoDB behind it.
+            Mostly I am chasing the forefront of technology and AI. I build
+            things to understand them, and the exploring is the point.
+          </p>
+          <p>
+            Most of my work is Python with React and TypeScript where the
+            interface matters.
           </p>
           <p>
             Right now I am going deeper on scalable backend architecture,
             cloud-ready deployments, and agent-based systems.
           </p>
           <p>
-            The problems I like are the ones where automation removes real
-            friction: SaaS products, developer tools, CRM systems, and job
-            platforms.
-          </p>
-          <p>
-            Mostly I am chasing the front edge of technology and AI. I build
-            things to understand them, and the exploring is the point.
-          </p>
-          <p>
-            Away from the keyboard it is usually the gym, a long walk, or a book
-            or a film. That photo is from the Kedarkantha summit.
+            Away from the keyboard it is usually the gym, a long walk, a book or
+            a film. That photo is from the Kedarkantha summit.
           </p>
           <p>
             Progress beats perfection. I would rather ship a clear increment,
@@ -53,7 +47,10 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="github-activity" aria-labelledby="github-activity-title">
+      <section
+        className="github-activity"
+        aria-labelledby="github-activity-title"
+      >
         <h2 id="github-activity-title">GitHub Activity</h2>
         <img
           src="https://ghchart.rshah.org/Rohit10jr"
@@ -62,9 +59,7 @@ export function AboutPage() {
           width="840"
           height="140"
         />
-        <p>
-          I build what I am curious about and leave the source code open.
-        </p>
+        <p>I build what I am curious about and leave the source code open.</p>
         <p>
           <a
             className="text-link"
@@ -74,7 +69,7 @@ export function AboutPage() {
           >
             Follow me on GitHub
             <ArrowUpRight aria-hidden="true" size={17} />
-          </a>{' '}
+          </a>{" "}
           to catch new projects as they land.
         </p>
       </section>
@@ -84,5 +79,5 @@ export function AboutPage() {
         body="If you would like to connect or have questions about my work, feel free to reach out."
       />
     </article>
-  )
+  );
 }
