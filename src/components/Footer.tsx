@@ -1,6 +1,6 @@
 import { BrandIcon } from './BrandIcon'
 import { PageLink } from './PageLink'
-import type { SocialLink } from '../data/profile'
+import { isExternalLink, profile, type SocialLink } from '../data/profile'
 import { routeItems, type RoutePath } from '../routes'
 
 type FooterProps = {
@@ -11,7 +11,9 @@ type FooterProps = {
 export function Footer({ socialLinks, onNavigate }: FooterProps) {
   return (
     <footer className="site-footer">
-      <p>Rohit J / Back-end developer / Chennai</p>
+      <p>
+        {profile.name} / {profile.role} / {profile.location}
+      </p>
       <nav className="footer-nav" aria-label="Footer navigation">
         {routeItems.map((item) => (
           <PageLink key={item.path} to={item.path} onNavigate={onNavigate}>
@@ -24,9 +26,15 @@ export function Footer({ socialLinks, onNavigate }: FooterProps) {
           <a
             key={link.href}
             href={link.href}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={`Open Rohit J on ${link.label}`}
+            {...(isExternalLink(link.href) && {
+              target: '_blank',
+              rel: 'noreferrer',
+            })}
+            aria-label={
+              isExternalLink(link.href)
+                ? `Open Rohit J on ${link.label}`
+                : 'Email Rohit J'
+            }
           >
             <BrandIcon kind={link.kind} />
             {link.label}
