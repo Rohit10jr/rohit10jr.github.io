@@ -260,8 +260,13 @@ li {
   display: none;
 }
 
+.menu li {
+  line-height: inherit;
+}
+
 .menu a {
   font-size: 16px;
+  line-height: var(--header-height);
   color: var(--ink);
 }
 
@@ -325,6 +330,10 @@ li {
     grid-row: 2;
     margin-inline-start: 0;
     line-height: 2.75rem;
+  }
+
+  .menu a {
+    line-height: inherit;
   }
 }
 
