@@ -2,7 +2,7 @@ import { ArrowUpRight, Printer } from 'lucide-react'
 import { BrandIcon } from '../components/BrandIcon'
 import { Projects } from '../components/Projects'
 import { Skills } from '../components/Skills'
-import { profile, projects, skillGroups } from '../data/profile'
+import { isExternalLink, profile, projects, skillGroups } from '../data/profile'
 
 export function ResumePage() {
   return (
@@ -11,7 +11,9 @@ export function ResumePage() {
         <div>
           <p className="section-kicker">Resume</p>
           <h1>Rohit J</h1>
-          <p>Back-end developer based in Chennai.</p>
+          <p>
+            {profile.role} based in {profile.location}.
+          </p>
         </div>
         <div className="resume-actions">
           {profile.socialLinks.map((link) => (
@@ -19,12 +21,16 @@ export function ResumePage() {
               key={link.href}
               className="button secondary-button"
               href={link.href}
-              target="_blank"
-              rel="noreferrer"
+              {...(isExternalLink(link.href) && {
+                target: '_blank',
+                rel: 'noreferrer',
+              })}
             >
               <BrandIcon kind={link.kind} />
               {link.label}
-              <ArrowUpRight aria-hidden="true" size={17} />
+              {isExternalLink(link.href) && (
+                <ArrowUpRight aria-hidden="true" size={17} />
+              )}
             </a>
           ))}
           <button className="button print-button" type="button" onClick={() => window.print()}>
@@ -43,7 +49,7 @@ export function ResumePage() {
         id="resume-skills"
         skillGroups={skillGroups}
         title="Skills"
-        intro="Skills currently shown on the existing portfolio."
+        intro="The stack I work in day to day."
       />
 
       <Projects

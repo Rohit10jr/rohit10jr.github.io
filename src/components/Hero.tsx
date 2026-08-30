@@ -1,7 +1,7 @@
 import { ArrowUpRight, MapPin } from 'lucide-react'
 import { BrandIcon } from './BrandIcon'
 import { PageLink } from './PageLink'
-import type { SocialLink } from '../data/profile'
+import { isExternalLink, type SocialLink } from '../data/profile'
 import type { RoutePath } from '../routes'
 
 type HeroProps = {
@@ -46,9 +46,15 @@ export function Hero({ profile, onNavigate }: HeroProps) {
             <a
               key={link.href}
               href={link.href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Open Rohit J on ${link.label}`}
+              {...(isExternalLink(link.href) && {
+                target: '_blank',
+                rel: 'noreferrer',
+              })}
+              aria-label={
+                isExternalLink(link.href)
+                  ? `Open Rohit J on ${link.label}`
+                  : 'Email Rohit J'
+              }
             >
               <BrandIcon kind={link.kind} />
               {link.label}

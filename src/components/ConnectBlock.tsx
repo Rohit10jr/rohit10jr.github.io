@@ -1,40 +1,47 @@
-import { ArrowUpRight } from 'lucide-react'
-import { BrandIcon } from './BrandIcon'
-import type { SocialLink } from '../data/profile'
+import type { ReactNode } from 'react'
+import { isExternalLink, profile, type SocialLink } from '../data/profile'
 
 type ConnectBlockProps = {
   title: string
   body: string
-  socialLinks: SocialLink[]
 }
 
-export function ConnectBlock({
-  title,
-  body,
-  socialLinks,
-}: ConnectBlockProps) {
+type ProseLinkProps = {
+  kind: SocialLink['kind']
+  children: ReactNode
+}
+
+function ProseLink({ kind, children }: ProseLinkProps) {
+  const link = profile.socialLinks.find((item) => item.kind === kind)
+
+  if (!link) {
+    return <>{children}</>
+  }
+
+  return (
+    <a
+      className="prose-link"
+      href={link.href}
+      {...(isExternalLink(link.href) && {
+        target: '_blank',
+        rel: 'noreferrer',
+      })}
+    >
+      {children}
+    </a>
+  )
+}
+
+export function ConnectBlock({ title, body }: ConnectBlockProps) {
   return (
     <section className="connect-block" aria-labelledby="connect-title">
-      <div>
-        <p className="section-kicker">Connect</p>
-        <h2 id="connect-title">{title}</h2>
-        <p>{body}</p>
-      </div>
-      <div className="connect-actions" aria-label="Connect links">
-        {socialLinks.map((link) => (
-          <a
-            key={link.href}
-            className="button primary-button"
-            href={link.href}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <BrandIcon kind={link.kind} />
-            {link.label}
-            <ArrowUpRight aria-hidden="true" size={17} />
-          </a>
-        ))}
-      </div>
+      <h2 id="connect-title">{title}</h2>
+      <p>{body}</p>
+      <p>
+        <ProseLink kind="linkedin">LinkedIn</ProseLink> and{' '}
+        <ProseLink kind="twitter">X</ProseLink> for updates, or{' '}
+        <ProseLink kind="email">email</ProseLink> for anything else.
+      </p>
     </section>
   )
 }

@@ -62,9 +62,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       <ConnectBlock
-        title="Connect with Rohit"
-        body="GitHub and LinkedIn are the confirmed public paths for now."
-        socialLinks={profile.socialLinks}
+        title="Stay connected"
+        body="If you would like to connect or have questions about my work, feel free to reach out."
       />
     </>
   )

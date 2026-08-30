@@ -1,66 +1,57 @@
-import { ArrowUpRight } from 'lucide-react'
-import { ConnectBlock } from '../components/ConnectBlock'
-import { FocusAreas } from '../components/FocusAreas'
-import { focusAreas, profile } from '../data/profile'
+import { ArrowUpRight } from "lucide-react";
+import { ConnectBlock } from "../components/ConnectBlock";
+import { profile } from "../data/profile";
 
 export function AboutPage() {
   return (
-    <article className="page-shell about-page">
-      <header className="page-hero about-page-hero">
-        <div>
-          <p className="section-kicker">About</p>
-          <h1>Practical backend work, improved in useful increments.</h1>
-          <p>
-            Rohit's current public portfolio is intentionally narrow: Chennai,
-            back-end development, Python, Django, DRF, Flask, JavaScript, CSS,
-            and a set of provisional project links.
-          </p>
-        </div>
-        <img
-          src={profile.image.src}
-          alt={profile.image.alt}
-          width="420"
-          height="420"
-        />
+    <article className="page-shell about-page minimal-about">
+      <header className="about-title">
+        <h1>About</h1>
       </header>
 
-      <section className="prose-section" aria-labelledby="about-work-title">
-        <h2 id="about-work-title">Engineer-owned and easy to revise.</h2>
-        <p>
-          This redesign keeps the story direct. It presents what is already
-          supported by the old site and leaves clear places for better project
-          detail when Rohit provides it.
-        </p>
-        <p>
-          The structure favors data files over hidden page copy. Updating skills,
-          projects, links, and future notes should be possible without changing
-          the layout components.
-        </p>
+      <section className="about-intro" aria-label="About Rohit J">
+        <figure className="about-photo">
+          <img
+            className="about-avatar"
+            src={profile.aboutImage.src}
+            alt={profile.aboutImage.alt}
+            width="560"
+            height="640"
+          />
+        </figure>
+        <div className="about-prose">
+          <p>
+            I am a software engineer in Chennai, building full-stack products,
+            backend systems, and agent-powered workflows.
+          </p>
+          <p>
+            Mostly I am chasing the forefront of technology and AI. I build
+            things to understand them, and the exploring is the point.
+          </p>
+          <p>
+            Most of my work is Python with React and TypeScript where the
+            interface matters.
+          </p>
+          <p>
+            Right now I am going deeper on scalable backend architecture, cloud
+            infrastructure, and agent-based systems.
+          </p>
+          <p>
+            Away from the keyboard it is usually the gym, a long walk, a book or
+            a film. That photo is from the Kedarkantha summit.
+          </p>
+          <p>
+            Progress beats perfection. I would rather ship a clear increment,
+            take the feedback, and improve from there.
+          </p>
+        </div>
       </section>
 
-      <aside className="philosophy-callout" aria-labelledby="about-philosophy">
-        <p className="section-kicker">Working note</p>
-        <h2 id="about-philosophy">Progress beats perfection</h2>
-        <p>
-          The useful path is to ship a clear increment, get feedback, and improve
-          the next version. That is how this portfolio is structured: honest
-          today, ready for stronger project evidence tomorrow.
-        </p>
-      </aside>
-
-      <section className="section" aria-labelledby="about-focus-title">
-        <div className="section-heading">
-          <p className="section-kicker">Focus</p>
-          <h2 id="about-focus-title">The work areas currently supported by the source content.</h2>
-        </div>
-        <FocusAreas items={focusAreas} />
-      </section>
-
-      <section className="github-activity" aria-labelledby="github-activity-title">
-        <div>
-          <p className="section-kicker">GitHub Activity</p>
-          <h2 id="github-activity-title">Rohit10jr contribution activity.</h2>
-        </div>
+      <section
+        className="github-activity"
+        aria-labelledby="github-activity-title"
+      >
+        <h2 id="github-activity-title">GitHub Activity</h2>
         <img
           src="https://ghchart.rshah.org/Rohit10jr"
           alt="Rohit10jr GitHub contribution activity chart"
@@ -68,22 +59,25 @@ export function AboutPage() {
           width="840"
           height="140"
         />
-        <a
-          className="text-link"
-          href="https://github.com/Rohit10jr"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Open GitHub profile
-          <ArrowUpRight aria-hidden="true" size={17} />
-        </a>
+        <p>I build what I am curious about and leave the source code open.</p>
+        <p>
+          <a
+            className="text-link"
+            href="https://github.com/Rohit10jr"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Follow me on GitHub
+            <ArrowUpRight aria-hidden="true" size={17} />
+          </a>{" "}
+          to catch new projects as they land.
+        </p>
       </section>
 
       <ConnectBlock
-        title="Keep in touch through the confirmed links"
-        body="Use GitHub for source work and LinkedIn for professional updates until a preferred email is provided."
-        socialLinks={profile.socialLinks}
+        title="Stay connected"
+        body="If you would like to connect or have questions about my work, feel free to reach out."
       />
     </article>
-  )
+  );
 }

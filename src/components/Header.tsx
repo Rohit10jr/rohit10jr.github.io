@@ -1,105 +1,99 @@
-import { Menu, Moon, Sun, X } from 'lucide-react'
-import { BrandIcon } from './BrandIcon'
 import { PageLink } from './PageLink'
-import type { SocialLink } from '../data/profile'
 import { routeItems, type RoutePath } from '../routes'
 
 type HeaderProps = {
   currentPath: RoutePath
-  socialLinks: SocialLink[]
-  menuOpen: boolean
   theme: 'light' | 'dark'
-  onMenuToggle: () => void
-  onNavigate: () => void
   onThemeToggle: () => void
   onRouteNavigate: (path: RoutePath) => void
 }
 
 export function Header({
   currentPath,
-  socialLinks,
-  menuOpen,
   theme,
-  onMenuToggle,
-  onNavigate,
   onThemeToggle,
   onRouteNavigate,
 }: HeaderProps) {
   return (
-    <header className="site-header">
+    <header className="header">
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <div className="header-inner">
-        <PageLink className="brand" to="/" onNavigate={onRouteNavigate}>
-          <span className="brand-mark">RJ</span>
-          <span className="brand-text">
+      <nav className="header-nav" aria-label="Main navigation">
+        <div className="logo">
+          <PageLink to="/" onNavigate={onRouteNavigate}>
             Rohit J
-            <span>Back-end developer</span>
-          </span>
-        </PageLink>
+          </PageLink>
+        </div>
 
-        <button
-          className="icon-button menu-button"
-          type="button"
-          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          aria-expanded={menuOpen}
-          aria-controls="site-navigation"
-          onClick={onMenuToggle}
-        >
-          {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-        </button>
-
-        <nav
-          id="site-navigation"
-          className={`site-nav ${menuOpen ? 'is-open' : ''}`}
-          aria-label="Main navigation"
-        >
+        <ul id="menu" className="menu">
           {routeItems.map((item) => (
-            <PageLink
-              key={item.path}
-              to={item.path}
-              onNavigate={(path) => {
-                onRouteNavigate(path)
-                onNavigate()
-              }}
-              ariaLabel={`Open ${item.label} page`}
-              ariaCurrent={currentPath === item.path ? 'page' : undefined}
-            >
-              {item.label}
-            </PageLink>
+            <li key={item.path}>
+              <PageLink
+                to={item.path}
+                onNavigate={onRouteNavigate}
+                ariaCurrent={currentPath === item.path ? 'page' : undefined}
+              >
+                <span
+                  className={currentPath === item.path ? 'active' : undefined}
+                >
+                  {item.label}
+                </span>
+              </PageLink>
+            </li>
           ))}
-        </nav>
+        </ul>
 
-        <div className="header-actions" aria-label="Profile links and theme">
-          {socialLinks.map((link) => (
-            <a
-              key={link.href}
-              className="icon-button"
-              href={link.href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Open Rohit J on ${link.label}`}
-              title={link.label}
-            >
-              <BrandIcon kind={link.kind} />
-            </a>
-          ))}
+        <div className="logo-switches">
           <button
-            className="icon-button"
+            id="theme-toggle"
+            className="theme-toggle"
             type="button"
             onClick={onThemeToggle}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
-            title="Theme"
+            title="Toggle theme"
           >
-            {theme === 'dark' ? (
-              <Sun aria-hidden="true" />
-            ) : (
-              <Moon aria-hidden="true" />
-            )}
+            <svg
+              className="moon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg
+              className="sun"
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
           </button>
         </div>
-      </div>
+      </nav>
     </header>
   )
 }
