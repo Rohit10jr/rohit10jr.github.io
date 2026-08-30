@@ -15,8 +15,8 @@ export function AboutPage() {
             className="about-avatar"
             src={profile.aboutImage.src}
             alt={profile.aboutImage.alt}
-            width="640"
-            height="800"
+            width="560"
+            height="640"
           />
         </figure>
         <div className="about-prose">
