@@ -1,26 +1,16 @@
 import { BrandIcon } from './BrandIcon'
-import { PageLink } from './PageLink'
 import { isExternalLink, profile, type SocialLink } from '../data/profile'
-import { routeItems, type RoutePath } from '../routes'
 
 type FooterProps = {
   socialLinks: SocialLink[]
-  onNavigate: (path: RoutePath) => void
 }
 
-export function Footer({ socialLinks, onNavigate }: FooterProps) {
+export function Footer({ socialLinks }: FooterProps) {
   return (
     <footer className="site-footer">
       <p>
         {profile.name} / {profile.role} / {profile.location}
       </p>
-      <nav className="footer-nav" aria-label="Footer navigation">
-        {routeItems.map((item) => (
-          <PageLink key={item.path} to={item.path} onNavigate={onNavigate}>
-            {item.label}
-          </PageLink>
-        ))}
-      </nav>
       <div className="footer-links" aria-label="Footer social links">
         {socialLinks.map((link) => (
           <a
@@ -35,11 +25,9 @@ export function Footer({ socialLinks, onNavigate }: FooterProps) {
                 ? `Open Rohit J on ${link.label}`
                 : 'Email Rohit J'
             }
-            title={
-              isExternalLink(link.href) ? link.label : 'Email Rohit J'
-            }
+            title={isExternalLink(link.href) ? link.label : 'Email Rohit J'}
           >
-            <BrandIcon kind={link.kind} size={24} />
+            <BrandIcon kind={link.kind} size={28} />
           </a>
         ))}
       </div>

@@ -516,13 +516,15 @@ li {
 
 .footer-links {
   grid-column: 2;
-  gap: 4px;
+  justify-content: end;
+  gap: 6px;
+  margin-inline-end: -8px;
 }
 
 .footer-links a {
   display: inline-grid;
   place-items: center;
-  padding: 6px;
+  padding: 8px;
   border-radius: 6px;
   color: var(--ink);
   opacity: 0.9;
@@ -599,7 +601,6 @@ li {
 .hero-actions,
 .hero-links,
 .footer-links,
-.footer-nav,
 .project-actions,
 .resume-actions {
   display: flex;
@@ -1089,25 +1090,6 @@ li {
   font-size: 0.93rem;
 }
 
-.footer-nav,
-.footer-links {
-  justify-content: end;
-}
-
-.footer-nav a {
-  color: var(--muted);
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-decoration: none;
-  text-underline-offset: 0.3rem;
-}
-
-.footer-nav a:hover {
-  color: var(--ink);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-}
-
 @media (max-width: 960px) {
   h1 {
     font-size: 3.1rem;
@@ -1143,11 +1125,6 @@ li {
   .project-grid,
   .post-list.compact {
     grid-template-columns: 1fr;
-  }
-
-  .footer-nav,
-  .footer-links {
-    justify-content: start;
   }
 }
 
@@ -1255,6 +1232,8 @@ li {
 
   .footer-links {
     grid-column: 1;
+    justify-content: start;
+    margin-inline: -8px 0;
   }
 }
 

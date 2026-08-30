@@ -68,7 +68,7 @@ export function App() {
         {route === '/resume' && <ResumePage />}
         {route === '/posts' && <PostsPage />}
       </main>
-      <Footer socialLinks={profile.socialLinks} onNavigate={navigate} />
+      <Footer socialLinks={profile.socialLinks} />
     </>
   )
 }
