@@ -111,6 +111,44 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  /* Reserve the scrollbar gutter on every page. Without this, moving from a
+     page that scrolls to one that does not returns ~15px of width and the
+     whole centred layout jumps sideways. Fallback for browsers without
+     scrollbar-gutter; the @supports block below prefers the cleaner property. */
+  overflow-y: scroll;
+}
+
+@supports (scrollbar-gutter: stable) {
+  html {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+}
+
+/* Firefox and anything without the WebKit pseudo-elements. */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
 }
 
 body {
