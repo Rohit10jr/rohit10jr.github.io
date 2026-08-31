@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react'
-import { LockKeyhole } from 'lucide-react'
+import { LockKeyhole, Printer } from 'lucide-react'
 
 type Payload = {
   v: number
@@ -97,19 +97,27 @@ export function PrivateResume() {
   if (status === 'unlocked') {
     return (
       <section className="cv-block cv-unlocked" aria-labelledby="cv-title">
-        <h2 id="cv-title">Full CV</h2>
+        <h2 id="cv-title" className="visually-hidden">
+          Resume
+        </h2>
+        <div className="cv-toolbar">
+          <button
+            className="button secondary-button"
+            type="button"
+            onClick={() => window.print()}
+          >
+            <Printer aria-hidden="true" size={17} />
+            Print
+          </button>
+        </div>
         <div className="cv-content" dangerouslySetInnerHTML={{ __html: content }} />
       </section>
     )
   }
 
   return (
-    <section className="cv-block" aria-labelledby="cv-title">
-      <h2 id="cv-title">Full CV</h2>
-      <p>
-        Contact details, work history, and education are kept behind a password.
-        Ask me for it and it opens here.
-      </p>
+    <section className="cv-block cv-gate" aria-labelledby="cv-title">
+      <h1 id="cv-title">Resume</h1>
 
       <form className="cv-form" onSubmit={handleSubmit}>
         <label className="cv-label" htmlFor="cv-password">
@@ -124,7 +132,7 @@ export function PrivateResume() {
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             disabled={status === 'unlocking'}
-            aria-describedby={message ? 'cv-message' : undefined}
+            aria-describedby="cv-message"
           />
           <button
             className="button primary-button"
