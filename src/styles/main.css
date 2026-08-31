@@ -1443,6 +1443,8 @@ li {
 .posts-page {
   width: min(768px, 100%);
   margin: 0 auto;
+  /* Same title-to-content breathing room as the About page. */
+  gap: 46px;
 }
 
 .posts-page .post-list {
