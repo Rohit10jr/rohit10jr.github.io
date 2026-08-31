@@ -4,11 +4,6 @@ export type SocialLink = {
   kind: 'github' | 'linkedin' | 'twitter' | 'email'
 }
 
-export type SkillGroup = {
-  title: string
-  skills: string[]
-}
-
 export type Project = {
   title: string
   repositoryName: string
@@ -26,7 +21,7 @@ export type FocusArea = {
 export const profile = {
   name: 'Rohit J',
   role: 'Software engineer',
-  location: 'Chennai',
+  location: 'India',
   headline:
     'Software engineer building backend systems, full-stack products, and agent-powered workflows.',
   summary:
@@ -67,34 +62,6 @@ export const profile = {
 export function isExternalLink(href: string): boolean {
   return !href.startsWith('mailto:')
 }
-
-export const skillGroups: SkillGroup[] = [
-  {
-    title: 'Backend',
-    skills: ['Python', 'Django', 'Django REST Framework', 'FastAPI', 'Flask'],
-  },
-  {
-    title: 'Frontend',
-    skills: [
-      'JavaScript',
-      'TypeScript',
-      'React',
-      'HTML',
-      'CSS',
-      'Tailwind CSS',
-      'Bootstrap',
-      'Sass',
-    ],
-  },
-  {
-    title: 'Databases',
-    skills: ['PostgreSQL', 'MySQL', 'MongoDB'],
-  },
-  {
-    title: 'Tooling',
-    skills: ['Git'],
-  },
-]
 
 export const focusAreas: FocusArea[] = [
   {
