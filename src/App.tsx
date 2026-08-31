@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
+import { findPost } from './data/posts'
 import { profile } from './data/profile'
 import { AboutPage } from './pages/AboutPage'
 import { HomePage } from './pages/HomePage'
+import { PostPage } from './pages/PostPage'
 import { PostsPage } from './pages/PostsPage'
 import { ResumePage } from './pages/ResumePage'
-import { normalizeRoute, routeTitles, type RoutePath } from './routes'
+import { normalizeRoute, postSlug, routeTitle, type RoutePath } from './routes'
 
 type Theme = 'light' | 'dark'
 
@@ -30,9 +32,11 @@ export function App() {
     document.documentElement.dataset.theme = theme
   }, [theme])
 
+  const slug = postSlug(route)
+
   useEffect(() => {
-    document.title = routeTitles[route]
-  }, [route])
+    document.title = routeTitle(route, slug ? findPost(slug)?.title : undefined)
+  }, [route, slug])
 
   useEffect(() => {
     function handlePopState() {
@@ -66,7 +70,8 @@ export function App() {
         {route === '/' && <HomePage onNavigate={navigate} />}
         {route === '/about' && <AboutPage />}
         {route === '/resume' && <ResumePage />}
-        {route === '/posts' && <PostsPage />}
+        {route === '/posts' && <PostsPage onNavigate={navigate} />}
+        {slug && <PostPage slug={slug} onNavigate={navigate} />}
       </main>
       <Footer socialLinks={profile.socialLinks} />
     </>
