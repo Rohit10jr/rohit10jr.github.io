@@ -96,22 +96,19 @@ export function PrivateResume() {
 
   if (status === 'unlocked') {
     return (
-      <section className="cv-block cv-unlocked" aria-labelledby="cv-title">
-        <h2 id="cv-title" className="visually-hidden">
-          Resume
-        </h2>
-        <div className="cv-toolbar">
-          <button
-            className="button secondary-button"
-            type="button"
-            onClick={() => window.print()}
-          >
-            <Printer aria-hidden="true" size={17} />
+      <div className="cv-unlocked">
+        <h2 className="visually-hidden">Resume</h2>
+        <nav className="resume-toolbar" aria-label="Resume actions">
+          <button className="resume-print" type="button" onClick={() => window.print()}>
+            <Printer aria-hidden="true" size={14} />
             Print
           </button>
-        </div>
-        <div className="cv-content" dangerouslySetInnerHTML={{ __html: content }} />
-      </section>
+        </nav>
+        <article
+          className="resume-paper"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      </div>
     )
   }
 
