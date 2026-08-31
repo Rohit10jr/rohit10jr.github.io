@@ -1,0 +1,25 @@
+#!/bin/sh
+# Refuses any commit that stages the private CV plaintext.
+#
+# private/ is gitignored, so this only fires if the ignore rule is bypassed
+# (git add -f) or removed. Enable once per clone:
+#
+#   git config core.hooksPath .githooks
+
+staged=$(git diff --cached --name-only)
+
+blocked=$(printf '%s\n' "$staged" | grep -E '^private/' || true)
+
+if [ -n "$blocked" ]; then
+  echo "BLOCKED: refusing to commit private CV source." >&2
+  echo "" >&2
+  printf '%s\n' "$blocked" | sed 's/^/  /' >&2
+  echo "" >&2
+  echo "These files hold plaintext personal details and must never be" >&2
+  echo "committed. Only public/cv.enc (the encrypted output) belongs in git." >&2
+  echo "" >&2
+  echo "Unstage with:  git restore --staged private/" >&2
+  exit 1
+fi
+
+exit 0
