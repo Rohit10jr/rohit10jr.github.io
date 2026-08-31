@@ -10,7 +10,6 @@ export function PostsPage({ onNavigate }: PostsPageProps) {
       <header className="page-hero">
         <div>
           <h1>All posts</h1>
-          <p>Notes on open source, building things, and what I am figuring out.</p>
         </div>
       </header>
 
