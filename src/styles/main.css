@@ -1437,6 +1437,16 @@ li {
   text-transform: none;
 }
 
+/* 768px column and 24px between entries, matching both reference sites. */
+.posts-page {
+  width: min(768px, 100%);
+  margin: 0 auto;
+}
+
+.posts-page .post-list {
+  gap: 24px;
+}
+
 /* Posts index: title matches the About page, no rule beneath it. */
 .posts-page .page-hero {
   border-bottom: 0;
