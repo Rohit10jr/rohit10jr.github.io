@@ -444,6 +444,7 @@ li {
 .page-main {
   flex: 1 0 auto;
   display: grid;
+  align-content: start;
   gap: 72px;
   padding: 56px 0 84px;
 }
