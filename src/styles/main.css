@@ -765,8 +765,7 @@ li {
 }
 
 .focus-card,
-.project-card,
-.post-card {
+.project-card {
   transition:
     border-color 140ms ease,
     transform 140ms ease,
@@ -774,8 +773,7 @@ li {
 }
 
 .focus-card:hover,
-.project-card:hover,
-.post-card:hover {
+.project-card:hover {
   border-color: var(--line-strong);
   transform: translateY(-1px);
   box-shadow: 0 12px 28px rgba(34, 34, 34, 0.06);
@@ -1392,6 +1390,19 @@ li {
 }
 
 /* ---- Posts ---- */
+
+/* Peter's treatment: no underline at rest, dashed on hover. */
+.post-title a {
+  color: var(--ink);
+  text-decoration: none;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.post-title a:hover {
+  text-decoration-line: underline;
+}
 
 /* Post cards sit tighter than the shared card size. */
 .post-card {
