@@ -998,6 +998,7 @@ li {
 }
 
 .resume-page {
+  width: 100%;
   max-width: 860px;
   margin: 0 auto;
 }
@@ -1312,15 +1313,19 @@ li {
 }
 
 .cv-gate {
-  max-width: 26rem;
+  width: 100%;
+  max-width: 32rem;
   margin: 0 auto;
   padding-top: 40px;
 }
 
+/* Sans, matching the field below it, rather than the resume's serif. */
 .cv-gate h1 {
   max-width: none;
-  font-size: 2.35rem;
-  line-height: 1.16;
+  font-family: var(--font-sans);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .cv-toolbar {
@@ -1378,12 +1383,13 @@ li {
 
 .cv-input {
   width: 100%;
-  min-height: 48px;
+  min-height: 40px;
   border: 1px solid var(--line-strong);
   border-radius: 8px;
-  padding: 12px 54px 12px 14px;
+  padding: 7px 42px 7px 12px;
   background: var(--surface);
   color: var(--ink);
+  font-size: 0.94rem;
 }
 
 .cv-input::placeholder {
@@ -1404,8 +1410,8 @@ li {
   top: 4px;
   right: 4px;
   display: grid;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   place-items: center;
   border: 0;
   border-radius: 6px;
@@ -1424,8 +1430,8 @@ li {
 }
 
 .cv-spinner {
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   border: 2px solid var(--line-strong);
   border-top-color: var(--ink);
   border-radius: 50%;

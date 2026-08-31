@@ -144,7 +144,7 @@ export function PrivateResume() {
             {status === 'unlocking' ? (
               <span className="cv-spinner" aria-hidden="true" />
             ) : (
-              <ArrowRight aria-hidden="true" size={18} />
+              <ArrowRight aria-hidden="true" size={16} />
             )}
           </button>
         </div>
