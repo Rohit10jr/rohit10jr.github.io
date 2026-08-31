@@ -1405,6 +1405,23 @@ li {
   text-decoration-line: underline;
 }
 
+/* Scroll-progress bar across the top of an article. */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  pointer-events: none;
+}
+
+.reading-progress-bar {
+  height: 100%;
+  background: var(--accent);
+}
+
 /* Post cards sit tighter than the shared card size. */
 .post-card {
   display: grid;

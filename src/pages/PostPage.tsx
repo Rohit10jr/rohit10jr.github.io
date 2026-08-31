@@ -1,5 +1,6 @@
 import { ArrowLeft } from 'lucide-react'
 import { PageLink } from '../components/PageLink'
+import { ReadingProgress } from '../components/ReadingProgress'
 import { findPost, formatPostDate } from '../data/posts'
 import type { RoutePath } from '../routes'
 
@@ -26,6 +27,7 @@ export function PostPage({ slug, onNavigate }: PostPageProps) {
 
   return (
     <article className="page-shell post-page">
+      <ReadingProgress key={post.slug} />
       <PageLink className="text-link post-back" to="/posts" onNavigate={onNavigate}>
         <ArrowLeft aria-hidden="true" size={17} />
         All posts
