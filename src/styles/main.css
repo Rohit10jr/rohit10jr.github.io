@@ -1393,6 +1393,18 @@ li {
 
 /* ---- Posts ---- */
 
+/* Posts index: title matches the About page, no rule beneath it. */
+.posts-page .page-hero {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.posts-page .page-hero h1 {
+  max-width: none;
+  font-size: 2rem;
+  line-height: 1.16;
+}
+
 .post-page {
   width: min(var(--prose-width), 100%);
   margin: 0 auto;
