@@ -121,6 +121,16 @@ body {
   color: var(--ink);
 }
 
+/* Header / main / footer are siblings inside #root. Making it a full-height
+   column lets main absorb the slack, so the footer sits at the bottom of the
+   viewport on short pages instead of floating under the content. */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
 body::before {
   content: '';
   position: fixed;
@@ -432,6 +442,7 @@ li {
 }
 
 .page-main {
+  flex: 1 0 auto;
   display: grid;
   gap: 72px;
   padding: 56px 0 84px;
