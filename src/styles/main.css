@@ -109,7 +109,7 @@
 }
 
 html {
-  font-size: 17px;
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
@@ -281,7 +281,7 @@ li {
 
 .logo a {
   font-family: var(--font-logo);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 400;
   display: flex;
   align-items: center;
@@ -310,7 +310,7 @@ li {
 }
 
 .menu a {
-  font-size: 17px;
+  font-size: 16px;
   line-height: var(--header-height);
   color: var(--ink);
 }
@@ -518,7 +518,7 @@ li {
    and inherits the surrounding font size. */
 .prose-link {
   color: var(--ink);
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: underline;
   text-decoration-color: var(--line-strong);
   text-decoration-thickness: 1px;
@@ -1324,7 +1324,6 @@ li {
   max-width: none;
   font-family: var(--font-sans);
   font-size: 1.45rem;
-  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -1353,7 +1352,7 @@ li {
 
 .cv-competencies dt {
   color: var(--ink);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .cv-competencies dd {
