@@ -1547,6 +1547,10 @@ li {
 }
 
 .placeholder-label {
+  /* Stays in the UI face; it inherits the wordmark font otherwise. */
+  font-family: var(--font-sans);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   border: 1px solid var(--warm);
   border-radius: 999px;
   padding: 1px 8px;
