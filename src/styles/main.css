@@ -1394,9 +1394,10 @@ li {
 /* Peter's treatment: no underline at rest, dashed on hover. */
 .post-title a {
   color: var(--ink);
+  font-weight: inherit;
   text-decoration: none;
   text-decoration-style: dashed;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: auto;
   text-underline-offset: 4px;
 }
 
@@ -1418,6 +1419,7 @@ li {
 .post-title {
   margin: 0;
   font-size: 1.05rem;
+  font-weight: 500;
   line-height: 1.3;
 }
 
