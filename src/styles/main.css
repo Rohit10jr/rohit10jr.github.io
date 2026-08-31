@@ -160,7 +160,8 @@ body {
 }
 
 /* Header / main / footer are siblings inside #root. Making it a full-height
-   column lets main absorb the slack, so the footer sits at the bottom of the
+   column lets main absorb the slack,
+so the footer sits at the bottom of the
    viewport on short pages instead of floating under the content. */
 #root {
   display: flex;
@@ -499,7 +500,6 @@ li {
 }
 
 .section-kicker,
-.project-meta,
 .post-meta {
   color: var(--muted);
   font-family: var(--font-mono);
@@ -516,7 +516,6 @@ li {
 }
 
 .section-heading,
-.projects-heading,
 .preview-heading {
   min-width: 0;
   display: grid;
@@ -528,7 +527,6 @@ li {
 }
 
 .section-heading > *,
-.projects-heading > *,
 .preview-heading > * {
   min-width: 0;
 }
@@ -543,8 +541,7 @@ li {
 }
 
 .text-link,
-.hero-links a,
-.project-actions a {
+.hero-links a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -558,13 +555,13 @@ li {
 }
 
 .text-link:hover,
-.hero-links a:hover,
-.project-actions a:hover {
+.hero-links a:hover {
   color: var(--accent-strong);
   text-decoration-color: currentColor;
 }
 
-/* Same treatment as .text-link, but flows inside a sentence: stays inline
+/* Same treatment as .text-link,
+but flows inside a sentence: stays inline
    and inherits the surrounding font size. */
 .prose-link {
   color: var(--ink);
@@ -718,7 +715,6 @@ li {
 
 .hero-actions,
 .hero-links,
-.project-actions,
 .resume-actions {
   display: flex;
   flex-wrap: wrap;
@@ -742,27 +738,15 @@ li {
   filter: grayscale(1);
 }
 
-.focus-grid,
-.skill-groups,
-.project-grid,
 .post-list {
   display: grid;
   gap: 16px;
 }
 
-.focus-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.skill-groups,
-.project-grid,
 .post-list.compact {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.focus-card,
-.skill-group,
-.project-card,
 .post-card {
   min-width: 0;
   border: 1px solid var(--line);
@@ -771,70 +755,19 @@ li {
   background: var(--surface);
 }
 
-.focus-card,
-.project-card {
-  transition:
-    border-color 140ms ease,
-    transform 140ms ease,
-    box-shadow 140ms ease;
-}
-
-.focus-card:hover,
-.project-card:hover {
-  border-color: var(--line-strong);
-  transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(34, 34, 34, 0.06);
-}
-
-.focus-card h3,
-.skill-group h3,
-.project-card h3,
 .post-card h3 {
   font-size: 1.1rem;
 }
 
-.focus-card p,
-.project-card p,
 .post-card p {
   margin-top: 10px;
 }
 
-.skill-group ul,
-.tag-list,
 .plain-list {
   padding: 0;
   list-style: none;
 }
 
-.skill-group ul,
-.tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.skill-group li,
-.tag-list li {
-  max-width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 5px 9px;
-  background: var(--surface-soft);
-  color: var(--ink);
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  font-weight: 700;
-  line-height: 1.35;
-  overflow-wrap: anywhere;
-}
-
-.project-card {
-  display: grid;
-  gap: 12px;
-}
-
-.project-meta,
 .post-meta {
   display: flex;
   flex-wrap: wrap;
@@ -842,24 +775,12 @@ li {
   gap: 8px;
 }
 
-.project-status,
 .placeholder-label {
   display: inline-flex;
   align-items: center;
   gap: 5px;
   border-radius: 999px;
   color: var(--warm);
-}
-
-.project-status.verified {
-  color: var(--accent-strong);
-}
-
-.unlinked-source {
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 700;
 }
 
 .post-card {
@@ -986,7 +907,8 @@ li {
   padding-top: 28px;
 }
 
-/* Section headings sit at ~64% of the 2.35rem page title, so the hierarchy
+/* Section headings sit at ~64% of the 2.35rem page title,
+so the hierarchy
    reads as two clear levels. */
 .minimal-about .github-activity h2,
 .minimal-about .connect-block h2 {
@@ -1000,30 +922,6 @@ li {
   border-color: var(--line);
   background: transparent;
   padding: 28px 0 0;
-}
-
-.about-note-list {
-  display: grid;
-  gap: 14px;
-  padding: 0;
-  list-style: none;
-}
-
-.about-note-list li {
-  display: grid;
-  gap: 4px;
-  border-top: 1px solid var(--line);
-  padding-top: 14px;
-}
-
-.about-note-list strong {
-  color: var(--ink);
-  font-size: 1rem;
-}
-
-.about-note-list span {
-  color: var(--muted);
-  line-height: 1.7;
 }
 
 .github-activity {
@@ -1105,32 +1003,6 @@ li {
   margin-bottom: 4px;
 }
 
-.resume-page .skill-groups,
-.resume-page .project-grid {
-  grid-template-columns: 1fr;
-}
-
-.resume-page .skill-group,
-.resume-page .project-card {
-  border: 0;
-  border-radius: 0;
-  padding: 0 10px;
-  background: transparent;
-}
-
-.resume-page .skill-group + .skill-group,
-.resume-page .project-card + .project-card {
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
-}
-
-.resume-page .project-card:hover,
-.resume-page .focus-card:hover,
-.resume-page .post-card:hover {
-  transform: none;
-  box-shadow: none;
-}
-
 .plain-list {
   display: grid;
   gap: 6px;
@@ -1167,9 +1039,9 @@ li {
   }
 
   .hero-section,
-  .about-intro,
-  .resume-hero,
-  .connect-block {
+.about-intro,
+.resume-hero,
+.connect-block {
     grid-template-columns: 1fr;
   }
 
@@ -1180,20 +1052,16 @@ li {
   }
 
   .profile-visual,
-  .about-avatar {
+.about-avatar {
     justify-self: start;
     width: min(100%, 300px);
   }
 
   .section-heading,
-  .projects-heading,
-  .preview-heading {
+.preview-heading {
     grid-template-columns: 1fr;
   }
 
-  .focus-grid,
-  .skill-groups,
-  .project-grid,
   .post-list.compact {
     grid-template-columns: 1fr;
   }
@@ -1201,7 +1069,7 @@ li {
 
 @media (max-width: 680px) {
   .page-main,
-  .site-footer {
+.site-footer {
     width: calc(100% - 28px);
   }
 
@@ -1221,26 +1089,24 @@ li {
   }
 
   p,
-  li {
+li {
     font-size: 0.98rem;
   }
 
   .hero-summary,
-  .about-prose p,
-  .page-hero p,
-  .section-intro,
-  .prose-section p,
-  .focus-card p,
-  .project-card p,
-  .post-card p,
-  .connect-block p,
-  .resume-block p,
-  .resume-block li {
+.about-prose p,
+.page-hero p,
+.section-intro,
+.prose-section p,
+.post-card p,
+.connect-block p,
+.resume-block p,
+.resume-block li {
     max-width: 31ch;
   }
 
   .hero-actions,
-  .resume-actions {
+.resume-actions {
     align-items: stretch;
   }
 
@@ -1249,10 +1115,7 @@ li {
   }
 
   .profile-visual,
-  .focus-grid,
-  .skill-groups,
-  .project-grid,
-  .post-list {
+.post-list {
     width: 100%;
     max-width: 320px;
   }
@@ -1261,9 +1124,6 @@ li {
     width: min(100%, 320px);
   }
 
-  .focus-card,
-  .skill-group,
-  .project-card,
   .post-card {
     width: 100%;
     padding: 18px;
@@ -1284,11 +1144,6 @@ li {
 
   .resume-hero h1 {
     font-size: 2.5rem;
-  }
-
-  .resume-page .skill-group,
-  .resume-page .project-card {
-    padding-inline: 0;
   }
 
   .site-footer {
@@ -1316,10 +1171,10 @@ li {
   }
 
   body::before,
-  .header,
-  .site-footer,
-  .resume-toolbar,
-  .cv-block:not(.cv-unlocked) {
+.header,
+.site-footer,
+.resume-toolbar,
+.cv-block:not(.cv-unlocked) {
     display: none !important;
   }
 
@@ -1335,7 +1190,8 @@ li {
     box-shadow: none;
   }
 
-  /* A4 sheet: drop the card, tighten the scale so it fits the page. */
+  /* A4 sheet: drop the card,
+tighten the scale so it fits the page. */
   @page {
     size: A4;
     margin: 0;
@@ -1366,11 +1222,11 @@ li {
   }
 
   .resume-summary p,
-  .resume-highlights,
-  .resume-detail-list dd,
-  .resume-detail-list dt,
-  .resume-skill-grid p,
-  .resume-skill-grid h3 {
+.resume-highlights,
+.resume-detail-list dd,
+.resume-detail-list dt,
+.resume-skill-grid p,
+.resume-skill-grid h3 {
     font-size: 9pt;
     line-height: 1.28;
   }
@@ -1380,17 +1236,18 @@ li {
   }
 
   .resume-entry-meta,
-  .resume-education-entry time {
+.resume-education-entry time {
     font-size: 8pt;
   }
 
   .resume-entry,
-  .resume-section {
+.resume-section {
     break-inside: avoid;
   }
 }
 
-/* ---- Selected work: numbered rows, one link per row ---- */
+/* ---- Selected work: numbered rows,
+one link per row ---- */
 
 .work-section .section-heading h2,
 .preview-heading h2 {
@@ -1514,7 +1371,8 @@ a.work-row:hover .work-arrow {
 
 /* ---- Posts ---- */
 
-/* Peter's treatment: no underline at rest, dashed on hover. */
+/* Peter's treatment: no underline at rest,
+dashed on hover. */
 .post-title a {
   color: var(--ink);
   font-weight: inherit;
@@ -1569,7 +1427,8 @@ a.work-row:hover .work-arrow {
   line-height: 1.55;
 }
 
-/* Date and reading time in the wordmark face, as Cheng does. */
+/* Date and reading time in the wordmark face,
+as Cheng does. */
 .post-card .post-meta {
   margin: 2px 0 0;
   color: var(--muted);
@@ -1579,7 +1438,8 @@ a.work-row:hover .work-arrow {
   text-transform: none;
 }
 
-/* 768px column and 24px between entries, matching both reference sites. */
+/* 768px column and 24px between entries,
+matching both reference sites. */
 .posts-page {
   width: min(768px, 100%);
   margin: 0 auto;
@@ -1591,7 +1451,8 @@ a.work-row:hover .work-arrow {
   gap: 24px;
 }
 
-/* Posts index: title matches the About page, no rule beneath it. */
+/* Posts index: title matches the About page,
+no rule beneath it. */
 .posts-page .page-hero {
   border-bottom: 0;
   padding-bottom: 0;
@@ -1735,7 +1596,9 @@ a.work-row:hover .work-arrow {
   padding-top: 40px;
 }
 
-/* Sans, matching the field below it, rather than the resume's serif. */
+/* Sans,
+matching the field below it,
+rather than the resume's serif. */
 .cv-gate h1 {
   max-width: none;
   font-family: var(--font-sans);
@@ -2009,8 +1872,8 @@ a.work-row:hover .work-arrow {
   }
 
   *,
-  *::before,
-  *::after {
+*::before,
+*::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
