@@ -6,16 +6,12 @@ export type SocialLink = {
 
 export type Project = {
   title: string
-  repositoryName: string
   description: string
-  tags: string[]
-  sourceUrl?: string
-  status: 'verified' | 'needs-review'
-}
-
-export type FocusArea = {
-  title: string
-  description: string
+  /** Short right-hand label, e.g. "Django · PostgreSQL". */
+  meta: string
+  url?: string
+  /** Placeholder entries are marked in the UI until the work is public. */
+  placeholder?: boolean
 }
 
 export const profile = {
@@ -63,67 +59,65 @@ export function isExternalLink(href: string): boolean {
   return !href.startsWith('mailto:')
 }
 
-export const focusAreas: FocusArea[] = [
-  {
-    title: 'Backend-first web apps',
-    description:
-      'Django and API-backed projects shaped around practical workflows.',
-  },
-  {
-    title: 'Django and REST APIs',
-    description:
-      'Project work centered on Django, DRF, and application data models.',
-  },
-  {
-    title: 'Simple web interfaces',
-    description:
-      'JavaScript and CSS interfaces that keep project workflows understandable.',
-  },
-]
-
 // These are provisional entries from the previous static site. Replace them
 // when Rohit provides newer project selections, live URLs, or stronger copy.
+// Placeholder set drawn from work in progress. Replace url/placeholder as
+// each repository becomes public.
 export const projects: Project[] = [
   {
+    title: 'OpenCRM',
+    description:
+      'Open-source CRM on Django REST Framework and SvelteKit. Multi-tenancy through PostgreSQL row-level security, JWT auth, and a REST surface across leads, accounts, opportunities and invoices.',
+    meta: 'Django REST · PostgreSQL · SvelteKit',
+    placeholder: true,
+  },
+  {
+    title: 'NanoBot',
+    description:
+      'Ultra-light agent framework with tool execution, memory, multi-channel chat and support for several LLM providers.',
+    meta: 'Python · Agents · MCP',
+    placeholder: true,
+  },
+  {
+    title: 'DataLine',
+    description:
+      'Connects to CSV, Excel, SQLite, PostgreSQL, MySQL and Snowflake, turns plain questions into SQL, runs it, and charts the result.',
+    meta: 'FastAPI · React · SQL',
+    placeholder: true,
+  },
+  {
+    title: 'AgentSEO',
+    description:
+      'Self-hostable tool that plans SEO content and drafts posts, built to deploy in one command.',
+    meta: 'Django · Redis · Docker',
+    placeholder: true,
+  },
+  {
+    title: 'RAG engine',
+    description:
+      'Retrieval pipeline built around deep document understanding, producing citation-backed answers across mixed formats.',
+    meta: 'Python · Embeddings · RAG',
+    placeholder: true,
+  },
+  {
+    title: 'JobNext',
+    description:
+      'Job platform pairing seekers and employers, with OTP auth, resume parsing and semantic matching over pgvector.',
+    meta: 'Django · pgvector · React',
+    placeholder: true,
+  },
+  {
+    title: 'Job Application Agent',
+    description:
+      'Agent that reads a profile, finds roles worth applying for, and handles the application on the user behalf.',
+    meta: 'Agents · Automation',
+    placeholder: true,
+  },
+  {
     title: 'Fullchat',
-    repositoryName: 'fullchat',
     description:
-      'A real-time chat app built with Django and WebSockets for live communication between users.',
-    tags: ['Python', 'Django', 'WebSockets'],
-    sourceUrl: 'https://github.com/Rohit10jr/fullchat',
-    status: 'verified',
-  },
-  {
-    title: 'School Management System',
-    repositoryName: 'school-management-system',
-    description:
-      'Legacy school-management placeholder from the previous portfolio. The old source URL needs owner review before it is linked again.',
-    tags: ['Django', 'DRF', 'JavaScript'],
-    status: 'needs-review',
-  },
-  {
-    title: 'Ecommerce Site',
-    repositoryName: 'Ecommerce-site',
-    description:
-      'A Django e-commerce project for an online shopping platform.',
-    tags: ['Python', 'Django', 'JavaScript'],
-    sourceUrl: 'https://github.com/Rohit10jr/Ecommerce-site',
-    status: 'verified',
-  },
-  {
-    title: 'iCoder Blog',
-    repositoryName: 'icoder-blog',
-    description: 'A blog application developed with Django.',
-    tags: ['Python', 'Django', 'JavaScript'],
-    sourceUrl: 'https://github.com/Rohit10jr/icoder-blog',
-    status: 'verified',
-  },
-  {
-    title: 'Chatrooms',
-    repositoryName: 'chatrooms',
-    description:
-      'Legacy chat-room placeholder from the previous portfolio. The old source URL needs owner review before it is linked again.',
-    tags: ['Python', 'Django', 'CSS'],
-    status: 'needs-review',
+      'Real-time chat built on Django and WebSockets, the project that got me into backend work properly.',
+    meta: 'Django · WebSockets',
+    url: 'https://github.com/Rohit10jr/fullchat',
   },
 ]
