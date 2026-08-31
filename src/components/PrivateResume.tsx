@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react'
-import { LockKeyhole, Printer } from 'lucide-react'
+import { ArrowRight, Printer } from 'lucide-react'
 
 type Payload = {
   v: number
@@ -120,14 +120,15 @@ export function PrivateResume() {
       <h1 id="cv-title">Resume</h1>
 
       <form className="cv-form" onSubmit={handleSubmit}>
-        <label className="cv-label" htmlFor="cv-password">
+        <label className="visually-hidden" htmlFor="cv-password">
           Password
         </label>
-        <div className="cv-form-row">
+        <div className="cv-field">
           <input
             id="cv-password"
             className="cv-input"
             type="password"
+            placeholder="Password"
             autoComplete="current-password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
@@ -135,18 +136,20 @@ export function PrivateResume() {
             aria-describedby="cv-message"
           />
           <button
-            className="button primary-button"
+            className="cv-submit"
             type="submit"
             disabled={status === 'unlocking' || !password}
+            aria-label="Unlock resume"
           >
-            <LockKeyhole aria-hidden="true" size={17} />
-            {status === 'unlocking' ? 'Unlocking…' : 'Unlock'}
+            {status === 'unlocking' ? (
+              <span className="cv-spinner" aria-hidden="true" />
+            ) : (
+              <ArrowRight aria-hidden="true" size={18} />
+            )}
           </button>
         </div>
-        <p className="cv-message" id="cv-message" role="status">
-          {status === 'unlocking'
-            ? 'Deriving key, this takes a moment…'
-            : message}
+        <p className="cv-message" id="cv-message" role="status" aria-live="polite">
+          {message}
         </p>
       </form>
     </section>

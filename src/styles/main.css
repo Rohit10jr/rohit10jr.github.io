@@ -1370,32 +1370,24 @@ li {
 .cv-form {
   display: grid;
   gap: 8px;
-  max-width: 34rem;
 }
 
-.cv-label {
-  color: var(--muted);
-  font-size: 0.86rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-
-.cv-form-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.cv-field {
+  position: relative;
 }
 
 .cv-input {
-  flex: 1 1 14rem;
-  min-width: 0;
-  min-height: 42px;
+  width: 100%;
+  min-height: 48px;
   border: 1px solid var(--line-strong);
-  border-radius: var(--radius);
-  padding: 0 12px;
+  border-radius: 8px;
+  padding: 12px 54px 12px 14px;
   background: var(--surface);
   color: var(--ink);
+}
+
+.cv-input::placeholder {
+  color: var(--muted);
 }
 
 .cv-input:focus-visible {
@@ -1407,10 +1399,53 @@ li {
   opacity: 0.6;
 }
 
+.cv-submit {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 0;
+  border-radius: 6px;
+  padding: 0;
+  background: transparent;
+  color: var(--muted);
+}
+
+.cv-submit:hover:not(:disabled) {
+  color: var(--ink);
+}
+
+.cv-submit:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.cv-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--line-strong);
+  border-top-color: var(--ink);
+  border-radius: 50%;
+  animation: cv-spin 700ms linear infinite;
+}
+
+@keyframes cv-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
 .cv-message {
   min-height: 1.4em;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
+}
+
+.cv-message:empty {
+  display: none;
 }
 
 .cv-content {
