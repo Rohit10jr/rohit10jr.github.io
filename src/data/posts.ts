@@ -1,26 +1,39 @@
 export type Post = {
-  title: string
   slug: string
-  dateLabel: string
+  title: string
+  date: string
   summary: string
-  status: 'placeholder'
+  tags: string[]
+  draft: boolean
+  placeholder: boolean
+  readingMinutes: number
+  html: string
 }
 
-export const posts: Post[] = [
-  {
-    title: 'Building my new portfolio',
-    slug: 'building-my-new-portfolio',
-    dateLabel: 'Future post',
-    summary:
-      'Placeholder for a future process note about planning, rebuilding, and refining this portfolio.',
-    status: 'placeholder',
-  },
-  {
-    title: 'Notes from a backend project',
-    slug: 'notes-from-a-backend-project',
-    dateLabel: 'Future post',
-    summary:
-      'Placeholder for a future technical note about decisions made while building a backend project.',
-    status: 'placeholder',
-  },
-]
+type PostModule = { default: Omit<Post, 'slug'> }
+
+// Vite inlines every markdown file at build time; the plugin in vite.config.ts
+// has already turned each one into front matter plus rendered HTML.
+const modules = import.meta.glob<PostModule>('../content/posts/*.md', {
+  eager: true,
+})
+
+export const posts: Post[] = Object.entries(modules)
+  .map(([path, module]) => ({
+    slug: path.split('/').pop()!.replace(/\.md$/, ''),
+    ...module.default,
+  }))
+  .filter((post) => !post.draft)
+  .sort((a, b) => b.date.localeCompare(a.date))
+
+export function findPost(slug: string): Post | undefined {
+  return posts.find((post) => post.slug === slug)
+}
+
+export function formatPostDate(date: string): string {
+  return new Date(date).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
+}

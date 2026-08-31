@@ -1,21 +1,19 @@
 import { PostList } from '../components/PostList'
 import { posts } from '../data/posts'
+import type { RoutePath } from '../routes'
 
-export function PostsPage() {
+type PostsPageProps = { onNavigate: (path: RoutePath) => void }
+
+export function PostsPage({ onNavigate }: PostsPageProps) {
   return (
     <article className="page-shell posts-page">
       <header className="page-hero">
         <div>
-          <p className="section-kicker">Posts</p>
-          <h1>Future writing index.</h1>
-          <p>
-            These two entries are dummy placeholders so the writing structure can
-            be filled with real notes later.
-          </p>
+          <h1>All posts</h1>
         </div>
       </header>
 
-      <PostList posts={posts} />
+      <PostList posts={posts} onNavigate={onNavigate} />
     </article>
   )
 }

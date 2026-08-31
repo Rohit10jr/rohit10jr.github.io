@@ -45,7 +45,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <ArrowUpRight aria-hidden="true" size={17} />
           </PageLink>
         </div>
-        <PostList posts={posts} compact />
+        <PostList posts={posts} compact onNavigate={onNavigate} />
       </section>
 
       <section className="philosophy-preview" aria-labelledby="philosophy-title">
