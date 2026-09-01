@@ -1354,7 +1354,12 @@ dashed on hover. */
   font-weight: inherit;
   text-decoration: none;
   text-decoration-style: dashed;
-  text-decoration-thickness: auto;
+  /* Explicit px, not `auto`: the browser derives the dash pattern from the
+     thickness, and a fractional `auto` value rounds differently per element,
+     so titles rendered with visibly different dash weights. */
+  text-decoration-thickness: 2px;
+  /* Descenders would otherwise punch extra gaps into the dash run. */
+  text-decoration-skip-ink: none;
   text-underline-offset: 4px;
 }
 
