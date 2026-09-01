@@ -42,6 +42,19 @@ Hugo (`outputs: home: [HTML, RSS, JSON]`); ours has to be generated.
 Sensible order is posts → RSS → tags → search, because RSS only needs real
 content, while tags and search only earn their place once there is volume.
 
+## Hero illustration
+
+The hero is deliberately type-only for now. If it ever wants a visual, the idea
+worth building is a **rocket** — a Django reference (the `startproject` welcome
+page), personal, and it reads as engineering rather than decoration. Rahul
+Jain's coffee cup works the same way: a human detail, not a skill signal.
+
+Build it as an inline SVG animated with CSS `stroke-dashoffset`, with a static
+fallback under `prefers-reduced-motion`. No animation library; Rahul uses GSAP
+but that is a runtime dependency for decoration.
+
+Do not reuse the portrait here — About already carries it.
+
 ## Later, unscheduled
 
 - Back-to-top button. The header is not sticky, so the bottom of a long page
