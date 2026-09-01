@@ -29,12 +29,9 @@ export function AboutPage() {
             things to understand them, and the exploring is the point.
           </p>
           <p>
-            Most of my work is Python with React and TypeScript where the
-            interface matters.
-          </p>
-          <p>
-            Right now I am going deeper on scalable backend architecture, cloud
-            infrastructure, and agent-based systems.
+            Most of my work is Python with React and TypeScript. Right now I am
+            going deeper on scalable backend architecture, cloud infrastructure,
+            and agent-based systems.
           </p>
           <p>
             Away from the keyboard it is usually the gym, a long walk, a book or
