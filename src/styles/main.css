@@ -1564,16 +1564,21 @@ no rule beneath it. */
   max-width: 32rem;
   margin: 0 auto;
   padding-top: 40px;
+  text-align: center;
 }
 
-/* Sans,
-matching the field below it,
-rather than the resume's serif. */
+/* Sans, matching the field below it, rather than the resume's serif. */
 .cv-gate h1 {
   max-width: none;
   font-family: var(--font-sans);
   font-size: 1.45rem;
   line-height: 1.2;
+}
+
+/* The field keeps its own alignment: the submit arrow sits hard right, so
+   centred placeholder text would read as lopsided. */
+.cv-gate .cv-input {
+  text-align: left;
 }
 
 .cv-form {
