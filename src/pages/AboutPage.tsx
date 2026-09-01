@@ -34,12 +34,12 @@ export function AboutPage() {
             infrastructure, and agent-based systems.
           </p>
           <p>
-            Away from the keyboard it is usually the gym, a long walk, a book or
-            a film. That photo is from the Kedarkantha summit.
-          </p>
-          <p>
             Progress beats perfection. I would rather ship a clear increment,
             take the feedback, and improve from there.
+          </p>
+          <p>
+            Away from the keyboard it is usually the gym, a long walk, a book or
+            a film. That photo is from the Kedarkantha summit.
           </p>
         </div>
       </section>
