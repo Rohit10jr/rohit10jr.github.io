@@ -488,6 +488,12 @@ li {
   padding: 56px 0 84px;
 }
 
+.page-main:has(.cv-gate) {
+  align-content: center;
+  /* Symmetric padding, or the heavier bottom padding offsets the centring. */
+  padding-block: 56px;
+}
+
 .section,
 .page-shell {
   min-width: 0;
@@ -1563,8 +1569,6 @@ no rule beneath it. */
   width: 100%;
   max-width: 32rem;
   margin: 0 auto;
-  padding-top: 40px;
-  text-align: center;
 }
 
 /* Sans, matching the field below it, rather than the resume's serif. */
@@ -1573,12 +1577,6 @@ no rule beneath it. */
   font-family: var(--font-sans);
   font-size: 1.45rem;
   line-height: 1.2;
-}
-
-/* The field keeps its own alignment: the submit arrow sits hard right, so
-   centred placeholder text would read as lopsided. */
-.cv-gate .cv-input {
-  text-align: left;
 }
 
 .cv-form {
