@@ -644,19 +644,11 @@ but flows inside a sentence: stays inline
 }
 
 .hero-section {
-  min-height: min(560px, calc(100svh - 220px));
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.72fr);
-  align-items: center;
-  gap: 56px;
-  padding: 18px 0 36px;
-}
-
-.hero-copy {
-  min-width: 0;
+  min-height: min(460px, calc(100svh - 260px));
   display: grid;
   justify-items: start;
-  gap: 0;
+  align-content: center;
+  padding: 24px 0 44px;
 }
 
 .hero-eyebrow {
@@ -672,16 +664,16 @@ but flows inside a sentence: stays inline
   color: var(--warm);
 }
 
-.hero-copy h1 {
-  max-width: 16ch;
+.hero-section h1 {
+  max-width: 20ch;
   margin: 0;
-  font-size: clamp(2.6rem, 6vw, 3.9rem);
+  font-size: clamp(2.7rem, 7vw, 4.6rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.04;
 }
 
-.hero-copy h1 em {
+.hero-section h1 em {
   color: var(--warm);
   font-style: italic;
 }
@@ -707,7 +699,8 @@ but flows inside a sentence: stays inline
 }
 
 .hero-summary {
-  margin-top: 20px;
+  max-width: 54ch;
+  margin-top: 22px;
   max-width: 58ch;
   color: var(--ink);
   font-size: 1.08rem;
@@ -720,22 +713,6 @@ but flows inside a sentence: stays inline
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-}
-
-.profile-visual {
-  position: relative;
-  justify-self: end;
-  width: min(100%, 336px);
-}
-
-.profile-visual img {
-  aspect-ratio: 1;
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  object-fit: cover;
-  object-position: 48% 38%;
-  filter: grayscale(1);
 }
 
 .post-list {
@@ -1051,7 +1028,6 @@ so the hierarchy
     padding-top: 8px;
   }
 
-  .profile-visual,
 .about-avatar {
     justify-self: start;
     width: min(100%, 300px);
@@ -1112,12 +1088,6 @@ li {
 
   .button {
     width: min(100%, 320px);
-  }
-
-  .profile-visual,
-.post-list {
-    width: 100%;
-    max-width: 320px;
   }
 
   .about-avatar {
