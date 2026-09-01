@@ -29,20 +29,17 @@ export function AboutPage() {
             things to understand them, and the exploring is the point.
           </p>
           <p>
-            Most of my work is Python with React and TypeScript where the
-            interface matters.
-          </p>
-          <p>
-            Right now I am going deeper on scalable backend architecture, cloud
+            Most of my work is Python, with React and TypeScript on top. Lately
+            that has meant going deeper on scalable backend architecture, cloud
             infrastructure, and agent-based systems.
-          </p>
-          <p>
-            Away from the keyboard it is usually the gym, a long walk, a book or
-            a film. That photo is from the Kedarkantha summit.
           </p>
           <p>
             Progress beats perfection. I would rather ship a clear increment,
             take the feedback, and improve from there.
+          </p>
+          <p>
+            Away from the keyboard it is usually the gym, a long walk, a book or
+            a film. That photo is from the Kedarkantha summit.
           </p>
         </div>
       </section>

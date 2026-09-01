@@ -22,10 +22,6 @@ export const profile = {
     'Software engineer building backend systems, full-stack products, and agent-powered workflows.',
   summary:
     'Backend systems, full-stack products, and agent-powered workflows, built mostly with Python, Django, FastAPI, React, and TypeScript.',
-  image: {
-    src: '/assets/rohit-profile.webp',
-    alt: 'Portrait of Rohit J',
-  },
   aboutImage: {
     src: '/assets/rohit-kedar.webp',
     alt: 'Rohit J at the Kedarkantha summit, above a layer of cloud',

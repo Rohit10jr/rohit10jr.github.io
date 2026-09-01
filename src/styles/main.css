@@ -1,4 +1,26 @@
 @font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url("/fonts/space-grotesk-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+    U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url("/fonts/space-grotesk-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
   font-family: "Atkinson Hyperlegible";
   font-style: normal;
   font-weight: 400;
@@ -79,6 +101,8 @@
     -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-serif: Charter, Georgia, "Times New Roman", serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-display: "Space Grotesk", "Atkinson Hyperlegible", ui-sans-serif,
+    system-ui, sans-serif;
   --font-logo: "Nothing You Could Do", cursive;
   font-family: var(--font-sans);
   font-synthesis: none;
@@ -488,6 +512,12 @@ li {
   padding: 56px 0 84px;
 }
 
+.page-main:has(.cv-gate) {
+  align-content: center;
+  /* Symmetric padding, or the heavier bottom padding offsets the centring. */
+  padding-block: 56px;
+}
+
 .section,
 .page-shell {
   min-width: 0;
@@ -644,19 +674,35 @@ but flows inside a sentence: stays inline
 }
 
 .hero-section {
-  min-height: min(560px, calc(100svh - 220px));
+  min-height: min(500px, calc(100svh - 240px));
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.72fr);
+  grid-template-columns: minmax(0, 1fr) minmax(200px, 300px);
   align-items: center;
-  gap: 56px;
-  padding: 18px 0 36px;
+  gap: 48px;
+  padding: 24px 0 44px;
 }
 
 .hero-copy {
   min-width: 0;
   display: grid;
   justify-items: start;
-  gap: 0;
+}
+
+.hero-art {
+  justify-self: center;
+  width: min(100%, 260px);
+  color: var(--ink);
+}
+
+.rocket {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.rocket-exhaust {
+  color: var(--warm);
+  stroke: var(--warm);
 }
 
 .hero-eyebrow {
@@ -672,16 +718,17 @@ but flows inside a sentence: stays inline
   color: var(--warm);
 }
 
-.hero-copy h1 {
-  max-width: 16ch;
+.hero-section h1 {
+  max-width: 18ch;
   margin: 0;
-  font-size: clamp(2.6rem, 6vw, 3.9rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.04;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 4.1rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
 }
 
-.hero-copy h1 em {
+.hero-section h1 em {
   color: var(--warm);
   font-style: italic;
 }
@@ -707,7 +754,8 @@ but flows inside a sentence: stays inline
 }
 
 .hero-summary {
-  margin-top: 20px;
+  max-width: 54ch;
+  margin-top: 22px;
   max-width: 58ch;
   color: var(--ink);
   font-size: 1.08rem;
@@ -720,22 +768,6 @@ but flows inside a sentence: stays inline
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-}
-
-.profile-visual {
-  position: relative;
-  justify-self: end;
-  width: min(100%, 336px);
-}
-
-.profile-visual img {
-  aspect-ratio: 1;
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  object-fit: cover;
-  object-position: 48% 38%;
-  filter: grayscale(1);
 }
 
 .post-list {
@@ -851,6 +883,14 @@ but flows inside a sentence: stays inline
   width: min(var(--prose-width), 100%);
   margin: 0 auto;
   gap: 46px;
+}
+
+.about-title h1,
+.posts-page .page-hero h1,
+.post-header h1,
+.work-name {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
 }
 
 .about-title h1 {
@@ -1033,6 +1073,18 @@ so the hierarchy
   font-size: 1.02rem;
 }
 
+@media (max-width: 860px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero-art {
+    justify-self: start;
+    width: min(100%, 190px);
+  }
+}
+
 @media (max-width: 960px) {
   h1 {
     font-size: 3.1rem;
@@ -1051,7 +1103,6 @@ so the hierarchy
     padding-top: 8px;
   }
 
-  .profile-visual,
 .about-avatar {
     justify-self: start;
     width: min(100%, 300px);
@@ -1112,12 +1163,6 @@ li {
 
   .button {
     width: min(100%, 320px);
-  }
-
-  .profile-visual,
-.post-list {
-    width: 100%;
-    max-width: 320px;
   }
 
   .about-avatar {
@@ -1378,7 +1423,12 @@ dashed on hover. */
   font-weight: inherit;
   text-decoration: none;
   text-decoration-style: dashed;
-  text-decoration-thickness: auto;
+  /* Explicit px, not `auto`: the browser derives the dash pattern from the
+     thickness, and a fractional `auto` value rounds differently per element,
+     so titles rendered with visibly different dash weights. */
+  text-decoration-thickness: 2px;
+  /* Descenders would otherwise punch extra gaps into the dash run. */
+  text-decoration-skip-ink: none;
   text-underline-offset: 4px;
 }
 
@@ -1593,12 +1643,9 @@ no rule beneath it. */
   width: 100%;
   max-width: 32rem;
   margin: 0 auto;
-  padding-top: 40px;
 }
 
-/* Sans,
-matching the field below it,
-rather than the resume's serif. */
+/* Sans, matching the field below it, rather than the resume's serif. */
 .cv-gate h1 {
   max-width: none;
   font-family: var(--font-sans);

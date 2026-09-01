@@ -1,15 +1,11 @@
 import { ArrowRight } from 'lucide-react'
+import { Rocket } from './Rocket'
 
 type HeroProps = {
   profile: {
     name: string
-    role: string
     location: string
     summary: string
-    image: {
-      src: string
-      alt: string
-    }
   }
 }
 
@@ -51,14 +47,9 @@ export function Hero({ profile }: HeroProps) {
         </a>
       </div>
 
-      <figure className="profile-visual">
-        <img
-          src={profile.image.src}
-          alt={profile.image.alt}
-          width="520"
-          height="520"
-        />
-      </figure>
+      <div className="hero-art" aria-hidden="true">
+        <Rocket />
+      </div>
     </section>
   )
 }
