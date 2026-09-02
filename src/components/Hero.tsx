@@ -47,7 +47,7 @@ export function Hero({ profile }: HeroProps) {
         </a>
       </div>
 
-      <div className="hero-art" aria-hidden="true">
+      <div className="hero-art">
         <Rocket />
       </div>
     </section>
