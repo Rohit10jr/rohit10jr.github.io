@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { BackToTop } from './components/BackToTop'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { findPost } from './data/posts'
@@ -74,6 +75,7 @@ export function App() {
         {slug && <PostPage slug={slug} onNavigate={navigate} />}
       </main>
       <Footer socialLinks={profile.socialLinks} />
+      <BackToTop />
     </>
   )
 }
