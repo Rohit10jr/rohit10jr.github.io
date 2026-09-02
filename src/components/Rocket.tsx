@@ -26,13 +26,16 @@ export function Rocket() {
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <g className="rocket-exhaust">
-          <path className="rocket-flame rocket-flame-1" pathLength="1" d="M92 268 C 88 288, 94 302, 90 320" />
-          <path className="rocket-flame rocket-flame-2" pathLength="1" d="M110 272 C 106 296, 114 312, 110 332" />
-          <path className="rocket-flame rocket-flame-3" pathLength="1" d="M128 268 C 132 288, 126 302, 130 320" />
-        </g>
+        {/* Body and exhaust float together, or the nozzle drifts away from
+            the flame at the top of each cycle. */}
+        <g className="rocket-float">
+          <g className="rocket-exhaust">
+          <path className="rocket-flame rocket-flame-1" pathLength="1" d="M92 282 C 88 300, 94 314, 90 330" />
+          <path className="rocket-flame rocket-flame-2" pathLength="1" d="M110 286 C 106 306, 114 322, 110 340" />
+          <path className="rocket-flame rocket-flame-3" pathLength="1" d="M128 282 C 132 300, 126 314, 130 330" />
+          </g>
 
-        <g className="rocket-body">
+          <g className="rocket-body">
           <path
             className="rocket-draw rocket-hull"
             pathLength="1"
@@ -57,6 +60,7 @@ export function Rocket() {
 
           <path className="rocket-draw rocket-seam" pathLength="1" d="M74 196 L146 196" strokeWidth="1.4" />
           <path className="rocket-draw rocket-seam" pathLength="1" d="M74 214 L146 214" strokeWidth="1.4" />
+          </g>
         </g>
       </svg>
     </div>

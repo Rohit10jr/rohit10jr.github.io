@@ -736,7 +736,7 @@ but flows inside a sentence: stays inline
 
 /* ---- Idle float ---- */
 
-.rocket-body {
+.rocket-float {
   animation: rocket-float 5s ease-in-out 1.5s infinite;
 }
 
@@ -759,6 +759,11 @@ but flows inside a sentence: stays inline
    pop into existence half a second late. */
 .rocket-flame {
   opacity: 0;
+  /* SVG transform-origin defaults to the user-space origin, not the element,
+     so scaleY was shrinking each plume toward the top of the canvas and
+     lifting it clear of the nozzle. Anchor it at its own top edge instead. */
+  transform-box: fill-box;
+  transform-origin: 50% 0;
   animation:
     rocket-flame-in 700ms ease-out 1.1s forwards,
     rocket-thrust 1.5s ease-in-out 1.8s infinite;
@@ -796,7 +801,7 @@ but flows inside a sentence: stays inline
 }
 
 /* Looping work stops once the hero is off screen. */
-.rocket-wrap[data-animate='pause'] .rocket-body,
+.rocket-wrap[data-animate='pause'] .rocket-float,
 .rocket-wrap[data-animate='pause'] .rocket-flame {
   animation-play-state: paused;
 }
@@ -804,7 +809,7 @@ but flows inside a sentence: stays inline
 @media (prefers-reduced-motion: reduce) {
   .rocket-draw,
   .rocket-flame,
-  .rocket-body {
+  .rocket-float {
     animation: none;
     stroke-dashoffset: 0;
     opacity: 1;
