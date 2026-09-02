@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useInView } from '../hooks/useInView'
 
 /**
@@ -11,10 +12,34 @@ import { useInView } from '../hooks/useInView'
 export function Rocket() {
   // The float and exhaust loops run forever, so stop paying for them once the
   // hero has scrolled away.
-  const { ref, inView } = useInView<HTMLDivElement>()
+  const { ref, inView } = useInView<HTMLButtonElement>()
+  const [launching, setLaunching] = useState(false)
+
+  function launch() {
+    // Ignore repeat clicks mid-flight, or the animation restarts halfway and
+    // the rocket appears to teleport.
+    if (launching) {
+      return
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return
+    }
+
+    setLaunching(true)
+    window.setTimeout(() => setLaunching(false), 1700)
+  }
 
   return (
-    <div className="rocket-wrap" ref={ref} data-animate={inView ? 'run' : 'pause'}>
+    <button
+      type="button"
+      className="rocket-wrap"
+      ref={ref}
+      onClick={launch}
+      aria-label="Launch the rocket"
+      data-animate={inView ? 'run' : 'pause'}
+      data-launching={launching ? 'true' : 'false'}
+    >
       <svg
         className="rocket"
         viewBox="0 0 220 340"
@@ -63,6 +88,6 @@ export function Rocket() {
           </g>
         </g>
       </svg>
-    </div>
+    </button>
   )
 }

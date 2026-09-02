@@ -690,12 +690,80 @@ but flows inside a sentence: stays inline
 
 .hero-art {
   justify-self: center;
+  overflow: clip;
+  /* Room for the crouch and the overshoot without cropping them. */
+  overflow-clip-margin: 30px;
   width: min(100%, 260px);
   color: var(--ink);
 }
 
 .rocket-wrap {
+  display: block;
   width: 100%;
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.rocket-wrap:focus-visible {
+  outline: 2px dashed var(--accent);
+  outline-offset: 10px;
+  border-radius: 12px;
+}
+
+/* ---- Launch --------------------------------------------------------------
+   Crouch, climb out of frame, then drop back in and settle. The travel is in
+   percentages of the rocket's own box so it scales with the artwork, and the
+   hero clips it so the flight cannot extend the page's scroll height. */
+
+.rocket-wrap[data-launching='true'] .rocket {
+  animation: rocket-liftoff 1.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rocket-wrap[data-launching='true'] .rocket-exhaust {
+  animation: rocket-burn 1.7s ease-out;
+}
+
+@keyframes rocket-liftoff {
+  0% {
+    transform: translateY(0);
+  }
+  12% {
+    transform: translateY(14px);
+  }
+  46% {
+    transform: translateY(-260%);
+  }
+  47% {
+    transform: translateY(260%);
+  }
+  86% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rocket-burn {
+  0%,
+  100% {
+    stroke-width: 2;
+    opacity: 0.9;
+  }
+  12% {
+    stroke-width: 4;
+    opacity: 1;
+  }
+  46% {
+    stroke-width: 5;
+    opacity: 1;
+  }
+  47%,
+  70% {
+    opacity: 0;
+  }
 }
 
 .rocket {
@@ -807,6 +875,8 @@ but flows inside a sentence: stays inline
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .rocket-wrap[data-launching='true'] .rocket,
+  .rocket-wrap[data-launching='true'] .rocket-exhaust,
   .rocket-draw,
   .rocket-flame,
   .rocket-float {
