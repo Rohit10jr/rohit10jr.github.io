@@ -1703,6 +1703,95 @@ a.work-row:hover .work-arrow {
   }
 }
 
+/* ---- 404 ---- */
+
+.notfound-page {
+  width: min(var(--prose-width), 100%);
+  margin: 0 auto;
+  justify-items: start;
+  gap: 26px;
+  padding-top: 12px;
+}
+
+.notfound-art {
+  width: 132px;
+  color: var(--muted);
+}
+
+/* Stroke is set as an attribute on the mark for legibility at 21px; at this
+   size that reads as a blob, so CSS overrides it. */
+.notfound-art .rocket-mark {
+  width: 100%;
+  stroke-width: 5;
+  animation: rocket-adrift 9s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+
+.notfound-art .rocket-mark-exhaust {
+  opacity: 0;
+}
+
+@keyframes rocket-adrift {
+  0% {
+    transform: rotate(24deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(38deg) translate(10px, -12px);
+  }
+  100% {
+    transform: rotate(24deg) translate(0, 0);
+  }
+}
+
+.notfound-copy {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+}
+
+.notfound-code {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+}
+
+.notfound-page h1 {
+  max-width: none;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.notfound-page p {
+  max-width: 46ch;
+}
+
+/* ---- Dark mode: a few stars behind the hero rocket ---- */
+
+.hero-stars {
+  display: none;
+}
+
+/* The app always stamps data-theme, so match it directly rather than using
+   :not([data-theme='light']), which would flash stars before hydration. */
+:root[data-theme='dark'] .hero-stars {
+  display: block;
+}
+
+.hero-stars circle {
+  fill: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notfound-art .rocket-mark {
+    animation: none;
+    transform: rotate(24deg);
+  }
+}
+
 /* ---- Posts ---- */
 
 /* Peter's treatment: no underline at rest,
