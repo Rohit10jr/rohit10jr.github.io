@@ -1,4 +1,10 @@
-export type RoutePath = '/' | '/about' | '/resume' | '/posts' | `/posts/${string}`
+export type RoutePath =
+  | '/'
+  | '/about'
+  | '/resume'
+  | '/posts'
+  | '/404'
+  | `/posts/${string}`
 
 export type RouteItem = {
   path: RoutePath
@@ -17,6 +23,7 @@ const TITLES: Record<string, string> = {
   '/about': 'About — Rohit J',
   '/resume': 'Resume — Rohit J',
   '/posts': 'Posts — Rohit J',
+  '/404': 'Not found — Rohit J',
 }
 
 export function routeTitle(route: RoutePath, postTitle?: string): string {
@@ -50,5 +57,7 @@ export function normalizeRoute(pathname: string): RoutePath {
     return trimmed as RoutePath
   }
 
-  return '/'
+  // Unknown paths get their own page rather than silently landing on home,
+  // which made a mistyped URL look like the site had no such section.
+  return '/404'
 }
