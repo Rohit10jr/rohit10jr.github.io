@@ -11,7 +11,20 @@ export function BackToTop() {
 
   useEffect(() => {
     function update() {
-      setVisible(window.scrollY > window.innerHeight * 0.75)
+      const maxScroll =
+        document.documentElement.scrollHeight - window.innerHeight
+
+      // A fixed fraction of the viewport is the wrong threshold: pages that
+      // scroll less than that can never reach it, so the button only ever
+      // appeared on the home page. Scale it to the scroll actually available,
+      // and skip pages where the top is barely out of reach anyway.
+      if (maxScroll < 320) {
+        setVisible(false)
+        return
+      }
+
+      const threshold = Math.min(window.innerHeight * 0.6, maxScroll * 0.4)
+      setVisible(window.scrollY > threshold)
     }
 
     update()
