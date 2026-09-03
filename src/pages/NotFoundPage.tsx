@@ -15,12 +15,13 @@ export function NotFoundPage({ onNavigate }: NotFoundPageProps) {
       </div>
 
       <div className="notfound-copy">
-        <p className="notfound-code">404</p>
-        <h1>Off course.</h1>
-        <p>
-          That page is not here. It may have been renamed, or the link that
-          brought you here was wrong.
+        {/* The number is decorative: inside the heading it concatenated into
+            "404Page not found" as the accessible name. The status is already
+            carried by the document title and the heading text. */}
+        <p className="notfound-code" aria-hidden="true">
+          404
         </p>
+        <h1 className="notfound-label">Page not found</h1>
         <PageLink className="text-link" to="/" onNavigate={onNavigate}>
           <ArrowLeft aria-hidden="true" size={17} />
           Back to the home page
