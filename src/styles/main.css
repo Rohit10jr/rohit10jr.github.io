@@ -519,6 +519,13 @@ li {
   padding-block: 56px;
 }
 
+/* Half the usual block padding. On a centred page it is not doing spacing
+   work, only keeping the content off the header and footer, and here it was
+   the largest single contributor to the page overflowing the viewport. */
+.page-main:has(.notfound-page) {
+  padding-block: 28px;
+}
+
 .section,
 .page-shell {
   min-width: 0;
@@ -1711,7 +1718,7 @@ a.work-row:hover .work-arrow {
   margin: 0 auto;
   justify-items: center;
   text-align: center;
-  gap: 26px;
+  gap: 14px;
 }
 
 .notfound-art {
