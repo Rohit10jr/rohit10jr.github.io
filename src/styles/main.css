@@ -1760,14 +1760,15 @@ a.work-row:hover .work-arrow {
   line-height: 0.92;
 }
 
-/* Hollow the digits so the number reads as line art rather than paint: solid
-   type next to an outlined rocket looks like two drawings sharing a page.
-   3px matches the pen the rocket is drawn with (stroke 5 in a 220-wide viewBox
-   rendered at 132px). Guarded, because where the stroke is unsupported the
-   transparent fill would leave nothing behind. */
-@supports (-webkit-text-stroke: 3px currentColor) {
+/* Hollow the digits so the number reads as line art rather than paint. With
+   nothing beside it the outline has to carry the page alone, so the pen is
+   heavier than the rocket's was. In em, or the weight that reads right at the
+   7.5rem desktop size looks clumsy at the 4.5rem floor. Guarded, because
+   where the stroke is unsupported the transparent fill would leave nothing
+   behind. */
+@supports (-webkit-text-stroke: 0.04em currentColor) {
   .notfound-code {
-    -webkit-text-stroke: 3px var(--warm);
+    -webkit-text-stroke: 0.04em var(--warm);
     color: transparent;
   }
 }
