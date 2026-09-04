@@ -14,10 +14,14 @@ export function NotFoundArt() {
   // bounds are trimmed: the box is empty on the right too, but narrowing it
   // while the rendered width is fixed would make the aspect taller, not
   // shorter.
+  //
+  // The horizontal origin is nudged instead. The ink runs x=22 to x=655, which
+  // left a 22-unit margin on one side and 65 on the other; starting the window
+  // at -22 splits the difference so the drawing sits centred in its box.
   return (
     <svg
       className="notfound-trajectory"
-      viewBox="0 24 720 260"
+      viewBox="-22 24 720 260"
       role="img"
       aria-label="A rocket climbing away along a dashed trajectory"
       fill="none"
