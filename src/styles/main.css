@@ -1759,6 +1759,18 @@ a.work-row:hover .work-arrow {
   line-height: 0.92;
 }
 
+/* Hollow the digits so the number reads as line art rather than paint: solid
+   type next to an outlined rocket looks like two drawings sharing a page.
+   3px matches the pen the rocket is drawn with (stroke 5 in a 220-wide viewBox
+   rendered at 132px). Guarded, because where the stroke is unsupported the
+   transparent fill would leave nothing behind. */
+@supports (-webkit-text-stroke: 3px currentColor) {
+  .notfound-code {
+    -webkit-text-stroke: 3px var(--warm);
+    color: transparent;
+  }
+}
+
 .notfound-label {
   max-width: none;
   margin: 0;
