@@ -512,7 +512,8 @@ li {
   padding: 56px 0 84px;
 }
 
-.page-main:has(.cv-gate) {
+.page-main:has(.cv-gate),
+.page-main:has(.notfound-page) {
   align-content: center;
   /* Symmetric padding, or the heavier bottom padding offsets the centring. */
   padding-block: 56px;
@@ -1708,9 +1709,9 @@ a.work-row:hover .work-arrow {
 .notfound-page {
   width: min(var(--prose-width), 100%);
   margin: 0 auto;
-  justify-items: start;
+  justify-items: center;
+  text-align: center;
   gap: 26px;
-  padding-top: 12px;
 }
 
 .notfound-art {
@@ -1745,7 +1746,7 @@ a.work-row:hover .work-arrow {
 
 .notfound-copy {
   display: grid;
-  justify-items: start;
+  justify-items: center;
   gap: 12px;
 }
 
