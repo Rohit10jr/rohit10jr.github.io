@@ -51,6 +51,17 @@ export function Rocket() {
         strokeLinecap="round"
         strokeLinejoin="round"
       >
+        {/* Only shown in the dark theme, where the off-white ground that
+            carries the drawing in light mode turns into night sky. */}
+        <g className="hero-stars">
+          <circle cx="26" cy="52" r="2.2" opacity="0.55" />
+          <circle cx="196" cy="88" r="1.6" opacity="0.4" />
+          <circle cx="204" cy="30" r="1.3" opacity="0.3" />
+          <circle cx="18" cy="148" r="1.5" opacity="0.35" />
+          <circle cx="188" cy="196" r="2" opacity="0.45" />
+          <circle cx="40" cy="292" r="1.4" opacity="0.3" />
+        </g>
+
         {/* Body and exhaust float together, or the nozzle drifts away from
             the flame at the top of each cycle. */}
         <g className="rocket-float">

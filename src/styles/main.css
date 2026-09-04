@@ -512,10 +512,18 @@ li {
   padding: 56px 0 84px;
 }
 
-.page-main:has(.cv-gate) {
+.page-main:has(.cv-gate),
+.page-main:has(.notfound-page) {
   align-content: center;
   /* Symmetric padding, or the heavier bottom padding offsets the centring. */
   padding-block: 56px;
+}
+
+/* Half the usual block padding. On a centred page it is not doing spacing
+   work, only keeping the content off the header and footer, and here it was
+   the largest single contributor to the page overflowing the viewport. */
+.page-main:has(.notfound-page) {
+  padding-block: 28px;
 }
 
 .section,
@@ -1700,6 +1708,139 @@ a.work-row:hover .work-arrow {
 
   .hero-section:has(.hero-cta:hover) .hero-art {
     transform: none;
+  }
+}
+
+/* ---- 404 ---- */
+
+.notfound-page {
+  width: min(var(--prose-width), 100%);
+  margin: 0 auto;
+  justify-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.notfound-art {
+  /* Three caps, smallest wins. 440px is the size the drawing wants; 100% keeps
+     it inside a narrow column; the third converts a height budget into the
+     width that produces it (2.77 is the 720/260 viewBox aspect), so on a short
+     window the art gives way instead of pushing the page into a scroll. */
+  width: min(100%, 440px, calc(20vh * 2.77));
+  color: var(--muted);
+}
+
+.notfound-trajectory {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Lighter than the rocket, so the track reads as something already behind it
+   rather than as part of the craft. */
+.trajectory-line {
+  stroke: var(--line-strong);
+  animation: trajectory-drift 1.5s linear infinite;
+}
+
+/* One dash period (5 + 11), so the loop restarts on an identical frame. */
+@keyframes trajectory-drift {
+  from {
+    stroke-dashoffset: 16;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Bobs along its own heading rather than straight up: the group is animated
+   in the parent's coordinates, so the 45deg climb has to be spelled out. */
+.trajectory-rocket {
+  animation: trajectory-bob 4.5s ease-in-out infinite;
+}
+
+@keyframes trajectory-bob {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(6px, -6px);
+  }
+}
+
+.trajectory-exhaust {
+  opacity: 0.55;
+}
+
+.notfound-copy {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+.notfound-code {
+  /* Tracking adds space after the last digit too, which shifts a centred
+     line off-centre by half of it. Pull that back. */
+  margin: 0 -0.05em 0 0;
+  color: var(--warm);
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 13vw, 7.5rem);
+  font-weight: 700;
+  /* Was negative: display type wants tightening, but half the stroke sits
+     outside each glyph, so the thicker pen ate the gaps. */
+  letter-spacing: 0.05em;
+  line-height: 0.92;
+}
+
+/* Hollow the digits so the number reads as line art rather than paint. With
+   nothing beside it the outline has to carry the page alone, so the pen is
+   heavier than the rocket's was. In em, or the weight that reads right at the
+   7.5rem desktop size looks clumsy at the 4.5rem floor. Guarded, because
+   where the stroke is unsupported the transparent fill would leave nothing
+   behind. */
+@supports (-webkit-text-stroke: 0.04em currentColor) {
+  .notfound-code {
+    -webkit-text-stroke: 0.04em var(--warm);
+    color: transparent;
+  }
+}
+
+.notfound-label {
+  max-width: none;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.notfound-page p {
+  max-width: 46ch;
+}
+
+/* ---- Dark mode: a few stars behind the hero rocket ---- */
+
+.hero-stars {
+  display: none;
+}
+
+/* The app always stamps data-theme, so match it directly rather than using
+   :not([data-theme='light']), which would flash stars before hydration. */
+:root[data-theme='dark'] .hero-stars {
+  display: block;
+}
+
+.hero-stars circle {
+  fill: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trajectory-line,
+  .trajectory-rocket {
+    animation: none;
   }
 }
 
