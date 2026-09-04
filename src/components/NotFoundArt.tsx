@@ -8,10 +8,16 @@
  * transform needs an element of its own that the animation never touches.
  */
 export function NotFoundArt() {
+  // The box is cropped to the ink. The drawing runs from about y=37 (the
+  // rocket's shoulder) to y=276 (the near end of the track), so a 0-300 box
+  // reserved roughly a fifth of its height for blank space. Only the vertical
+  // bounds are trimmed: the box is empty on the right too, but narrowing it
+  // while the rendered width is fixed would make the aspect taller, not
+  // shorter.
   return (
     <svg
       className="notfound-trajectory"
-      viewBox="0 0 720 300"
+      viewBox="0 24 720 260"
       role="img"
       aria-label="A rocket climbing away along a dashed trajectory"
       fill="none"

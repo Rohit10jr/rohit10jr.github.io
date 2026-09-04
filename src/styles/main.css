@@ -1715,7 +1715,11 @@ a.work-row:hover .work-arrow {
 }
 
 .notfound-art {
-  width: min(100%, 560px);
+  /* Three caps, smallest wins. 440px is the size the drawing wants; 100% keeps
+     it inside a narrow column; the third converts a height budget into the
+     width that produces it (2.77 is the 720/260 viewBox aspect), so on a short
+     window the art gives way instead of pushing the page into a scroll. */
+  width: min(100%, 440px, calc(20vh * 2.77));
   color: var(--muted);
 }
 
