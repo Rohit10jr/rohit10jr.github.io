@@ -1715,33 +1715,51 @@ a.work-row:hover .work-arrow {
 }
 
 .notfound-art {
-  width: 132px;
+  width: min(100%, 560px);
   color: var(--muted);
 }
 
-/* Stroke is set as an attribute on the mark for legibility at 21px; at this
-   size that reads as a blob, so CSS overrides it. */
-.notfound-art .rocket-mark {
+.notfound-trajectory {
+  display: block;
   width: 100%;
-  stroke-width: 5;
-  animation: rocket-adrift 9s ease-in-out infinite;
-  transform-origin: 50% 50%;
+  height: auto;
 }
 
-.notfound-art .rocket-mark-exhaust {
-  opacity: 0;
+/* Lighter than the rocket, so the track reads as something already behind it
+   rather than as part of the craft. */
+.trajectory-line {
+  stroke: var(--line-strong);
+  animation: trajectory-drift 1.5s linear infinite;
 }
 
-@keyframes rocket-adrift {
-  0% {
-    transform: rotate(24deg) translate(0, 0);
+/* One dash period (5 + 11), so the loop restarts on an identical frame. */
+@keyframes trajectory-drift {
+  from {
+    stroke-dashoffset: 16;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Bobs along its own heading rather than straight up: the group is animated
+   in the parent's coordinates, so the 45deg climb has to be spelled out. */
+.trajectory-rocket {
+  animation: trajectory-bob 4.5s ease-in-out infinite;
+}
+
+@keyframes trajectory-bob {
+  0%,
+  100% {
+    transform: translate(0, 0);
   }
   50% {
-    transform: rotate(38deg) translate(10px, -12px);
+    transform: translate(6px, -6px);
   }
-  100% {
-    transform: rotate(24deg) translate(0, 0);
-  }
+}
+
+.trajectory-exhaust {
+  opacity: 0.55;
 }
 
 .notfound-copy {
@@ -1809,9 +1827,9 @@ a.work-row:hover .work-arrow {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .notfound-art .rocket-mark {
+  .trajectory-line,
+  .trajectory-rocket {
     animation: none;
-    transform: rotate(24deg);
   }
 }
 

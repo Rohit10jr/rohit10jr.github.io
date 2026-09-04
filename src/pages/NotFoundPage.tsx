@@ -1,4 +1,5 @@
 import { ArrowLeft } from 'lucide-react'
+import { NotFoundArt } from '../components/NotFoundArt'
 import { PageLink } from '../components/PageLink'
 import type { RoutePath } from '../routes'
 
@@ -9,6 +10,10 @@ type NotFoundPageProps = {
 export function NotFoundPage({ onNavigate }: NotFoundPageProps) {
   return (
     <article className="page-shell notfound-page">
+      <div className="notfound-art">
+        <NotFoundArt />
+      </div>
+
       <div className="notfound-copy">
         {/* The number is decorative: inside the heading it concatenated into
             "404Page not found" as the accessible name. The status is already
