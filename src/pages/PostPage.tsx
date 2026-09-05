@@ -1,4 +1,5 @@
 import { ArrowLeft } from 'lucide-react'
+import { NotFoundBlock } from '../components/NotFoundBlock'
 import { PageLink } from '../components/PageLink'
 import { ReadingProgress } from '../components/ReadingProgress'
 import { findPost, formatPostDate } from '../data/posts'
@@ -14,14 +15,12 @@ export function PostPage({ slug, onNavigate }: PostPageProps) {
 
   if (!post) {
     return (
-      <article className="page-shell post-page">
-        <h1>Post not found</h1>
-        <p>That post does not exist, or it has not been published yet.</p>
-        <PageLink className="text-link" to="/posts" onNavigate={onNavigate}>
-          <ArrowLeft aria-hidden="true" size={17} />
-          All posts
-        </PageLink>
-      </article>
+      <NotFoundBlock
+        label="Post not found"
+        linkTo="/posts"
+        linkLabel="All posts"
+        onNavigate={onNavigate}
+      />
     )
   }
 
