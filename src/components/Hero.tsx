@@ -34,7 +34,7 @@ export function Hero({ profile }: HeroProps) {
         </svg>
 
         <h1 id="hero-title">
-          I build backend systems
+          I build products end to end
           <br />
           that <em>hold up.</em>
         </h1>
