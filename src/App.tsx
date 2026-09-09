@@ -37,7 +37,13 @@ export function App() {
   const slug = postSlug(route)
 
   useEffect(() => {
-    document.title = routeTitle(route, slug ? findPost(slug)?.title : undefined)
+    const post = slug ? findPost(slug) : undefined
+
+    // A slug matching no post renders the not-found block, so the tab should
+    // say so rather than falling back to the home page title.
+    document.title = post
+      ? routeTitle(route, post.title)
+      : routeTitle(slug ? '/404' : route)
   }, [route, slug])
 
   useEffect(() => {

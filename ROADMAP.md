@@ -7,12 +7,24 @@ priority, not a schedule.
 
 **Finish the home page.** The rebuild is in place; the content is not.
 
-- Replace the headline — the current one is a placeholder suggestion
 - Replace the project entries with real ones, and add URLs as repositories go
   public. Drop `placeholder: true` from each in `src/data/profile.ts` when it
-  is no longer in progress
-- Decide on the hero portrait; it is still the older greyscale photo while the
-  About page uses the Kedarkantha one
+  is no longer in progress. Note that three of the current entries map to
+  forks rather than own repositories (`Micropyramid-Django-CRM`, `ragflow`,
+  `ai-job-search`) and four have no public repository at all
+
+## After the home page: copy in the data layer
+
+Deferred deliberately — settle the home page first, then make one pass over
+all of it so the wording does not have to be revisited twice.
+
+- **`profile.headline` is unused.** The hero renders its own hardcoded string.
+  Either wire the hero to the field or delete it; the two currently disagree,
+  and the hero version carries a `<br>` and an `<em>` that a plain string
+  cannot, so it needs a small change either way
+- **Move the About page copy into `profile.ts`.** It is hardcoded in
+  `AboutPage.tsx` today, so the page and the data layer state the same things
+  in different words
 
 ## Next: writing
 
@@ -44,21 +56,12 @@ content, while tags and search only earn their place once there is volume.
 
 ## Hero illustration
 
-The hero is deliberately type-only for now. If it ever wants a visual, the idea
-worth building is a **rocket** — a Django reference (the `startproject` welcome
-page), personal, and it reads as engineering rather than decoration. Rahul
-Jain's coffee cup works the same way: a human detail, not a skill signal.
-
-Build it as an inline SVG animated with CSS `stroke-dashoffset`, with a static
-fallback under `prefers-reduced-motion`. No animation library; Rahul uses GSAP
-but that is a runtime dependency for decoration.
-
-Do not reuse the portrait here — About already carries it.
+Done. The hero carries an inline SVG rocket, animated with CSS
+`stroke-dashoffset` and static under `prefers-reduced-motion`, with a compact
+variant reused by the back-to-top button and the 404 page.
 
 ## Later, unscheduled
 
-- Back-to-top button. The header is not sticky, so the bottom of a long page
-  has no navigation. Cheng solves this with a floating control
 - Resume: the CV source in `private/cv.html` is written for a specific
   application. Worth a neutral pass for a public site
 - `progress.md` predates the current structure and is stale
