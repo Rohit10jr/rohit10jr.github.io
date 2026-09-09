@@ -1,19 +1,16 @@
+import { profile } from '../data/profile'
 import { Rocket } from './Rocket'
 
-type HeroProps = {
-  profile: {
-    summary: string
-  }
-}
+export function Hero() {
+  const { hero } = profile
 
-export function Hero({ profile }: HeroProps) {
   return (
     <section className="hero-section" aria-labelledby="hero-title">
       <div className="hero-copy">
         <h1 id="hero-title">
-          I{' '}
+          {hero.headlineLead}{' '}
           <span className="hero-underlined">
-            build
+            {hero.headlineUnderlined}
             {/* Stretched to the width of the word, so the wave has to be free
                 of its aspect ratio. non-scaling-stroke keeps the line an even
                 weight while that happens. */}
@@ -32,17 +29,17 @@ export function Hero({ profile }: HeroProps) {
               />
             </svg>
           </span>{' '}
-          products end to end
+          {hero.headlineRest}
           <br />
-          that <em>hold up.</em>
+          {hero.headlineTail} <em>{hero.headlineAccent}</em>
         </h1>
 
         <p className="hero-summary">
-          {profile.summary}{' '}
+          {hero.summary}{' '}
           {/* The closing section repeats this phrase, so it doubles as the way
               down to it. */}
           <a className="hero-summary-link" href="#say-hello">
-            Say hello.
+            {hero.summaryLink}
           </a>
         </p>
       </div>

@@ -20,27 +20,9 @@ export function AboutPage() {
           />
         </figure>
         <div className="about-prose">
-          <p>
-            I am a software engineer in India, building full-stack products,
-            backend systems, and agent-powered workflows.
-          </p>
-          <p>
-            Mostly I am chasing the forefront of technology and AI. I build
-            things to understand them, and the exploring is the point.
-          </p>
-          <p>
-            Most of my work is Python, with React and TypeScript on top. Lately
-            that has meant going deeper on scalable backend architecture, cloud
-            infrastructure, and agent-based systems.
-          </p>
-          <p>
-            Progress beats perfection. I would rather ship a clear increment,
-            take the feedback, and improve from there.
-          </p>
-          <p>
-            Away from the keyboard it is usually the gym, a long walk, a book or
-            a film. That photo is from the Kedarkantha summit.
-          </p>
+          {profile.about.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </div>
       </section>
 
@@ -50,30 +32,30 @@ export function AboutPage() {
       >
         <h2 id="github-activity-title">GitHub Activity</h2>
         <img
-          src="https://ghchart.rshah.org/Rohit10jr"
-          alt="Rohit10jr GitHub contribution activity chart"
+          src={profile.about.githubActivity.chartSrc}
+          alt={profile.about.githubActivity.chartAlt}
           loading="lazy"
           width="840"
           height="140"
         />
-        <p>I build what I am curious about and leave the source code open.</p>
+        <p>{profile.about.githubActivity.body}</p>
         <p>
           <a
             className="text-link"
-            href="https://github.com/Rohit10jr"
+            href={profile.about.githubActivity.linkHref}
             target="_blank"
             rel="noreferrer"
           >
-            Follow me on GitHub
+            {profile.about.githubActivity.linkLabel}
             <ArrowUpRight aria-hidden="true" size={17} />
           </a>{" "}
-          to catch new projects as they land.
+          {profile.about.githubActivity.linkTail}
         </p>
       </section>
 
       <ConnectBlock
-        title="Stay connected"
-        body="If you’d like to connect or have questions about my work, feel free to reach out through any of the links below."
+        title={profile.about.connect.title}
+        body={profile.about.connect.body}
       />
     </article>
   );
