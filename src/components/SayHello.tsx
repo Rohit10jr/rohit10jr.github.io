@@ -10,7 +10,7 @@ export function SayHello() {
   const email = profile.socialLinks.find((link) => link.kind === 'email')
 
   return (
-    <section className="say-hello" aria-labelledby="say-hello-title">
+    <section id="say-hello" className="say-hello" aria-labelledby="say-hello-title">
       <h2 id="say-hello-title">
         Say <span className="say-hello-accent">hello.</span>
       </h2>

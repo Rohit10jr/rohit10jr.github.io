@@ -37,7 +37,14 @@ export function Hero({ profile }: HeroProps) {
           that <em>hold up.</em>
         </h1>
 
-        <p className="hero-summary">{profile.summary}</p>
+        <p className="hero-summary">
+          {profile.summary}{' '}
+          {/* The closing section repeats this phrase, so it doubles as the way
+              down to it. */}
+          <a className="hero-summary-link" href="#say-hello">
+            Say hello.
+          </a>
+        </p>
       </div>
 
       <div className="hero-art">

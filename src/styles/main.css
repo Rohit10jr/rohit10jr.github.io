@@ -952,6 +952,22 @@ but flows inside a sentence: stays inline
 /* Steps back by colour rather than by size. Shrinking it made it recede but
    also made it harder to read; the muted ink does the same job at a size that
    is still comfortable. */
+/* Stronger than the muted line it sits in, so it reads as something to click
+   rather than as emphasis. */
+.hero-summary-link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.28rem;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.hero-summary-link:hover {
+  color: var(--warm);
+  text-decoration-color: currentColor;
+}
+
 .hero-summary {
   margin-top: 22px;
   max-width: 52ch;
@@ -1061,6 +1077,9 @@ but flows inside a sentence: stays inline
 /* ---- Say hello ---- */
 
 .say-hello {
+  /* Anchored from the hero summary, so it needs the same landing clearance the
+     other scroll targets have. */
+  scroll-margin-top: 88px;
   min-width: 0;
   display: grid;
   justify-items: start;
