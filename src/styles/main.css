@@ -897,11 +897,22 @@ but flows inside a sentence: stays inline
   }
 }
 
-/* Sits under the headline rather than above it: with the name line gone it
-   had nothing to belong to at the top of the column. */
-.hero-flourish {
-  margin: 20px 0 0;
+/* The squiggle underlines one word instead of standing alone: with the name
+   line gone it had nothing to sit beneath, and as an underline it marks the
+   verb the sentence turns on. */
+.hero-underlined {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-underlined .hero-flourish {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0.2em;
   color: var(--warm);
+  stroke-width: 2.5;
 }
 
 .hero-section h1 {

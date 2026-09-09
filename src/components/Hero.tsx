@@ -12,26 +12,31 @@ export function Hero({ profile }: HeroProps) {
     <section className="hero-section" aria-labelledby="hero-title">
       <div className="hero-copy">
         <h1 id="hero-title">
-          I build products end to end
+          I{' '}
+          <span className="hero-underlined">
+            build
+            {/* Stretched to the width of the word, so the wave has to be free
+                of its aspect ratio. non-scaling-stroke keeps the line an even
+                weight while that happens. */}
+            <svg
+              className="hero-flourish"
+              viewBox="0 0 120 14"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M2 8 C 22 2, 42 12, 62 6 S 102 10, 118 5"
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
+          </span>{' '}
+          products end to end
           <br />
           that <em>hold up.</em>
         </h1>
-
-        <svg
-          className="hero-flourish"
-          viewBox="0 0 120 14"
-          width="120"
-          height="14"
-          aria-hidden="true"
-        >
-          <path
-            d="M2 8 C 22 2, 42 12, 62 6 S 102 10, 118 5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-        </svg>
 
         <p className="hero-summary">{profile.summary}</p>
 
