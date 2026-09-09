@@ -1521,13 +1521,21 @@ one link per row ---- */
   gap: 0 40px;
 }
 
+/* Rules sit between rows, not under every cell. Drawn on the top edge and
+   suppressed for the first row, so the grid neither opens with a line under
+   the heading nor closes with one above the next section. It keys off the
+   column count, not the number of projects, so the set can grow. */
 .oss-cell {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 86px;
-  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
   padding: 12px 0;
+}
+
+.oss-cell:nth-child(-n + 3) {
+  border-top: 0;
 }
 
 .oss-link {
@@ -1578,6 +1586,15 @@ one link per row ---- */
 
   .oss-cell {
     min-height: 72px;
+  }
+
+  /* Two columns here, so the third cell starts a row and needs its rule back. */
+  .oss-cell:nth-child(3) {
+    border-top: 1px solid var(--line);
+  }
+
+  .oss-cell:nth-child(-n + 2) {
+    border-top: 0;
   }
 
   .oss-link {
