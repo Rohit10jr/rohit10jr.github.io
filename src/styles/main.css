@@ -705,6 +705,11 @@ but flows inside a sentence: stays inline
   overflow-clip-margin: 30px;
   width: min(100%, 260px);
   color: var(--ink);
+  /* Sits the drawing level with the headline. Margin rather than a transform:
+     the call-to-action hover owns `transform` on this element and would
+     overwrite a resting offset. Centring splits the margin, so this lifts the
+     rocket by half of it. */
+  margin-bottom: 40px;
 }
 
 .rocket-wrap {
@@ -912,7 +917,7 @@ but flows inside a sentence: stays inline
   width: 100%;
   height: 0.2em;
   color: var(--warm);
-  stroke-width: 2.5;
+  stroke-width: 2;
 }
 
 .hero-section h1 {
@@ -957,7 +962,7 @@ but flows inside a sentence: stays inline
   margin-top: 22px;
   max-width: 52ch;
   color: var(--muted);
-  font-size: 1.06rem;
+  font-size: 1rem;
   line-height: 1.65;
 }
 
