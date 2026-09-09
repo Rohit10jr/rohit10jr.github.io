@@ -1559,13 +1559,22 @@ one link per row ---- */
   transform: translate(2px, -2px);
 }
 
-/* Caption on the grid above it. */
+/* Two lines read as one caption on the grid: only the first is spaced away
+   from it, and the second is separated by leading alone. */
+.oss-lede,
 .oss-note {
   max-width: 58ch;
-  margin: 24px 0 0;
   color: var(--muted);
   font-size: 0.94rem;
-  line-height: 1.7;
+  line-height: 1.6;
+}
+
+.oss-lede {
+  margin: 24px 0 0;
+}
+
+.oss-note {
+  margin: 0;
 }
 
 @media (max-width: 680px) {
