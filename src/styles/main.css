@@ -895,16 +895,10 @@ but flows inside a sentence: stays inline
   }
 }
 
-.hero-eyebrow {
-  color: var(--muted);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
+/* No top margin: this now opens the hero, and 10px there left the copy
+   column sitting lower than the drawing beside it. */
 .hero-flourish {
-  margin: 10px 0 18px;
+  margin: 0 0 18px;
   color: var(--warm);
 }
 

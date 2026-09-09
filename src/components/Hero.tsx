@@ -3,8 +3,6 @@ import { Rocket } from './Rocket'
 
 type HeroProps = {
   profile: {
-    name: string
-    location: string
     summary: string
   }
 }
@@ -13,10 +11,6 @@ export function Hero({ profile }: HeroProps) {
   return (
     <section className="hero-section" aria-labelledby="hero-title">
       <div className="hero-copy">
-        <p className="hero-eyebrow">
-          {profile.name} <span aria-hidden="true">·</span> {profile.location}
-        </p>
-
         <svg
           className="hero-flourish"
           viewBox="0 0 120 14"
