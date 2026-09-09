@@ -36,10 +36,9 @@ export function OpenSource() {
         ))}
       </ul>
 
-      <p className="oss-lede">{openSource.lede}</p>
-
       <p className="oss-note">
-        The full record is in my{' '}
+        Fixes and corrections merged into open source projects, with the full
+        record in my{' '}
         <a
           className="prose-link"
           href={openSource.activityUrl}

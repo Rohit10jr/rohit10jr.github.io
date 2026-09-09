@@ -1559,24 +1559,15 @@ one link per row ---- */
   transform: translate(2px, -2px);
 }
 
-/* Two lines read as one caption on the grid: only the first is spaced away
-   from it, and the second is separated by leading alone. */
-.oss-lede,
+/* Caption on the grid above it. Back to prose leading: it is one sentence
+   now, so the line spacing is about reading it rather than about the gap
+   between two stacked lines. */
 .oss-note {
-  max-width: 58ch;
+  max-width: 62ch;
+  margin: 24px 0 0;
   color: var(--muted);
   font-size: 0.94rem;
-  /* Tighter than prose. Nothing separates the two lines but their leading, so
-     this is the gap between them. */
-  line-height: 1.28;
-}
-
-.oss-lede {
-  margin: 24px 0 0;
-}
-
-.oss-note {
-  margin: 0;
+  line-height: 1.6;
 }
 
 @media (max-width: 680px) {

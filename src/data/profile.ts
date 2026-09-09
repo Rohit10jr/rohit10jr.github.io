@@ -61,7 +61,6 @@ export type OpenSourceProject = {
  * work landed, and GitHub's own activity page carries the detail.
  */
 export const openSource = {
-  lede: 'Fixes and corrections merged into open source projects.',
   projects: [
     { name: 'Django', url: 'https://github.com/django/django' },
     {
