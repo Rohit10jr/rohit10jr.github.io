@@ -508,7 +508,9 @@ li {
   flex: 1 0 auto;
   display: grid;
   align-content: start;
-  gap: 72px;
+  /* Wider than it needs to look, because nothing else marks a section
+     boundary now that the rules above the headings are gone. */
+  gap: 104px;
   padding: 56px 0 84px;
 }
 
@@ -1332,7 +1334,7 @@ so the hierarchy
   }
 
   .page-main {
-    gap: 58px;
+    gap: 76px;
     padding: 38px 0 68px;
   }
 
