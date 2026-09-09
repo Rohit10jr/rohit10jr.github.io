@@ -62,7 +62,7 @@ export type OpenSourceProject = {
  */
 export const openSource = {
   lede:
-    'Fixes and corrections merged into the projects I build with, mostly Django and the tooling around it. Six of them in Django-CRM, across row-level security, RBAC, and API error semantics.',
+    'Fixes and corrections merged into the projects I build with, mostly Django and the tooling around it.',
   projects: [
     { name: 'Django', url: 'https://github.com/django/django' },
     {

@@ -1500,6 +1500,7 @@ tighten the scale so it fits the page. */
 one link per row ---- */
 
 .work-section .section-heading h2,
+.oss-section .section-heading h2,
 .preview-heading h2 {
   max-width: none;
   font-size: 0.82rem;

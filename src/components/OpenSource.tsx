@@ -13,7 +13,7 @@ export function OpenSource() {
   return (
     <section
       id="open-source"
-      className="section"
+      className="section oss-section"
       aria-labelledby="open-source-title"
     >
       <div className="section-heading">
