@@ -936,7 +936,9 @@ but flows inside a sentence: stays inline
   max-width: 18ch;
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.85rem, 7vw, 5.4rem);
+  /* Scales with both axes. Width alone meant a wide, short laptop rendered it
+     at the full 86px with no vertical room for it. */
+  font-size: clamp(2.4rem, min(7vw, 11vh), 5.4rem);
   font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1.0;
