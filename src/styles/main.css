@@ -1,23 +1,29 @@
 @font-face {
   font-family: "Space Grotesk";
   font-style: normal;
-  font-weight: 500 700;
+  /* The files carry the typeface's full 300-700 variable range; declaring a
+     narrower one only made the browser clamp requests outside it. */
+  font-weight: 300 700;
   font-display: swap;
   src: url("/fonts/space-grotesk-latin-ext.woff2") format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
-    U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
   font-family: "Space Grotesk";
   font-style: normal;
-  font-weight: 500 700;
+  /* The files carry the typeface's full 300-700 variable range; declaring a
+     narrower one only made the browser clamp requests outside it. */
+  font-weight: 300 700;
   font-display: swap;
   src: url("/fonts/space-grotesk-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
@@ -26,9 +32,10 @@
   font-weight: 400;
   font-display: swap;
   src: url("/fonts/atkinson-400-latin-ext.woff2") format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
-    U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
@@ -37,9 +44,10 @@
   font-weight: 400;
   font-display: swap;
   src: url("/fonts/atkinson-400-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
@@ -48,9 +56,10 @@
   font-weight: 700;
   font-display: swap;
   src: url("/fonts/atkinson-700-latin-ext.woff2") format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
-    U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
@@ -59,9 +68,10 @@
   font-weight: 700;
   font-display: swap;
   src: url("/fonts/atkinson-700-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
@@ -70,9 +80,10 @@
   font-weight: 400;
   font-display: swap;
   src: url("/fonts/nothing-you-could-do-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 
 :root {
@@ -97,12 +108,14 @@
   --header-height: 60px;
   --gap: 24px;
   --radius: 8px;
-  --font-sans: "Atkinson Hyperlegible", Atkinson, ui-sans-serif, system-ui,
-    -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans:
+    "Atkinson Hyperlegible", Atkinson, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-serif: Charter, Georgia, "Times New Roman", serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  --font-display: "Space Grotesk", "Atkinson Hyperlegible", ui-sans-serif,
-    system-ui, sans-serif;
+  --font-display:
+    "Space Grotesk", "Atkinson Hyperlegible", ui-sans-serif, system-ui,
+    sans-serif;
   --font-logo: "Nothing You Could Do", cursive;
   font-family: var(--font-sans);
   font-synthesis: none;
@@ -111,7 +124,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   color-scheme: dark;
   --bg: #1d1e20;
   --surface: #2b2c30;
@@ -195,12 +208,16 @@ so the footer sits at the bottom of the
 }
 
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(226, 222, 212, 0.28), transparent 22rem);
+  background: linear-gradient(
+    180deg,
+    rgba(226, 222, 212, 0.28),
+    transparent 22rem
+  );
 }
 
 ::selection {
@@ -482,15 +499,15 @@ li {
   transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
 }
 
-[data-theme='light'] .moon,
-[data-theme='dark'] .sun {
+[data-theme="light"] .moon,
+[data-theme="dark"] .sun {
   opacity: 1;
   filter: blur(0px);
   transform: scale(1);
 }
 
-[data-theme='dark'] .moon,
-[data-theme='light'] .sun {
+[data-theme="dark"] .moon,
+[data-theme="light"] .sun {
   opacity: 0;
   filter: blur(4px);
   pointer-events: none;
@@ -508,7 +525,9 @@ li {
   flex: 1 0 auto;
   display: grid;
   align-content: start;
-  gap: 72px;
+  /* Wider than it needs to look, because nothing else marks a section
+     boundary now that the rules above the headings are gone. */
+  gap: 104px;
   padding: 56px 0 84px;
 }
 
@@ -553,6 +572,9 @@ li {
   color: var(--accent-strong);
 }
 
+/* No rule above a section title. Space separates the sections instead, the way
+   Rahul's work section does it, which leaves the only lines on the page
+   belonging to the lists that need them. */
 .section-heading,
 .preview-heading {
   min-width: 0;
@@ -560,7 +582,6 @@ li {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 24px;
   align-items: end;
-  border-top: 1px solid var(--line);
   padding-top: 30px;
 }
 
@@ -682,7 +703,9 @@ but flows inside a sentence: stays inline
 }
 
 .hero-section {
-  min-height: min(620px, calc(100svh - 200px));
+  /* Exactly one screenful, rather than a floor the content then overshoots.
+     Subtracts the header and .page-main's top padding, which sit above it. */
+  min-height: calc(100svh - var(--header-height) - 56px);
   display: grid;
   /* More of the row goes to the copy, so the larger headline breaks where it
      is meant to rather than wherever the column runs out. */
@@ -703,7 +726,9 @@ but flows inside a sentence: stays inline
   overflow: clip;
   /* Room for the crouch and the overshoot without cropping them. */
   overflow-clip-margin: 30px;
-  width: min(100%, 260px);
+  /* The drawing is 1.55x taller than it is wide, so a width-only cap made it
+     402px tall on a 583px window. The vh term binds only on short screens. */
+  width: min(100%, 260px, 39vh);
   color: var(--ink);
   /* Sits the drawing level with the headline. Margin rather than a transform:
      the call-to-action hover owns `transform` on this element and would
@@ -732,11 +757,11 @@ but flows inside a sentence: stays inline
    percentages of the rocket's own box so it scales with the artwork, and the
    hero clips it so the flight cannot extend the page's scroll height. */
 
-.rocket-wrap[data-launching='true'] .rocket {
+.rocket-wrap[data-launching="true"] .rocket {
   animation: rocket-liftoff 1.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.rocket-wrap[data-launching='true'] .rocket-exhaust {
+.rocket-wrap[data-launching="true"] .rocket-exhaust {
   animation: rocket-burn 1.7s ease-out;
 }
 
@@ -790,6 +815,28 @@ but flows inside a sentence: stays inline
 
 .rocket-exhaust {
   stroke: var(--warm);
+  transition: stroke-width 480ms ease;
+}
+
+/* The lift used to key off the call to action. Now that the drawing is the
+   only thing to hover, it responds to itself. It sits on the wrapper so it
+   composes with the float animation on the group inside rather than being
+   overwritten by it. */
+.hero-art {
+  /* Slow, and on a gentler curve than the site's usual one: the previous
+     easing front-loaded almost all of the travel, so the lift read as a jump
+     rather than as the rocket rising. */
+  transition: transform 480ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.hero-art:hover,
+.hero-art:has(.rocket-wrap:focus-visible) {
+  transform: translateY(-16px);
+}
+
+.hero-art:hover .rocket-exhaust,
+.hero-art:has(.rocket-wrap:focus-visible) .rocket-exhaust {
+  stroke-width: 2.8;
 }
 
 /* ---- Draw-in ----------------------------------------------------------
@@ -810,12 +857,24 @@ but flows inside a sentence: stays inline
 }
 
 /* Assemble in a readable order rather than all at once. */
-.rocket-hull { animation-delay: 100ms; }
-.rocket-fin { animation-delay: 420ms; }
-.rocket-skirt { animation-delay: 620ms; }
-.rocket-window { animation-delay: 780ms; }
-.rocket-window-inner { animation-delay: 880ms; }
-.rocket-seam { animation-delay: 960ms; }
+.rocket-hull {
+  animation-delay: 100ms;
+}
+.rocket-fin {
+  animation-delay: 420ms;
+}
+.rocket-skirt {
+  animation-delay: 620ms;
+}
+.rocket-window {
+  animation-delay: 780ms;
+}
+.rocket-window-inner {
+  animation-delay: 880ms;
+}
+.rocket-seam {
+  animation-delay: 960ms;
+}
 
 /* ---- Idle float ---- */
 
@@ -884,14 +943,14 @@ but flows inside a sentence: stays inline
 }
 
 /* Looping work stops once the hero is off screen. */
-.rocket-wrap[data-animate='pause'] .rocket-float,
-.rocket-wrap[data-animate='pause'] .rocket-flame {
+.rocket-wrap[data-animate="pause"] .rocket-float,
+.rocket-wrap[data-animate="pause"] .rocket-flame {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rocket-wrap[data-launching='true'] .rocket,
-  .rocket-wrap[data-launching='true'] .rocket-exhaust,
+  .rocket-wrap[data-launching="true"] .rocket,
+  .rocket-wrap[data-launching="true"] .rocket-exhaust,
   .rocket-draw,
   .rocket-flame,
   .rocket-float {
@@ -924,10 +983,16 @@ but flows inside a sentence: stays inline
   max-width: 18ch;
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.85rem, 7vw, 5.4rem);
+  /* Scales with both axes: min() takes whichever has less room to spare, so a
+     wide but short laptop is governed by its height rather than rendering at
+     the full 86px with nowhere to put it. Above roughly 765px of viewport
+     height the width term takes over and hits the ceiling, so tall screens are
+     unaffected. */
+  /* font-size: clamp(2.4rem, min(7vw, 12.5vh), 5.4rem); */
+  font-size: clamp(2.4rem, min(7vw, 13vh), 5.4rem);
   font-weight: 500;
   letter-spacing: -0.03em;
-  line-height: 1.0;
+  line-height: 1;
 }
 
 .hero-section h1 em {
@@ -935,29 +1000,27 @@ but flows inside a sentence: stays inline
   font-style: italic;
 }
 
-.hero-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 26px;
-  border-bottom: 2px solid var(--ink);
-  padding-bottom: 3px;
-  color: var(--ink);
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: gap 160ms ease, color 160ms ease, border-color 160ms ease;
-}
-
-.hero-cta:hover {
-  gap: 14px;
-  border-color: var(--warm);
-  color: var(--warm);
-}
-
 /* Steps back by colour rather than by size. Shrinking it made it recede but
    also made it harder to read; the muted ink does the same job at a size that
    is still comfortable. */
+/* Stronger than the muted line it sits in, so it reads as something to click
+   rather than as emphasis. */
+.hero-summary-link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.28rem;
+  transition:
+    color 160ms ease,
+    text-decoration-color 160ms ease;
+}
+
+.hero-summary-link:hover {
+  color: var(--warm);
+  text-decoration-color: currentColor;
+}
+
 .hero-summary {
   margin-top: 22px;
   max-width: 52ch;
@@ -1062,6 +1125,65 @@ but flows inside a sentence: stays inline
 .connect-block p {
   max-width: 62ch;
   margin-top: 8px;
+}
+
+/* ---- Say hello ---- */
+
+.say-hello {
+  /* Anchored from the hero summary, so it needs the same landing clearance the
+     other scroll targets have. */
+  scroll-margin-top: 88px;
+  min-width: 0;
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+}
+
+/* Overrides the small uppercase label the other section headings use: this one
+   closes the page, so it is set as a statement. */
+.say-hello h2 {
+  max-width: none;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  /* Every term is 83% of the hero's, so the two posters hold their ratio at any
+     window size. Width alone left this one larger than the hero on a short
+     screen, once the hero learned to respond to height. */
+  /* font-size: clamp(2rem, min(5.8vw, 10.4vh), 4.5rem); */
+  font-size: clamp(2rem, min(5.8vw, 10.8vh), 4.5rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.04;
+}
+
+.say-hello-accent {
+  color: var(--warm);
+}
+
+.say-hello-availability {
+  max-width: 46ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.say-hello-email {
+  margin-top: 26px;
+  color: var(--ink);
+  font-size: 1.14rem;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.34rem;
+  transition:
+    color 160ms ease,
+    text-decoration-color 160ms ease;
+}
+
+.say-hello-email:hover {
+  color: var(--warm);
+  text-decoration-color: currentColor;
 }
 
 .page-hero {
@@ -1259,7 +1381,7 @@ so the hierarchy
 }
 
 .plain-list li::before {
-  content: '-';
+  content: "-";
   position: absolute;
   left: 0;
   color: var(--ink);
@@ -1296,9 +1418,9 @@ so the hierarchy
   }
 
   .hero-section,
-.about-intro,
-.resume-hero,
-.connect-block {
+  .about-intro,
+  .resume-hero,
+  .connect-block {
     grid-template-columns: 1fr;
   }
 
@@ -1308,13 +1430,13 @@ so the hierarchy
     padding-top: 8px;
   }
 
-.about-avatar {
+  .about-avatar {
     justify-self: start;
     width: min(100%, 300px);
   }
 
   .section-heading,
-.preview-heading {
+  .preview-heading {
     grid-template-columns: 1fr;
   }
 
@@ -1325,12 +1447,12 @@ so the hierarchy
 
 @media (max-width: 680px) {
   .page-main,
-.site-footer {
+  .site-footer {
     width: calc(100% - 28px);
   }
 
   .page-main {
-    gap: 58px;
+    gap: 76px;
     padding: 38px 0 68px;
   }
 
@@ -1345,24 +1467,24 @@ so the hierarchy
   }
 
   p,
-li {
+  li {
     font-size: 0.98rem;
   }
 
   .hero-summary,
-.about-prose p,
-.page-hero p,
-.section-intro,
-.prose-section p,
-.post-card p,
-.connect-block p,
-.resume-block p,
-.resume-block li {
+  .about-prose p,
+  .page-hero p,
+  .section-intro,
+  .prose-section p,
+  .post-card p,
+  .connect-block p,
+  .resume-block p,
+  .resume-block li {
     max-width: 31ch;
   }
 
   .hero-actions,
-.resume-actions {
+  .resume-actions {
     align-items: stretch;
   }
 
@@ -1421,10 +1543,10 @@ li {
   }
 
   body::before,
-.header,
-.site-footer,
-.resume-toolbar,
-.cv-block:not(.cv-unlocked) {
+  .header,
+  .site-footer,
+  .resume-toolbar,
+  .cv-block:not(.cv-unlocked) {
     display: none !important;
   }
 
@@ -1472,11 +1594,11 @@ tighten the scale so it fits the page. */
   }
 
   .resume-summary p,
-.resume-highlights,
-.resume-detail-list dd,
-.resume-detail-list dt,
-.resume-skill-grid p,
-.resume-skill-grid h3 {
+  .resume-highlights,
+  .resume-detail-list dd,
+  .resume-detail-list dt,
+  .resume-skill-grid p,
+  .resume-skill-grid h3 {
     font-size: 9pt;
     line-height: 1.28;
   }
@@ -1486,12 +1608,12 @@ tighten the scale so it fits the page. */
   }
 
   .resume-entry-meta,
-.resume-education-entry time {
+  .resume-education-entry time {
     font-size: 8pt;
   }
 
   .resume-entry,
-.resume-section {
+  .resume-section {
     break-inside: avoid;
   }
 }
@@ -1500,6 +1622,7 @@ tighten the scale so it fits the page. */
 one link per row ---- */
 
 .work-section .section-heading h2,
+.oss-section .section-heading h2,
 .preview-heading h2 {
   max-width: none;
   font-size: 0.82rem;
@@ -1507,6 +1630,89 @@ one link per row ---- */
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+/* ---- Open source ---- */
+
+.oss-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 40px;
+}
+
+.oss-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 86px;
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+}
+
+.oss-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.04rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-align: center;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.oss-link:hover {
+  color: var(--warm);
+}
+
+/* Present at rest but quiet, so the row does not shift on hover. */
+.oss-arrow {
+  opacity: 0.45;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.oss-link:hover .oss-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+/* Caption on the grid above it. Back to prose leading: it is one sentence
+   now, so the line spacing is about reading it rather than about the gap
+   between two stacked lines. */
+.oss-note {
+  max-width: 62ch;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 680px) {
+  .oss-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 24px;
+  }
+
+  .oss-cell {
+    min-height: 72px;
+  }
+
+  .oss-link {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oss-arrow {
+    transition: none;
+  }
 }
 
 .work-list {
@@ -1528,7 +1734,9 @@ one link per row ---- */
   padding: 26px 4px;
   color: inherit;
   text-decoration: none;
-  transition: background-color 160ms ease, padding-inline 160ms ease;
+  transition:
+    background-color 160ms ease,
+    padding-inline 160ms ease;
 }
 
 a.work-row:hover {
@@ -1591,7 +1799,9 @@ a.work-row:hover .work-name {
 .work-arrow {
   color: var(--muted);
   margin-top: 6px;
-  transition: transform 160ms ease, color 160ms ease;
+  transition:
+    transform 160ms ease,
+    color 160ms ease;
 }
 
 a.work-row:hover .work-arrow {
@@ -1603,7 +1813,9 @@ a.work-row:hover .work-arrow {
 .reveal {
   opacity: 0;
   transform: translateY(12px);
-  transition: opacity 420ms ease, transform 420ms ease;
+  transition:
+    opacity 420ms ease,
+    transform 420ms ease;
 }
 
 .reveal.is-visible {
@@ -1646,7 +1858,7 @@ a.work-row:hover .work-arrow {
     border-color 160ms ease;
 }
 
-.back-to-top[data-visible='true'] {
+.back-to-top[data-visible="true"] {
   opacity: 1;
   transform: none;
   visibility: visible;
@@ -1673,11 +1885,11 @@ a.work-row:hover .work-arrow {
 }
 
 /* Brief burst as the page scrolls back up. */
-.back-to-top[data-firing='true'] .rocket-mark {
+.back-to-top[data-firing="true"] .rocket-mark {
   animation: rocket-launch 600ms ease-out;
 }
 
-.back-to-top[data-firing='true'] .rocket-mark-exhaust {
+.back-to-top[data-firing="true"] .rocket-mark-exhaust {
   opacity: 1;
 }
 
@@ -1692,26 +1904,6 @@ a.work-row:hover .work-arrow {
 
 /* ---- Hero: the rocket responds to the call to action ---- */
 
-.hero-art {
-  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* The lift sits on the wrapper so it composes with the float animation on
-   the group inside, rather than being overwritten by it. */
-.hero-section:has(.hero-cta:hover) .hero-art,
-.hero-section:has(.hero-cta:focus-visible) .hero-art {
-  transform: translateY(-16px);
-}
-
-.hero-section:has(.hero-cta:hover) .rocket-exhaust,
-.hero-section:has(.hero-cta:focus-visible) .rocket-exhaust {
-  stroke-width: 2.8;
-}
-
-.rocket-exhaust {
-  transition: stroke-width 260ms ease;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .back-to-top,
   .hero-art,
@@ -1721,7 +1913,7 @@ a.work-row:hover .work-arrow {
     animation: none;
   }
 
-  .hero-section:has(.hero-cta:hover) .hero-art {
+  .hero-art:hover {
     transform: none;
   }
 }
@@ -1844,7 +2036,7 @@ a.work-row:hover .work-arrow {
 
 /* The app always stamps data-theme, so match it directly rather than using
    :not([data-theme='light']), which would flash stars before hydration. */
-:root[data-theme='dark'] .hero-stars {
+:root[data-theme="dark"] .hero-stars {
   display: block;
 }
 
@@ -2202,7 +2394,9 @@ no rule beneath it. */
   font-size: 0.78rem;
   font-weight: 600;
   line-height: 1;
-  transition: color 160ms ease, border-color 160ms ease;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease;
 }
 
 .resume-print:hover {
@@ -2364,8 +2558,8 @@ no rule beneath it. */
   }
 
   *,
-*::before,
-*::after {
+  *::before,
+  *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

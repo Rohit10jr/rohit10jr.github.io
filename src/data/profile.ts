@@ -21,7 +21,10 @@ export const profile = {
   headline:
     'Software engineer building backend systems, full-stack products, and agent-powered workflows.',
   summary:
-    'Software engineer, exploring and building full-stack products and agent systems to understand them. Say hello.',
+    'Software engineer, exploring and building full-stack products and agent systems to understand them.',
+  sayHello: {
+    availability: 'Open to full-stack and agent-related work.',
+  },
   aboutImage: {
     src: '/assets/rohit-kedar.webp',
     alt: 'Rohit J at the Kedarkantha summit, above a layer of cloud',
@@ -48,6 +51,30 @@ export const profile = {
       kind: 'email',
     },
   ] satisfies SocialLink[],
+}
+
+export type OpenSourceProject = {
+  name: string
+  url: string
+}
+
+/**
+ * Upstream projects with merged work. Links point at the repository, not at a
+ * fork here and not at individual pull requests — the section says where the
+ * work landed, and GitHub's own activity page carries the detail.
+ */
+export const openSource = {
+  projects: [
+    { name: 'Django', url: 'https://github.com/django/django' },
+    {
+      name: 'Django REST Framework',
+      url: 'https://github.com/encode/django-rest-framework',
+    },
+    { name: 'Django-CRM', url: 'https://github.com/Django-CRM/Django-CRM' },
+    { name: 'RAGFlow', url: 'https://github.com/infiniflow/ragflow' },
+    { name: "Google's ADK docs", url: 'https://github.com/google/adk-docs' },
+  ] satisfies OpenSourceProject[],
+  activityUrl: 'https://github.com/Rohit10jr',
 }
 
 // mailto: links open the mail client, not a new tab, and get no external marker.
