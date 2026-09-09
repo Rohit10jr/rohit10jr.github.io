@@ -802,6 +802,25 @@ but flows inside a sentence: stays inline
 
 .rocket-exhaust {
   stroke: var(--warm);
+  transition: stroke-width 260ms ease;
+}
+
+/* The lift used to key off the call to action. Now that the drawing is the
+   only thing to hover, it responds to itself. It sits on the wrapper so it
+   composes with the float animation on the group inside rather than being
+   overwritten by it. */
+.hero-art {
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-art:hover,
+.hero-art:has(.rocket-wrap:focus-visible) {
+  transform: translateY(-16px);
+}
+
+.hero-art:hover .rocket-exhaust,
+.hero-art:has(.rocket-wrap:focus-visible) .rocket-exhaust {
+  stroke-width: 2.8;
 }
 
 /* ---- Draw-in ----------------------------------------------------------
@@ -1848,6 +1867,10 @@ a.work-row:hover .work-arrow {
   .rocket-mark-exhaust {
     transition: none;
     animation: none;
+  }
+
+  .hero-art:hover {
+    transform: none;
   }
 }
 
