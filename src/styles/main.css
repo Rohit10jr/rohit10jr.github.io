@@ -713,7 +713,9 @@ but flows inside a sentence: stays inline
   overflow: clip;
   /* Room for the crouch and the overshoot without cropping them. */
   overflow-clip-margin: 30px;
-  width: min(100%, 260px);
+  /* The drawing is 1.55x taller than it is wide, so a width-only cap made it
+     402px tall on a 583px window. The vh term binds only on short screens. */
+  width: min(100%, 260px, 39vh);
   color: var(--ink);
   /* Sits the drawing level with the headline. Margin rather than a transform:
      the call-to-action hover owns `transform` on this element and would
