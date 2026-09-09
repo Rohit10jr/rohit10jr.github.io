@@ -1566,7 +1566,9 @@ one link per row ---- */
   max-width: 58ch;
   color: var(--muted);
   font-size: 0.94rem;
-  line-height: 1.6;
+  /* Tighter than prose. Nothing separates the two lines but their leading, so
+     this is the gap between them. */
+  line-height: 1.4;
 }
 
 .oss-lede {
