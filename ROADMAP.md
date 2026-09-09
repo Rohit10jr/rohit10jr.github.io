@@ -22,8 +22,6 @@ all of it so the wording does not have to be revisited twice.
   Either wire the hero to the field or delete it; the two currently disagree,
   and the hero version carries a `<br>` and an `<em>` that a plain string
   cannot, so it needs a small change either way
-- **`profile.summary` still leads with backend**, which no longer matches the
-  headline above it. Rebalance it toward the full-stack and product side
 - **Move the About page copy into `profile.ts`.** It is hardcoded in
   `AboutPage.tsx` today, so the page and the data layer state the same things
   in different words
