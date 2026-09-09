@@ -11,6 +11,12 @@ export function Hero({ profile }: HeroProps) {
   return (
     <section className="hero-section" aria-labelledby="hero-title">
       <div className="hero-copy">
+        <h1 id="hero-title">
+          I build products end to end
+          <br />
+          that <em>hold up.</em>
+        </h1>
+
         <svg
           className="hero-flourish"
           viewBox="0 0 120 14"
@@ -26,12 +32,6 @@ export function Hero({ profile }: HeroProps) {
             strokeLinecap="round"
           />
         </svg>
-
-        <h1 id="hero-title">
-          I build products end to end
-          <br />
-          that <em>hold up.</em>
-        </h1>
 
         <p className="hero-summary">{profile.summary}</p>
 

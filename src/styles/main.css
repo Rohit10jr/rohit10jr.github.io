@@ -682,9 +682,11 @@ but flows inside a sentence: stays inline
 }
 
 .hero-section {
-  min-height: min(500px, calc(100svh - 240px));
+  min-height: min(620px, calc(100svh - 200px));
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(200px, 300px);
+  /* More of the row goes to the copy, so the larger headline breaks where it
+     is meant to rather than wherever the column runs out. */
+  grid-template-columns: minmax(0, 1.2fr) minmax(180px, 280px);
   align-items: center;
   gap: 48px;
   padding: 24px 0 44px;
@@ -895,10 +897,10 @@ but flows inside a sentence: stays inline
   }
 }
 
-/* No top margin: this now opens the hero, and 10px there left the copy
-   column sitting lower than the drawing beside it. */
+/* Sits under the headline rather than above it: with the name line gone it
+   had nothing to belong to at the top of the column. */
 .hero-flourish {
-  margin: 0 0 18px;
+  margin: 20px 0 0;
   color: var(--warm);
 }
 
@@ -906,10 +908,10 @@ but flows inside a sentence: stays inline
   max-width: 18ch;
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.85rem, 6.5vw, 4.5rem);
-  font-weight: 700;
+  font-size: clamp(2.85rem, 7vw, 5.4rem);
+  font-weight: 500;
   letter-spacing: -0.03em;
-  line-height: 1.02;
+  line-height: 1.0;
 }
 
 .hero-section h1 em {
@@ -937,13 +939,15 @@ but flows inside a sentence: stays inline
   color: var(--warm);
 }
 
-/* Deliberately below the body size: it sits under a much larger headline now,
-   and reading as a second heading rather than a subtitle flattened the two. */
+/* Steps back by colour rather than by size. Shrinking it made it recede but
+   also made it harder to read; the muted ink does the same job at a size that
+   is still comfortable. */
 .hero-summary {
   margin-top: 22px;
-  max-width: 58ch;
-  color: var(--ink);
-  font-size: 0.98rem;
+  max-width: 52ch;
+  color: var(--muted);
+  font-size: 1.06rem;
+  line-height: 1.65;
 }
 
 .hero-actions,
