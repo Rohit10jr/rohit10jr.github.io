@@ -690,7 +690,9 @@ but flows inside a sentence: stays inline
 }
 
 .hero-section {
-  min-height: min(620px, calc(100svh - 200px));
+  /* Exactly one screenful, rather than a floor the content then overshoots.
+     Subtracts the header and .page-main's top padding, which sit above it. */
+  min-height: calc(100svh - var(--header-height) - 56px);
   display: grid;
   /* More of the row goes to the copy, so the larger headline breaks where it
      is meant to rather than wherever the column runs out. */
