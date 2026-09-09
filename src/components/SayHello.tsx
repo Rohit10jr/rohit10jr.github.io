@@ -12,7 +12,8 @@ export function SayHello() {
   return (
     <section id="say-hello" className="say-hello" aria-labelledby="say-hello-title">
       <h2 id="say-hello-title">
-        Say <span className="say-hello-accent">hello.</span>
+        {profile.sayHello.lead}{' '}
+        <span className="say-hello-accent">{profile.sayHello.accent}</span>
       </h2>
       <p className="say-hello-availability">{profile.sayHello.availability}</p>
       {email && (

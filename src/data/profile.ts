@@ -18,16 +18,49 @@ export const profile = {
   name: 'Rohit J',
   role: 'Software engineer',
   location: 'India',
-  headline:
-    'Software engineer building backend systems, full-stack products, and agent-powered workflows.',
-  summary:
-    'Software engineer, exploring and building full-stack products and agent systems to understand them.',
+  /* The headline is split because it carries markup rather than being one
+     string: "build" takes the drawn underline, and the closing phrase is set
+     in the accent. Keeping the pieces here still beats leaving the sentence in
+     the component, which is where it disagreed with this file for weeks. */
+  hero: {
+    headlineLead: 'I',
+    headlineUnderlined: 'build',
+    headlineRest: 'products end to end',
+    headlineTail: 'that',
+    headlineAccent: 'hold up.',
+    summary:
+      'Software engineer, exploring and building full-stack products and agent systems to understand them.',
+    summaryLink: 'Say hello.',
+  },
   sayHello: {
+    lead: 'Say',
+    accent: 'hello.',
     availability: 'Open to full-stack and agent-related work.',
   },
   aboutImage: {
     src: '/assets/rohit-kedar.webp',
     alt: 'Rohit J at the Kedarkantha summit, above a layer of cloud',
+  },
+  about: {
+    paragraphs: [
+      'I am a software engineer in India, building full-stack products, backend systems, and agent-powered workflows.',
+      'Mostly I am chasing the forefront of technology and AI. I build things to understand them, and the exploring is the point.',
+      'Most of my work is Python, with React and TypeScript on top. Lately that has meant going deeper on scalable backend architecture, cloud infrastructure, and agent-based systems.',
+      'Progress beats perfection. I would rather ship a clear increment, take the feedback, and improve from there.',
+      'Away from the keyboard it is usually the gym, a long walk, a book or a film. That photo is from the Kedarkantha summit.',
+    ],
+    githubActivity: {
+      chartSrc: 'https://ghchart.rshah.org/Rohit10jr',
+      chartAlt: 'Rohit10jr GitHub contribution activity chart',
+      body: 'I build what I am curious about and leave the source code open.',
+      linkLabel: 'Follow me on GitHub',
+      linkHref: 'https://github.com/Rohit10jr',
+      linkTail: 'to catch new projects as they land.',
+    },
+    connect: {
+      title: 'Stay connected',
+      body: 'If you’d like to connect or have questions about my work, feel free to reach out through any of the links below.',
+    },
   },
   socialLinks: [
     {

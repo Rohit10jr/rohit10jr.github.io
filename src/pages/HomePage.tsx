@@ -5,7 +5,7 @@ import { PageLink } from '../components/PageLink'
 import { PostList } from '../components/PostList'
 import { SayHello } from '../components/SayHello'
 import { WorkList } from '../components/WorkList'
-import { profile, projects } from '../data/profile'
+import { projects } from '../data/profile'
 import { posts } from '../data/posts'
 import type { RoutePath } from '../routes'
 
@@ -16,7 +16,7 @@ type HomePageProps = {
 export function HomePage({ onNavigate }: HomePageProps) {
   return (
     <>
-      <Hero profile={profile} />
+      <Hero />
 
       <section id="work" className="section work-section" aria-labelledby="work-title">
         <div className="section-heading">
