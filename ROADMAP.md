@@ -13,25 +13,18 @@ priority, not a schedule.
   forks rather than own repositories (`Micropyramid-Django-CRM`, `ragflow`,
   `ai-job-search`) and four have no public repository at all
 
-## After the home page: copy in the data layer
-
-Deferred deliberately — settle the home page first, then make one pass over
-all of it so the wording does not have to be revisited twice.
-
-- **`profile.headline` is unused.** The hero renders its own hardcoded string.
-  Either wire the hero to the field or delete it; the two currently disagree,
-  and the hero version carries a `<br>` and an `<em>` that a plain string
-  cannot, so it needs a small change either way
-- **Move the About page copy into `profile.ts`.** It is hardcoded in
-  `AboutPage.tsx` today, so the page and the data layer state the same things
-  in different words
-
 ## Next: writing
 
 **1. Real posts.** Five placeholders exist in `src/content/posts/`. Each is
 marked `placeholder: true`, which drives the badge in the UI — remove that flag
 once a post is genuinely written. Adding a post is one markdown file; the build
 validates `title`, `date` and `summary` and fails if any is missing.
+
+Two of the five are not real topics at all but dummy notes written to test the
+markdown pipeline — `debugging-checklist` and `local-agent-workflow`. Because
+they carry the newest dates they take two of the three home page Writing slots,
+so that section currently shows two pipeline tests above one real stub. Delete
+them once there is anything to replace them with.
 
 **2. Tags.** Front matter already carries `tags`, and the data layer already
 parses them, but nothing renders them yet. Needs a tag index and per-tag pages.
@@ -63,5 +56,10 @@ variant reused by the back-to-top button and the 404 page.
 ## Later, unscheduled
 
 - Resume: the CV source in `private/cv.html` is written for a specific
-  application. Worth a neutral pass for a public site
+  application. It reads as a CV addressed to one employer, which is wrong for a
+  page anyone with the passphrase can open. Worth a neutral pass
+- `--font-serif: Charter` is not self-hosted. The token names it, but there is
+  no `@font-face` rule for it, so it silently falls back to Georgia for nearly
+  everyone. Same class of bug as the Space Grotesk range, which declared
+  `500 700` while the files carried `300 700`. Only affects the gated resume
 - `progress.md` predates the current structure and is stale
