@@ -1512,15 +1512,6 @@ one link per row ---- */
 
 /* ---- Open source ---- */
 
-/* Sits under the grid as a caption on it, paired with the note below. */
-.oss-lede {
-  max-width: 58ch;
-  margin: 26px 0 0;
-  color: var(--muted);
-  font-size: 0.94rem;
-  line-height: 1.7;
-}
-
 .oss-grid {
   margin: 0;
   padding: 0;
@@ -1568,9 +1559,10 @@ one link per row ---- */
   transform: translate(2px, -2px);
 }
 
+/* Caption on the grid above it. */
 .oss-note {
   max-width: 58ch;
-  margin: 0;
+  margin: 24px 0 0;
   color: var(--muted);
   font-size: 0.94rem;
   line-height: 1.7;
