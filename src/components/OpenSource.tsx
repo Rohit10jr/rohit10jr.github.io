@@ -1,6 +1,6 @@
-import { ArrowUpRight } from 'lucide-react'
-import { useReveal } from '../hooks/useReveal'
-import { openSource } from '../data/profile'
+import { ArrowUpRight } from "lucide-react";
+import { useReveal } from "../hooks/useReveal";
+import { openSource } from "../data/profile";
 
 /**
  * Where upstream work landed, named rather than enumerated. Individual pull
@@ -8,7 +8,7 @@ import { openSource } from '../data/profile'
  * reads as more than it is, and GitHub already keeps that record.
  */
 export function OpenSource() {
-  const listRef = useReveal<HTMLUListElement>()
+  const listRef = useReveal<HTMLUListElement>();
 
   return (
     <section
@@ -30,15 +30,19 @@ export function OpenSource() {
               rel="noreferrer"
             >
               {project.name}
-              <ArrowUpRight className="oss-arrow" aria-hidden="true" size={15} />
+              <ArrowUpRight
+                className="oss-arrow"
+                aria-hidden="true"
+                size={15}
+              />
             </a>
           </li>
         ))}
       </ul>
 
       <p className="oss-note">
-        Fixes and corrections merged into open source projects, with the full
-        record in my{' '}
+        Fixes and corrections merged into open source projects, full record in
+        my{" "}
         <a
           className="prose-link"
           href={openSource.activityUrl}
@@ -50,5 +54,5 @@ export function OpenSource() {
         .
       </p>
     </section>
-  )
+  );
 }

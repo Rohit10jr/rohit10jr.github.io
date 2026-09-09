@@ -1534,7 +1534,7 @@ one link per row ---- */
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: var(--muted);
+  color: var(--ink);
   font-family: var(--font-display);
   font-size: 1.04rem;
   font-weight: 600;
