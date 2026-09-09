@@ -20,8 +20,6 @@ export function OpenSource() {
         <h2 id="open-source-title">Open source</h2>
       </div>
 
-      <p className="oss-lede">{openSource.lede}</p>
-
       <ul className="oss-grid" ref={listRef}>
         {openSource.projects.map((project) => (
           <li key={project.name} className="oss-cell reveal">
@@ -37,6 +35,8 @@ export function OpenSource() {
           </li>
         ))}
       </ul>
+
+      <p className="oss-lede">{openSource.lede}</p>
 
       <p className="oss-note">
         The full record is in my{' '}

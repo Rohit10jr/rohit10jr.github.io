@@ -1512,12 +1512,13 @@ one link per row ---- */
 
 /* ---- Open source ---- */
 
-/* Plain body text, matching .section-intro. Rahul sets his lede in the display
-   face at up to 34px, but his section titles are 13px labels; ours are 2.15rem
-   headings, so the same treatment here read as a second heading. */
+/* Sits under the grid as a caption on it, paired with the note below. */
 .oss-lede {
-  max-width: var(--prose-width);
-  margin: 10px 0 32px;
+  max-width: 58ch;
+  margin: 26px 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.7;
 }
 
 .oss-grid {
@@ -1569,7 +1570,7 @@ one link per row ---- */
 
 .oss-note {
   max-width: 58ch;
-  margin: 26px 0 0;
+  margin: 0;
   color: var(--muted);
   font-size: 0.94rem;
   line-height: 1.7;
