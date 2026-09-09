@@ -62,4 +62,3 @@ variant reused by the back-to-top button and the 404 page.
   no `@font-face` rule for it, so it silently falls back to Georgia for nearly
   everyone. Same class of bug as the Space Grotesk range, which declared
   `500 700` while the files carried `300 700`. Only affects the gated resume
-- `progress.md` predates the current structure and is stale
