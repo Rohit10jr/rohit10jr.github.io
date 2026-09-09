@@ -24,7 +24,13 @@ export const posts: Post[] = Object.entries(modules)
     ...module.default,
   }))
   .filter((post) => !post.draft)
-  .sort((a, b) => b.date.localeCompare(a.date))
+  // Newest first, falling back to the slug when two posts share a date. That
+  // fallback matched what already happened, but only because the sort is
+  // stable and the glob happens to enumerate alphabetically; stating it here
+  // means the order no longer depends on the bundler.
+  .sort(
+    (a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug),
+  )
 
 export function findPost(slug: string): Post | undefined {
   return posts.find((post) => post.slug === slug)
