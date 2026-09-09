@@ -21,7 +21,7 @@ export const profile = {
   headline:
     'Software engineer building backend systems, full-stack products, and agent-powered workflows.',
   summary:
-    'Software engineer, building full-stack products and agent systems — out of curiosity, to understand them. Say hello.',
+    'Software engineer, exploring and building full-stack products and agent systems — to understand them. Say hello.',
   aboutImage: {
     src: '/assets/rohit-kedar.webp',
     alt: 'Rohit J at the Kedarkantha summit, above a layer of cloud',
