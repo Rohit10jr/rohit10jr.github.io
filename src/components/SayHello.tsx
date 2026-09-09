@@ -11,7 +11,9 @@ export function SayHello() {
 
   return (
     <section className="say-hello" aria-labelledby="say-hello-title">
-      <h2 id="say-hello-title">{profile.sayHello.title}</h2>
+      <h2 id="say-hello-title">
+        Say <span className="say-hello-accent">hello.</span>
+      </h2>
       <p className="say-hello-availability">{profile.sayHello.availability}</p>
       {email && (
         <a
