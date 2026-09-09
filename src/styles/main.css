@@ -1511,61 +1511,91 @@ one link per row ---- */
 
 /* ---- Open source ---- */
 
-.oss-featured {
-  display: grid;
-  justify-items: start;
-  gap: 8px;
-  margin-bottom: 26px;
+.oss-lede {
+  max-width: 46ch;
+  margin: 0 0 34px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  line-height: 1.35;
 }
 
-.oss-project {
+.oss-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 40px;
+}
+
+.oss-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 86px;
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+}
+
+.oss-link {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-size: 1.32rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  text-decoration: none;
-}
-
-.oss-project:hover {
-  color: var(--warm);
-}
-
-.oss-blurb {
-  max-width: 58ch;
-  margin: 0;
   color: var(--muted);
-  font-size: 0.94rem;
-  line-height: 1.6;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-align: center;
+  text-decoration: none;
+  transition: color 180ms ease;
 }
 
-/* The rows carry one line each, so they sit tighter than a work row and centre
-   on the number rather than hanging from its top. */
-.oss-row {
-  align-items: center;
-  padding-block: 16px;
-}
-
-.oss-pr-title {
-  min-width: 0;
-  color: var(--ink);
-  font-size: 0.98rem;
-  line-height: 1.45;
-}
-
-a.oss-row:hover .oss-pr-title {
+.oss-link:hover {
   color: var(--warm);
 }
 
-.oss-also {
+/* Present at rest but quiet, so the row does not shift on hover. */
+.oss-arrow {
+  opacity: 0.45;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.oss-link:hover .oss-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.oss-note {
   max-width: 58ch;
-  margin: 22px 0 0;
+  margin: 26px 0 0;
   color: var(--muted);
   font-size: 0.94rem;
   line-height: 1.7;
+}
+
+@media (max-width: 680px) {
+  .oss-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 24px;
+  }
+
+  .oss-cell {
+    min-height: 72px;
+  }
+
+  .oss-link {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oss-arrow {
+    transition: none;
+  }
 }
 
 .work-list {
