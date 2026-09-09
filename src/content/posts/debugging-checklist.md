@@ -4,7 +4,7 @@ date: 2026-08-30
 summary: A second dummy note that confirms multiple posts and internal links render.
 tags: [debugging, systems]
 draft: false
-placeholder: true
+placeholder: false
 ---
 
 This is another local dummy note.
