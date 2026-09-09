@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "lucide-react";
-import { ConnectBlock } from "../components/ConnectBlock";
 import { profile } from "../data/profile";
 
 export function AboutPage() {
@@ -71,10 +70,6 @@ export function AboutPage() {
         </p>
       </section>
 
-      <ConnectBlock
-        title="Stay connected"
-        body="If you would like to connect or have questions about my work, feel free to reach out."
-      />
     </article>
   );
 }

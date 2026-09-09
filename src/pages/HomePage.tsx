@@ -1,9 +1,9 @@
 import { ArrowRight } from 'lucide-react'
-import { ConnectBlock } from '../components/ConnectBlock'
 import { Hero } from '../components/Hero'
 import { OpenSource } from '../components/OpenSource'
 import { PageLink } from '../components/PageLink'
 import { PostList } from '../components/PostList'
+import { SayHello } from '../components/SayHello'
 import { WorkList } from '../components/WorkList'
 import { profile, projects } from '../data/profile'
 import { posts } from '../data/posts'
@@ -38,10 +38,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <PostList posts={posts.slice(0, 3)} onNavigate={onNavigate} />
       </section>
 
-      <ConnectBlock
-        title="Stay connected"
-        body="If you would like to connect or have questions about my work, feel free to reach out."
-      />
+      <SayHello />
     </>
   )
 }
