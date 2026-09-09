@@ -1509,6 +1509,65 @@ one link per row ---- */
   color: var(--muted);
 }
 
+/* ---- Open source ---- */
+
+.oss-featured {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.oss-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.32rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.oss-project:hover {
+  color: var(--warm);
+}
+
+.oss-blurb {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+/* The rows carry one line each, so they sit tighter than a work row and centre
+   on the number rather than hanging from its top. */
+.oss-row {
+  align-items: center;
+  padding-block: 16px;
+}
+
+.oss-pr-title {
+  min-width: 0;
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+a.oss-row:hover .oss-pr-title {
+  color: var(--warm);
+}
+
+.oss-also {
+  max-width: 58ch;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
 .work-list {
   margin: 0;
   padding: 0;

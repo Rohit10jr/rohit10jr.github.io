@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import { ConnectBlock } from '../components/ConnectBlock'
 import { Hero } from '../components/Hero'
+import { OpenSource } from '../components/OpenSource'
 import { PageLink } from '../components/PageLink'
 import { PostList } from '../components/PostList'
 import { WorkList } from '../components/WorkList'
@@ -23,6 +24,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
         <WorkList projects={projects} />
       </section>
+
+      <OpenSource />
 
       <section className="section" aria-labelledby="posts-preview-title">
         <div className="section-heading preview-heading">

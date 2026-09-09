@@ -50,6 +50,74 @@ export const profile = {
   ] satisfies SocialLink[],
 }
 
+export type Contribution = {
+  title: string
+  number: number
+  url: string
+}
+
+/**
+ * Merged upstream work. Every URL points at the upstream pull request, never
+ * at a fork here — the fork is not the evidence, the merge is.
+ *
+ * Two tiers on purpose. Django-CRM is project-level involvement and gets the
+ * detail; the rest are single small fixes, and giving each one a row of its
+ * own would let them borrow weight they have not earned.
+ */
+export const contributions = {
+  featured: {
+    project: 'Django-CRM',
+    url: 'https://github.com/Django-CRM/Django-CRM',
+    blurb:
+      'Six merged fixes in a multi-tenant Django CRM, across row-level security, RBAC, and API error semantics.',
+    prs: [
+      {
+        title: 'Exempt the /healthz/ liveness probe from the org-context guard',
+        number: 756,
+        url: 'https://github.com/Django-CRM/Django-CRM/pull/756',
+      },
+      {
+        title:
+          'Return 409 instead of 500 when deleting an account with linked invoices',
+        number: 755,
+        url: 'https://github.com/Django-CRM/Django-CRM/pull/755',
+      },
+      {
+        title: 'Make the created_at range filter inclusive of the end day',
+        number: 754,
+        url: 'https://github.com/Django-CRM/Django-CRM/pull/754',
+      },
+      {
+        title: 'Return 404 instead of 500 for an unknown lead',
+        number: 751,
+        url: 'https://github.com/Django-CRM/Django-CRM/pull/751',
+      },
+      {
+        title: 'Include the id in the list serializer',
+        number: 750,
+        url: 'https://github.com/Django-CRM/Django-CRM/pull/750',
+      },
+      {
+        title: 'Fix a dead creator check in kanban-move RBAC',
+        number: 747,
+        url: 'https://github.com/Django-CRM/Django-CRM/pull/747',
+      },
+    ] satisfies Contribution[],
+  },
+  also: [
+    { name: 'Django', url: 'https://github.com/django/django/pull/19697' },
+    {
+      name: 'Django REST Framework',
+      url: 'https://github.com/encode/django-rest-framework/pull/9698',
+    },
+    { name: 'RAGFlow', url: 'https://github.com/infiniflow/ragflow/pull/11791' },
+    {
+      name: "Google's ADK docs",
+      url: 'https://github.com/google/adk-docs/pull/357',
+    },
+  ],
+}
+
 // mailto: links open the mail client, not a new tab, and get no external marker.
 export function isExternalLink(href: string): boolean {
   return !href.startsWith('mailto:')
