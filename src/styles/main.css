@@ -1595,11 +1595,13 @@ one link per row ---- */
   margin: 0;
   padding: 0;
   list-style: none;
-  border-top: 1px solid var(--line);
 }
 
-.work-item {
-  border-bottom: 1px solid var(--line);
+/* Separators between rows, not a frame around the list. The section divider
+   above the heading already closes the top, and a rule under the last row put
+   a second line directly above the next section's. */
+.work-item + .work-item {
+  border-top: 1px solid var(--line);
 }
 
 .work-row {
