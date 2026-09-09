@@ -553,6 +553,9 @@ li {
   color: var(--accent-strong);
 }
 
+/* No rule above a section title. Space separates the sections instead, the way
+   Rahul's work section does it, which leaves the only lines on the page
+   belonging to the lists that need them. */
 .section-heading,
 .preview-heading {
   min-width: 0;
@@ -560,7 +563,6 @@ li {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 24px;
   align-items: end;
-  border-top: 1px solid var(--line);
   padding-top: 30px;
 }
 
@@ -1521,21 +1523,13 @@ one link per row ---- */
   gap: 0 40px;
 }
 
-/* Rules sit between rows, not under every cell. Drawn on the top edge and
-   suppressed for the first row, so the grid neither opens with a line under
-   the heading nor closes with one above the next section. It keys off the
-   column count, not the number of projects, so the set can grow. */
 .oss-cell {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 86px;
-  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   padding: 12px 0;
-}
-
-.oss-cell:nth-child(-n + 3) {
-  border-top: 0;
 }
 
 .oss-link {
@@ -1588,14 +1582,6 @@ one link per row ---- */
     min-height: 72px;
   }
 
-  /* Two columns here, so the third cell starts a row and needs its rule back. */
-  .oss-cell:nth-child(3) {
-    border-top: 1px solid var(--line);
-  }
-
-  .oss-cell:nth-child(-n + 2) {
-    border-top: 0;
-  }
 
   .oss-link {
     font-size: 1rem;
@@ -1612,13 +1598,11 @@ one link per row ---- */
   margin: 0;
   padding: 0;
   list-style: none;
+  border-top: 1px solid var(--line);
 }
 
-/* Separators between rows, not a frame around the list. The section divider
-   above the heading already closes the top, and a rule under the last row put
-   a second line directly above the next section's. */
-.work-item + .work-item {
-  border-top: 1px solid var(--line);
+.work-item {
+  border-bottom: 1px solid var(--line);
 }
 
 .work-row {
