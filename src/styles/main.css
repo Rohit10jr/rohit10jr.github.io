@@ -1034,6 +1034,7 @@ but flows inside a sentence: stays inline
 }
 
 .philosophy-preview,
+.connect-block,
 .philosophy-callout,
 .github-activity,
 .resume-block {
@@ -1054,6 +1055,21 @@ but flows inside a sentence: stays inline
   border-color: var(--warm);
   background: linear-gradient(90deg, var(--warm-soft), transparent);
   padding: 28px 0 0 18px;
+}
+
+.connect-block {
+  min-width: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.connect-block > * {
+  min-width: 0;
+}
+
+.connect-block p {
+  max-width: 62ch;
+  margin-top: 8px;
 }
 
 /* ---- Say hello ---- */
