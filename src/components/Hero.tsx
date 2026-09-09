@@ -1,4 +1,3 @@
-import { ArrowRight } from 'lucide-react'
 import { Rocket } from './Rocket'
 
 type HeroProps = {
@@ -39,11 +38,6 @@ export function Hero({ profile }: HeroProps) {
         </h1>
 
         <p className="hero-summary">{profile.summary}</p>
-
-        <a className="hero-cta" href="#work">
-          See selected work
-          <ArrowRight aria-hidden="true" size={18} />
-        </a>
       </div>
 
       <div className="hero-art">

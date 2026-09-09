@@ -943,26 +943,6 @@ but flows inside a sentence: stays inline
   font-style: italic;
 }
 
-.hero-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 26px;
-  border-bottom: 2px solid var(--ink);
-  padding-bottom: 3px;
-  color: var(--ink);
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: gap 160ms ease, color 160ms ease, border-color 160ms ease;
-}
-
-.hero-cta:hover {
-  gap: 14px;
-  border-color: var(--warm);
-  color: var(--warm);
-}
-
 /* Steps back by colour rather than by size. Shrinking it made it recede but
    also made it harder to read; the muted ink does the same job at a size that
    is still comfortable. */
@@ -1836,26 +1816,6 @@ a.work-row:hover .work-arrow {
 
 /* ---- Hero: the rocket responds to the call to action ---- */
 
-.hero-art {
-  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* The lift sits on the wrapper so it composes with the float animation on
-   the group inside, rather than being overwritten by it. */
-.hero-section:has(.hero-cta:hover) .hero-art,
-.hero-section:has(.hero-cta:focus-visible) .hero-art {
-  transform: translateY(-16px);
-}
-
-.hero-section:has(.hero-cta:hover) .rocket-exhaust,
-.hero-section:has(.hero-cta:focus-visible) .rocket-exhaust {
-  stroke-width: 2.8;
-}
-
-.rocket-exhaust {
-  transition: stroke-width 260ms ease;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .back-to-top,
   .hero-art,
@@ -1863,10 +1823,6 @@ a.work-row:hover .work-arrow {
   .rocket-mark-exhaust {
     transition: none;
     animation: none;
-  }
-
-  .hero-section:has(.hero-cta:hover) .hero-art {
-    transform: none;
   }
 }
 
