@@ -912,7 +912,7 @@ but flows inside a sentence: stays inline
   max-width: 18ch;
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 6vw, 4.1rem);
+  font-size: clamp(2.85rem, 6.5vw, 4.5rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.02;
@@ -943,12 +943,13 @@ but flows inside a sentence: stays inline
   color: var(--warm);
 }
 
+/* Deliberately below the body size: it sits under a much larger headline now,
+   and reading as a second heading rather than a subtitle flattened the two. */
 .hero-summary {
-  max-width: 54ch;
   margin-top: 22px;
   max-width: 58ch;
   color: var(--ink);
-  font-size: 1.08rem;
+  font-size: 0.98rem;
 }
 
 .hero-actions,
