@@ -94,13 +94,30 @@ contributions list. It boosts your confidence.
   pivotal in the story.
 -->
 
+## Where that got me
+
+And by doing smaller projects and recreating them, and then moving to medium
+level open source projects, I now have the confidence to take on even high level
+projects.
+
+## How I find projects
+
+I usually search for projects using GitHub search, or from GitHub topics, and
+also from lists — like the Django projects listed in the docs.
+
 ## Still to record
 
 - The summary line. The notes now answer it: docs tell you what exists, the
   source tells you what it does and when to use it. Not one beating the other
-- How I tell a maintained repo from an unmaintained one before cloning it
+- How I tell a maintained repo from an unmaintained one *before* cloning it.
+  The notes say I learned to prefer maintained ones, but not how I spot them
 - How I found Django-CRM specifically, and whether it passed that test
-- What took me from documentation fixes to code fixes
-- Whether I went back to the high-level projects later
+- What took me from documentation fixes to code fixes — the second step up
 - The remaining annoyances — labels, dead pull requests, maintainers who
   never reply
+
+The arc is now complete end to end: needed to level up, everything was above my
+level, nothing in my stack, half would not run, docs for what exists and source
+for what it does, a documentation fix merged, and the ladder from small projects
+to the confidence for high level ones. What is missing is detail inside it, not
+shape.
