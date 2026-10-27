@@ -94,6 +94,19 @@ contributions list. It boosts your confidence.
   pivotal in the story.
 -->
 
+## The path, in order
+
+From contributing typos in docs, to updating wrong examples, to contributing to
+real repos on real issues — that has been my path on open source contributions.
+
+## The mistake I made first, and the filter I use now
+
+I initially tried to recreate projects that do not even run. Which was a big
+mistake.
+
+Then I started only cloning the projects that had contributions, recent commits,
+a stable main branch, and so on.
+
 ## Where that got me
 
 And by doing smaller projects and recreating them, and then moving to medium
@@ -121,10 +134,9 @@ like AgentSEO and NanoBot.
 
 - The summary line. The notes now answer it: docs tell you what exists, the
   source tells you what it does and when to use it. Not one beating the other
-- How I tell a maintained repo from an unmaintained one *before* cloning it.
-  The notes say I learned to prefer maintained ones, but not how I spot them
-- How I found Django-CRM specifically, and whether it passed that test
-- What took me from documentation fixes to code fixes — the second step up
+- Whether AgentSEO and NanoBot are mine or projects I found and rebuilt. Still
+  open; it decides how the home page cards should read
+- How I found Django-CRM specifically, and whether it passed the filter
 - The remaining annoyances — labels, dead pull requests, maintainers who
   never reply
 
