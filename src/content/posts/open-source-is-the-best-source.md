@@ -32,11 +32,28 @@ Once I found the repos, another issue came up. The projects, as I mentioned,
 were really high level — a level at which I knew I could not work or keep up as
 a beginner.
 
+## The third obstacle: just getting it to run
+
+Sometimes it takes too much time for me to find a correct repo — one I can work
+on or keep up with, and that also has some value for me.
+
+Then I clone it and start running it locally. And initially this itself takes
+too much time, because of various dependency and version errors.
+
+I remember being stuck with different Python errors from the time when I did not
+use multiple Pythons on my laptop. Or issues like unsupported versions and
+deprecated packages. Sometimes two packages will each demand a different version
+of the same thing to work.
+
+Which made me realise: clone the properly maintained repos, instead of fighting
+with repos that were not maintained properly.
+
 ## Still to record
 
-- What happened next, and how I got from "I cannot keep up" to merged fixes
-- Whether I abandoned those projects or came back to them
+- How I tell a maintained repo from an unmaintained one before cloning it
+- How I found Django-CRM specifically, and whether it passed that test
 - What changed: the approach, the kind of issue I looked for, or the project
-- How I found Django-CRM specifically
 - The first thing I actually submitted, and what I was thinking
-- The annoyances — labels, dead pull requests, setup that does not work
+- Whether I went back to the high-level projects later
+- The remaining annoyances — labels, dead pull requests, maintainers who
+  never reply
