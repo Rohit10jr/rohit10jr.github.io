@@ -120,8 +120,10 @@ export function isExternalLink(href: string): boolean {
 // deliberate choice, since publishing is imminent and the alternative was
 // carrying the URLs in comments nobody would remember to move.
 //
-// `placeholder: true` is separate: it drives the in-progress badge and stays
-// until the work itself is done, not until the repository is visible.
+// `placeholder: true` is separate: it drives the in-progress badge and tracks
+// whether the work is done, not whether the repository is visible. Only the
+// two entries still being built carry it; the field is simply absent on the
+// rest rather than set to false.
 export const projects: Project[] = [
   {
     title: 'OpenCRM',
@@ -129,7 +131,6 @@ export const projects: Project[] = [
       'Open-source CRM on Django REST Framework and SvelteKit. Multi-tenancy through PostgreSQL row-level security, JWT auth, and a REST surface across leads, accounts, opportunities and invoices.',
     meta: 'Django REST · PostgreSQL · SvelteKit',
     url: 'https://github.com/Rohit10jr/OpenCRM',
-    placeholder: true,
   },
   {
     title: 'Job Application Agent',
@@ -145,7 +146,6 @@ export const projects: Project[] = [
       'Ultra-light agent framework with tool execution, memory, multi-channel chat and support for several LLM providers.',
     meta: 'Python · Agents · MCP',
     url: 'https://github.com/Rohit10jr/NanoClaw',
-    placeholder: true,
   },
   {
     title: 'AI Business Consultant',
@@ -153,7 +153,6 @@ export const projects: Project[] = [
       'Agent system that works an engagement in stages — scoping, discovery, ranked hypotheses, investigation, synthesis and review — with a calibration loop and a guard that keeps client data out of the repository.',
     meta: 'Python · Agents',
     url: 'https://github.com/Rohit10jr/ai-business-consultant',
-    placeholder: true,
   },
   {
     title: 'RAG Fusion',
@@ -171,7 +170,6 @@ export const projects: Project[] = [
       'Connects to CSV, Excel, SQLite, PostgreSQL, MySQL and Snowflake, turns plain questions into SQL, runs it, and charts the result.',
     meta: 'FastAPI · React · SQL',
     url: 'https://github.com/Rohit10jr/agent-sql-schema',
-    placeholder: true,
   },
   {
     title: 'JobNext',
@@ -179,7 +177,6 @@ export const projects: Project[] = [
       'Job platform pairing seekers and employers, with OTP auth, resume parsing and semantic matching over pgvector.',
     meta: 'Django · pgvector · React',
     url: 'https://github.com/Rohit10jr/jobnxt',
-    placeholder: true,
   },
   {
     title: 'AgentSEO',
@@ -187,6 +184,5 @@ export const projects: Project[] = [
       'Self-hostable tool that plans SEO content and drafts posts, built to deploy in one command.',
     meta: 'Django · Redis · Docker',
     url: 'https://github.com/Rohit10jr/AgentSEO',
-    placeholder: true,
   },
 ]
