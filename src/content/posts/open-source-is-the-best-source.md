@@ -157,6 +157,11 @@ built, I contributed on the bugs I found.
   reading a tracker.
 -->
 
+## The lesson
+
+Practising and building projects is how you build confidence. And the courage to
+tackle real projects that solve real issues is itself an important learning.
+
 ## Notes are complete
 
 Nothing outstanding. The arc runs end to end:
