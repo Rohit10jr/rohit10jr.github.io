@@ -60,11 +60,21 @@ then you have to come back to the docs again anyway.
 So from that point of view, I think reading to get what is *there*, instead of
 trying everything out, is the better option.
 
+## Where the source beat the docs
+
+Sometimes reading docs like DRF's, or LangChain's initial docs — which were not
+mature like other well-maintained docs — is when I realised that reading source
+code is even better than reading docs.
+
+Because for most frameworks I tried, they will add meta in the code explaining
+what it does and when to use it.
+
+But reading the docs is what helps you find out these exist in the first place.
+
 ## Still to record
 
-- Whether the summary line still holds. It currently says reading the source
-  beats reading the docs, but my own account is that reading the docs
-  thoroughly is how I found bugs
+- The summary line. The notes now answer it: docs tell you what exists, the
+  source tells you what it does and when to use it. Not one beating the other
 - How I tell a maintained repo from an unmaintained one before cloning it
 - How I found Django-CRM specifically, and whether it passed that test
 - What changed: the approach, the kind of issue I looked for, or the project
