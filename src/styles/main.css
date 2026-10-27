@@ -1203,10 +1203,12 @@ but flows inside a sentence: stays inline
   min-width: 0;
 }
 
-/* Heading on the left, feed on the right, baselines aligned. */
-.posts-hero {
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
+/* The feed sits beside the heading rather than out at the margin, so it reads
+   as belonging to it. */
+.posts-hero-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .feed-link {
