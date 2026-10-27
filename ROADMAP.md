@@ -39,13 +39,13 @@ list annoying. Two options:
 - Pagefind, which indexes the built HTML and ships a static search bundle —
   what to use if the archive grows
 
-**4. RSS.** Deliberately deferred until real posts exist; a feed advertising
-placeholder content is worse than no feed. Needs a build step emitting
-`/rss.xml` from the same post data the pages use. Cheng gets this free from
-Hugo (`outputs: home: [HTML, RSS, JSON]`); ours has to be generated.
+**4. RSS.** Done. `/rss.xml` is emitted by the markdown plugin from the same
+parse the pages use, and excludes anything flagged `placeholder` or `draft` —
+so the feed is valid and empty today and fills itself as posts become real.
+Autodiscovery is declared in `index.html`; there is no visible link to it yet.
 
-Sensible order is posts → RSS → tags → search, because RSS only needs real
-content, while tags and search only earn their place once there is volume.
+Sensible order is posts → tags → search, because tags and search only earn
+their place once there is volume.
 
 ## Hero illustration
 
@@ -58,7 +58,3 @@ variant reused by the back-to-top button and the 404 page.
 - Resume: the CV source in `private/cv.html` is written for a specific
   application. It reads as a CV addressed to one employer, which is wrong for a
   page anyone with the passphrase can open. Worth a neutral pass
-- `--font-serif: Charter` is not self-hosted. The token names it, but there is
-  no `@font-face` rule for it, so it silently falls back to Georgia for nearly
-  everyone. Same class of bug as the Space Grotesk range, which declared
-  `500 700` while the files carried `300 700`. Only affects the gated resume
