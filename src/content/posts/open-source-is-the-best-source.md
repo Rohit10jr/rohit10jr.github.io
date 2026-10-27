@@ -22,19 +22,24 @@ that was also useful to me, took a long time.
 
 ## Getting it to run
 
-Cloning a repo and running it locally took a long time too. Mostly dependency
+Cloning a random repo and running it locally took a long time too. Mostly dependency
 and version errors. Python errors from before I used multiple Python versions on
 my laptop. Unsupported versions and deprecated packages. Sometimes two packages
 each need a different version of the same thing.
 
 That made me realise I should clone properly maintained repos instead of
-fighting with repos that are not maintained.
+fighting with repos that are not maintained or outdated.
 
 ## What I check before cloning
 
 - Recent commits
 - Contributions from other people
-- A stable main branch
+- A working main branch
+- Pinned dependencies or a lockfile
+
+The lockfile is the one that saves the most time. It means someone has already
+resolved the version conflicts and committed the answer, so you get the same
+install they have.
 
 All of that is visible before you clone anything. Earlier I tried to recreate
 projects that did not even run. That was a mistake.
