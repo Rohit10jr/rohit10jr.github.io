@@ -153,6 +153,7 @@ export const projects: Project[] = [
       'Agent system that works an engagement in stages — scoping, discovery, ranked hypotheses, investigation, synthesis and review — with a calibration loop and a guard that keeps client data out of the repository.',
     meta: 'Python · Agents',
     url: 'https://github.com/Rohit10jr/ai-business-consultant',
+    placeholder: true,
   },
   {
     title: 'RAG Fusion',
