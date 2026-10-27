@@ -18,11 +18,11 @@ to become a really good engineer, one who is useful and creates value.
 
 I needed to learn Django, and there was not much open source in Django compared
 to other frameworks and languages. Finding a project I could keep up with, and
-that was also useful to me, took a long time.
+that was also useful to me, took time.
 
 ## Getting it to run
 
-Cloning a random repo and running it locally took a long time too. Mostly dependency
+Cloning a random repo and running it locally took time too. Mostly because of dependency
 and version errors. Python errors from before I used multiple Python versions on
 my laptop. Unsupported versions and deprecated packages. Sometimes two packages
 each need a different version of the same thing.
@@ -64,16 +64,19 @@ Reading documentation closely is how I found mistakes in it. Broken links, links
 pointing at the wrong version, references to files that were not there, code
 examples that no longer ran.
 
-I sent a pull request to DRF. The maintainers merged it.
+The first one was a missing colon in a code example in LangGraph's docs, the
+same ecosystem whose documentation had pushed me into reading source in the
+first place. I sent [the pull
+request](https://github.com/langchain-ai/langgraph/pull/4142) and the
+maintainers merged it the same day.
 
 I remember telling a friend my name was in the contributors list. It boosts your
 confidence.
 
 More went in after that, into
 [DRF](https://github.com/encode/django-rest-framework/pull/9698),
-[LangGraph](https://github.com/langchain-ai/langgraph/pull/4142), [Django's own
-docs](https://github.com/django/django/pull/19697) and [Google's ADK
-docs](https://github.com/google/adk-docs/pull/357).
+[Django](https://github.com/django/django/pull/19697) and [Google's
+ADK](https://github.com/google/adk-docs/pull/357) documentation.
 
 ## The path
 
