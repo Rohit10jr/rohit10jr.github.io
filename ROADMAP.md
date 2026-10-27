@@ -15,16 +15,20 @@ priority, not a schedule.
 
 ## Next: writing
 
-**1. Real posts.** Five placeholders exist in `src/content/posts/`. Each is
-marked `placeholder: true`, which drives the badge in the UI — remove that flag
-once a post is genuinely written. Adding a post is one markdown file; the build
-validates `title`, `date` and `summary` and fails if any is missing.
+**1. Real posts.** One is written: `open-source-is-the-best-source`. Two stubs
+remain, both marked `placeholder: true`, which drives the badge in the UI —
+remove that flag once a post is genuinely written:
 
-Two of the five are not real topics at all but dummy notes written to test the
-markdown pipeline — `debugging-checklist` and `local-agent-workflow`. Because
-they carry the newest dates they take two of the three home page Writing slots,
-so that section currently shows two pipeline tests above one real stub. Delete
-them once there is anything to replace them with.
+- `how-i-actually-build-things` — the loop, the tools that survived, the parts
+  that are still messy
+- `progress-beats-perfection` — shipping a clear increment over polishing
+  something nobody has used
+
+Adding a post is one markdown file; the build validates `title`, `date` and
+`summary` and fails if any is missing, and anything still flagged `placeholder`
+or `draft` is kept out of the RSS feed.
+
+The two dummy pipeline notes have been deleted.
 
 **2. Tags.** Front matter already carries `tags`, and the data layer already
 parses them, but nothing renders them yet. Needs a tag index and per-tag pages.
