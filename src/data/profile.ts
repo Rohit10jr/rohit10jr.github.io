@@ -115,15 +115,69 @@ export function isExternalLink(href: string): boolean {
   return !href.startsWith('mailto:')
 }
 
-// Most of these are still private. Each entry keeps `placeholder: true` until
-// its repository is public and can carry a real URL — a card with no
-// destination should not look clickable, and the badge says why.
+// Most of these are still private. Each entry keeps `placeholder: true` and no
+// `url` until its repository is public — a link to a private repository 404s
+// for everyone but the owner. The repository is recorded above each entry so
+// the mapping is not lost; publishing one is a matter of moving that line into
+// a `url` field and dropping the flag.
 export const projects: Project[] = [
   {
+    // https://github.com/Rohit10jr/OpenCRM
     title: 'OpenCRM',
     description:
       'Open-source CRM on Django REST Framework and SvelteKit. Multi-tenancy through PostgreSQL row-level security, JWT auth, and a REST surface across leads, accounts, opportunities and invoices.',
     meta: 'Django REST · PostgreSQL · SvelteKit',
+    placeholder: true,
+  },
+  {
+    // https://github.com/Rohit10jr/agent-auto-apply
+    title: 'Job Application Agent',
+    description:
+      'Agent that reads a profile, finds roles worth applying for, and handles the application on the user behalf.',
+    meta: 'Agents · Automation',
+    placeholder: true,
+  },
+  {
+    // https://github.com/Rohit10jr/NanoClaw
+    title: 'NanoClaw',
+    description:
+      'Ultra-light agent framework with tool execution, memory, multi-channel chat and support for several LLM providers.',
+    meta: 'Python · Agents · MCP',
+    placeholder: true,
+  },
+  {
+    // https://github.com/Rohit10jr/ai-business-consultant
+    title: 'AI Business Consultant',
+    description:
+      'Agent system that works an engagement in stages — scoping, discovery, ranked hypotheses, investigation, synthesis and review — with a calibration loop and a guard that keeps client data out of the repository.',
+    meta: 'Python · Agents',
+    placeholder: true,
+  },
+  {
+    // Split across two public repositories until they are merged, so neither
+    // alone is the right thing for this card to point at:
+    // https://github.com/Rohit10jr/agent-sql-schema
+    // https://github.com/Rohit10jr/data-agent-frontend
+    title: 'Dataline',
+    description:
+      'Connects to CSV, Excel, SQLite, PostgreSQL, MySQL and Snowflake, turns plain questions into SQL, runs it, and charts the result.',
+    meta: 'FastAPI · React · SQL',
+    placeholder: true,
+  },
+  {
+    // https://github.com/Rohit10jr/ragfusion
+    title: 'RAG Fusion',
+    description:
+      'Retrieval pipeline built around deep document understanding, producing citation-backed answers across mixed formats.',
+    meta: 'Python · Embeddings · RAG',
+    placeholder: true,
+  },
+  {
+    // https://github.com/Rohit10jr/jobnxt
+    title: 'JobNext',
+    description:
+      'Job platform pairing seekers and employers, with OTP auth, resume parsing and semantic matching over pgvector.',
+    meta: 'Django · pgvector · React',
     placeholder: true,
   },
   {
@@ -132,47 +186,5 @@ export const projects: Project[] = [
       'Self-hostable tool that plans SEO content and drafts posts, built to deploy in one command.',
     meta: 'Django · Redis · Docker',
     url: 'https://github.com/Rohit10jr/AgentSEO',
-  },
-  {
-    title: 'NanoClaw',
-    description:
-      'Ultra-light agent framework with tool execution, memory, multi-channel chat and support for several LLM providers.',
-    meta: 'Python · Agents · MCP',
-    placeholder: true,
-  },
-  {
-    title: 'AI Business Consultant',
-    description:
-      'Agent system that works an engagement in stages — scoping, discovery, ranked hypotheses, investigation, synthesis and review — with a calibration loop and a guard that keeps client data out of the repository.',
-    meta: 'Python · Agents',
-    placeholder: true,
-  },
-  {
-    title: 'Dataline',
-    description:
-      'Connects to CSV, Excel, SQLite, PostgreSQL, MySQL and Snowflake, turns plain questions into SQL, runs it, and charts the result.',
-    meta: 'FastAPI · React · SQL',
-    placeholder: true,
-  },
-  {
-    title: 'JobNext',
-    description:
-      'Job platform pairing seekers and employers, with OTP auth, resume parsing and semantic matching over pgvector.',
-    meta: 'Django · pgvector · React',
-    placeholder: true,
-  },
-  {
-    title: 'RAG Fusion',
-    description:
-      'Retrieval pipeline built around deep document understanding, producing citation-backed answers across mixed formats.',
-    meta: 'Python · Embeddings · RAG',
-    placeholder: true,
-  },
-  {
-    title: 'Job Application Agent',
-    description:
-      'Agent that reads a profile, finds roles worth applying for, and handles the application on the user behalf.',
-    meta: 'Agents · Automation',
-    placeholder: true,
   },
 ]
