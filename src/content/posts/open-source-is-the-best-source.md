@@ -162,6 +162,24 @@ built, I contributed on the bugs I found.
 Practising and building projects is how you build confidence. And the courage to
 tackle real projects that solve real issues is itself an important learning.
 
+## This site is the example
+
+And this site is itself an example. It was created by combining ideas from a few
+open source codebases, with my own ideas sprinkled on them.
+
+<!--
+  True, and checkable: the navbar, resume gate and posts index came from
+  Cheng's site; the About structure, GitHub activity block and dashed underline
+  from Peter's; the home page structure and type scale from Rahul Jain's. The
+  rocket, the gated resume's in-app decryption, the 404 trajectory and the RSS
+  pipeline are Rohit's.
+
+  One caveat if this line goes in: the hero squiggle is Rahul's path data
+  verbatim — same `d`, same viewBox, same stroke width. Everything else is a
+  borrowed idea rather than borrowed code. A post making this claim invites
+  someone to check, so it is worth either redrawing it or naming it.
+-->
+
 ## Notes are complete
 
 Nothing outstanding. The arc runs end to end:
