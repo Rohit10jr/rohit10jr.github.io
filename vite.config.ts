@@ -4,17 +4,11 @@ import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import matter from 'gray-matter'
 import { marked } from 'marked'
+import { SITE } from './src/data/site'
 
 const REQUIRED = ['title', 'date', 'summary'] as const
 
 const POSTS_DIR = 'src/content/posts'
-
-const SITE = {
-  title: 'Rohit J — Engineer',
-  description: 'Portfolio for Rohit J, an engineer based in India.',
-  url: 'https://rohit10jr.github.io',
-  language: 'en',
-}
 
 type PostMeta = {
   slug: string
@@ -210,6 +204,12 @@ function markdownPosts(): Plugin {
 
     // generateBundle does not run under `vite dev`, so the feed is served from
     // disk there instead. Same parse, same filter.
+    transformIndexHtml(html) {
+      return html
+        .replace(/%SITE_TITLE%/g, SITE.title)
+        .replace(/%SITE_DESCRIPTION%/g, SITE.description)
+    },
+
     configureServer(server) {
       server.middlewares.use('/rss.xml', async (_request, response, next) => {
         try {
