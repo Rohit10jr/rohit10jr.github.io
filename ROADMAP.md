@@ -58,7 +58,3 @@ variant reused by the back-to-top button and the 404 page.
 - Resume: the CV source in `private/cv.html` is written for a specific
   application. It reads as a CV addressed to one employer, which is wrong for a
   page anyone with the passphrase can open. Worth a neutral pass
-- `--font-serif: Charter` is not self-hosted. The token names it, but there is
-  no `@font-face` rule for it, so it silently falls back to Georgia for nearly
-  everyone. Same class of bug as the Space Grotesk range, which declared
-  `500 700` while the files carried `300 700`. Only affects the gated resume

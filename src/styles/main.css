@@ -111,7 +111,12 @@
   --font-sans:
     "Atkinson Hyperlegible", Atkinson, ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: Charter, Georgia, "Times New Roman", serif;
+  /* Georgia leads rather than Charter. Charter is not self-hosted, so it only
+     ever appeared for the few visitors who happen to have it installed, and
+     everyone else got Georgia — naming it first made the resume look like it
+     was set in a face the site never loads. Self-hosting it was the other
+     option and not worth ~40KB for three heading levels on a gated page. */
+  --font-serif: Georgia, "Times New Roman", Charter, serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   --font-display:
     "Space Grotesk", "Atkinson Hyperlegible", ui-sans-serif, system-ui,
