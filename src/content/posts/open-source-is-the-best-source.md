@@ -137,18 +137,41 @@ original repo name — that is my name for it.
   interesting than implying they were originated.
 -->
 
-## Still to record
+## Why none of the usual annoyances happened
 
-- The summary line. The notes now answer it: docs tell you what exists, the
-  source tells you what it does and when to use it. Not one beating the other
-- Whether AgentSEO and NanoBot are mine or projects I found and rebuilt. Still
-  open; it decides how the home page cards should read
-- How I found Django-CRM specifically, and whether it passed the filter
-- The remaining annoyances — labels, dead pull requests, maintainers who
-  never reply
+The annoyances did not happen on contributions, because I contributed to active
+or maintained repos.
 
-The arc is now complete end to end: needed to level up, everything was above my
-level, nothing in my stack, half would not run, docs for what exists and source
-for what it does, a documentation fix merged, and the ladder from small projects
-to the confidence for high level ones. What is missing is detail inside it, not
-shape.
+And as I said — I just search for projects on GitHub and start working. As I
+built, I contributed on the bugs I found.
+
+<!--
+  The strongest point in the notes, and it reframes everything above it. Almost
+  all "how to get into open source" advice is about finding an issue to work on:
+  good-first-issue labels, curated lists, waiting to be assigned something.
+  Rohit never did that step. He built, and the bugs found him. Which is also why
+  the stock complaints never applied — he was never queued behind anyone.
+
+  It explains the six Django-CRM fixes without retelling them, too: all six are
+  the kind of thing you hit while running a system, not the kind you find by
+  reading a tracker.
+-->
+
+## Notes are complete
+
+Nothing outstanding. The arc runs end to end:
+
+needed to level up, everything was above my level, nothing in Django, half would
+not run, docs tell you what exists and the source tells you what it does, bad
+docs taught me that, a documentation fix merged and my name in the contributors
+list, typos then wrong examples then real issues, recent commits and visible
+contributions and a stable main branch, recreating smaller projects, and the
+confidence for high level ones.
+
+The spine of it: I never looked for an issue to work on. I built, and the bugs
+found me.
+
+Two things settled along the way — the summary line should say docs tell you
+what exists while the source tells you what it does, rather than one beating the
+other; and AgentSEO and NanoBot are open source projects I recreated, which the
+home page cards do not currently say.
