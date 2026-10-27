@@ -115,10 +115,9 @@ export function isExternalLink(href: string): boolean {
   return !href.startsWith('mailto:')
 }
 
-// These are provisional entries from the previous static site. Replace them
-// when Rohit provides newer project selections, live URLs, or stronger copy.
-// Placeholder set drawn from work in progress. Replace url/placeholder as
-// each repository becomes public.
+// Most of these are still private. Each entry keeps `placeholder: true` until
+// its repository is public and can carry a real URL — a card with no
+// destination should not look clickable, and the badge says why.
 export const projects: Project[] = [
   {
     title: 'OpenCRM',
@@ -128,31 +127,31 @@ export const projects: Project[] = [
     placeholder: true,
   },
   {
-    title: 'NanoBot',
+    title: 'AgentSEO',
+    description:
+      'Self-hostable tool that plans SEO content and drafts posts, built to deploy in one command.',
+    meta: 'Django · Redis · Docker',
+    url: 'https://github.com/Rohit10jr/AgentSEO',
+  },
+  {
+    title: 'NanoClaw',
     description:
       'Ultra-light agent framework with tool execution, memory, multi-channel chat and support for several LLM providers.',
     meta: 'Python · Agents · MCP',
     placeholder: true,
   },
   {
-    title: 'DataLine',
+    title: 'AI Business Consultant',
+    description:
+      'Agent system that works an engagement in stages — scoping, discovery, ranked hypotheses, investigation, synthesis and review — with a calibration loop and a guard that keeps client data out of the repository.',
+    meta: 'Python · Agents',
+    placeholder: true,
+  },
+  {
+    title: 'Dataline',
     description:
       'Connects to CSV, Excel, SQLite, PostgreSQL, MySQL and Snowflake, turns plain questions into SQL, runs it, and charts the result.',
     meta: 'FastAPI · React · SQL',
-    placeholder: true,
-  },
-  {
-    title: 'AgentSEO',
-    description:
-      'Self-hostable tool that plans SEO content and drafts posts, built to deploy in one command.',
-    meta: 'Django · Redis · Docker',
-    placeholder: true,
-  },
-  {
-    title: 'RAG engine',
-    description:
-      'Retrieval pipeline built around deep document understanding, producing citation-backed answers across mixed formats.',
-    meta: 'Python · Embeddings · RAG',
     placeholder: true,
   },
   {
@@ -163,17 +162,17 @@ export const projects: Project[] = [
     placeholder: true,
   },
   {
+    title: 'RAG Fusion',
+    description:
+      'Retrieval pipeline built around deep document understanding, producing citation-backed answers across mixed formats.',
+    meta: 'Python · Embeddings · RAG',
+    placeholder: true,
+  },
+  {
     title: 'Job Application Agent',
     description:
       'Agent that reads a profile, finds roles worth applying for, and handles the application on the user behalf.',
     meta: 'Agents · Automation',
     placeholder: true,
-  },
-  {
-    title: 'Fullchat',
-    description:
-      'Real-time chat built on Django and WebSockets, the project that got me into backend work properly.',
-    meta: 'Django · WebSockets',
-    url: 'https://github.com/Rohit10jr/fullchat',
   },
 ]
