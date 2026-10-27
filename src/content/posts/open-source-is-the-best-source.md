@@ -122,12 +122,19 @@ But mostly I search for projects I am curious about — like agents, or CRM
 projects. Or ones I think I can handle when I encounter them during a search,
 like AgentSEO and NanoBot.
 
+Both of those are open source projects I recreated. AgentSEO is not the
+original repo name — that is my name for it.
+
 <!--
-  Needs clarifying before drafting: AgentSEO and NanoClaw are listed on the home
-  page as Rohit's own projects. This note reads as though he encountered them
-  during a search, which would make them existing open source projects he
-  worked on or rebuilt rather than ones he originated. The distinction decides
-  how the project cards should be worded, so ask rather than assume.
+  Answered, and it reaches past the post: the home page lists both under
+  "Selected work" with descriptions of what the upstream projects do, which
+  presents recreations as original work. Needs fixing, and the same question
+  applies to the rest of the list — OpenCRM, Dataline, RAG Fusion and JobNext
+  all carry descriptions that read like upstream projects too. Asked.
+
+  Worth noting: recreating a project to understand it is the technique this
+  post is about, so saying so on the cards is both more accurate and more
+  interesting than implying they were originated.
 -->
 
 ## Still to record
