@@ -1,195 +1,154 @@
 ---
 title: Open source is the best source
-date: 2026-08-12
-summary: Reading the source beats reading the docs, and contributing beats both. Notes on what open source has actually taught me.
+date: 2026-10-27
+summary: Everything I found was above my level, and half of it would not even run. How I got from there to merged fixes, without once picking an issue off a tracker.
 tags: [open source, learning]
 draft: false
 placeholder: true
 ---
 
-> Raw notes, not a draft. Recorded as given so nothing is lost, and still
-> flagged `placeholder` — so it carries the in-progress badge and stays out of
-> the RSS feed until it is written.
+**TL;DR**: I never went looking for an issue to work on. I built things, ran
+into bugs, and fixed those. The labels, the curated beginner lists, the waiting
+to be assigned something — I skipped all of it, and I think that is why none of
+the usual frustrations ever reached me.
 
-## Why I started
+I started looking at open source because I knew I had to level up. Not vaguely.
+I wanted a shot at becoming a really good engineer, one who is useful and
+creates value, and I could not see how more tutorials got me there.
 
-I initially started my exploration on open source because I knew I had to level
-up to have a shot at becoming a really good engineer — one who can be useful and
-create value.
+What I found almost immediately is that a lot of open source sits at a level
+most developers will never work at in their career. That is a disorienting thing
+to learn when you are looking for somewhere to begin. The projects were
+excellent. I was a beginner.
 
-## What I found almost immediately
+## Nothing in the framework I actually needed
 
-There are a lot of open source projects at such a high level. A level at which
-most developers will never work in their career.
+The first problem was narrower than I expected. There is an enormous amount of
+open source. There was not much of it in Django, which was the framework I
+needed to learn.
 
-## The first obstacle: nothing in my own stack
+So the search took far longer than it should have — not just finding a project,
+but finding one I could keep up with *and* that was worth something to me. Those
+two conditions remove most of the list.
 
-I did not find much in Django, the framework I needed to learn.
+## Half of them would not even run
 
-## The second obstacle: the level
+Then came the part nobody warns you about. I would clone a repo and try to run
+it locally, and that alone would eat the evening.
 
-Once I found the repos, another issue came up. The projects, as I mentioned,
-were really high level — a level at which I knew I could not work or keep up as
-a beginner.
+Dependency and version errors, mostly. I was stuck on Python errors from the
+days before I kept multiple Pythons on my laptop. Unsupported versions.
+Deprecated packages. And the one that still annoys me: two packages that each
+insist on a different version of the same thing, both of them right, neither of
+them going to budge.
 
-## The third obstacle: just getting it to run
+At some point it stopped feeling like my problem to solve. If a project fights
+you for two hours before it will start, that is information. It is telling you
+how closely it is looked after.
 
-Sometimes it takes too much time for me to find a correct repo — one I can work
-on or keep up with, and that also has some value for me.
+So I stopped. Clone the properly maintained repos, I decided, instead of
+fighting the ones that are not.
 
-Then I clone it and start running it locally. And initially this itself takes
-too much time, because of various dependency and version errors.
+## What I check before cloning now
 
-I remember being stuck with different Python errors from the time when I did not
-use multiple Pythons on my laptop. Or issues like unsupported versions and
-deprecated packages. Sometimes two packages will each demand a different version
-of the same thing to work.
+Three things, all visible on the repo page before you clone anything:
 
-Which made me realise: clone the properly maintained repos, instead of fighting
-with repos that were not maintained properly.
+- **Recent commits.** Not stars. Stars are historical.
+- **Visible contributions.** Other people are getting changes in.
+- **A stable main branch.**
 
-## Reading the docs, and what reading them is for
+I arrived at that list the expensive way. Before it, I tried to recreate
+projects that did not even run. That was a big mistake, and it cost me time I
+could have spent on something that worked.
 
-Another thing I did was reading the docs thoroughly. Was it helpful? Well, that
-is how I found some bugs.
+## Docs tell you what exists. The source tells you what it does.
 
-But I would still say: reading everything and trying everything from the docs,
-you will still forget after some time if you do not use them regularly — and
-then you have to come back to the docs again anyway.
+I also read documentation properly — all the way through, not searching for the
+one function I needed. Was that useful? It is how I found some bugs, so yes.
 
-So from that point of view, I think reading to get what is *there*, instead of
-trying everything out, is the better option.
+But I would not recommend reading everything *and* trying everything. You will
+forget it if you do not use it regularly, and then you are back in the docs
+anyway. So the trying was wasted and the reading was not. Read to learn what is
+*there*. Come back for the detail when you need it.
 
-## Where the source beat the docs
+Where the source overtook the docs for me was reading DRF, and LangChain's early
+documentation, which was not mature the way well-maintained docs are. With gaps
+like that you have no choice but to open the code — and once I did, I found the
+explanation had been sitting there the whole time. Most frameworks write it in:
+what a thing does, and when you should use it.
 
-Sometimes reading docs like DRF's, or LangChain's initial docs — which were not
-mature like other well-maintained docs — is when I realised that reading source
-code is even better than reading docs.
-
-Because for most frameworks I tried, they will add meta in the code explaining
-what it does and when to use it.
-
-But reading the docs is what helps you find out these exist in the first place.
+Which is the real division of labour. The docs tell you something exists. The
+source tells you what it does. I needed both, and I only learned the second half
+because the first half let me down.
 
 ## The first one that got merged
 
-And by reading the docs I found some mistakes in the docs, which I made a PR for
-and it got merged.
+And reading documentation that closely is how I found mistakes *in* the
+documentation. Wrong examples, broken links, references to files that were not
+there. I sent a pull request. It got merged.
 
-I still remember sharing it with my friend, telling him my name was in the
-contributions list. It boosts your confidence.
+Those fixes went into [Django's own
+docs](https://github.com/django/django/pull/19697),
+[DRF](https://github.com/encode/django-rest-framework/pull/9698), and [Google's
+ADK docs](https://github.com/google/adk-docs/pull/357). Tiny changes, all of
+them.
 
-<!--
-  The record, for the draft. Not Rohit's words — verified merged PRs that match
-  this account:
-    django/django#19697                    corrected code examples in topics docs
-    encode/django-rest-framework#9698      Django doc links to the stable version
-    encode/django-rest-framework#9693      broken Heroku JSON Schema link
-    google/adk-docs#357                    internal doc link on Output Key
-    google/adk-docs#341                    incorrect main.py reference in a guide
+I still remember sending it to a friend — look, my name is in the contributors
+list. That sounds like a small thing to be pleased about, and it is. It also
+changed what I thought I was allowed to attempt next, which is not small at all.
 
-  Worth noting for the draft: these are the fixes I argued should NOT get cards
-  on the home page, because individually they are small. In the post they are
-  the most important ones, because they are the way in. Small on a portfolio,
-  pivotal in the story.
--->
+## Typos, then wrong examples, then real issues
 
-## The path, in order
+That is the whole path, and the middle rung is the one people skip.
 
-From contributing typos in docs, to updating wrong examples, to contributing to
-real repos on real issues — that has been my path on open source contributions.
+A typo needs no understanding of anything. A *wrong example* is different: you
+ran it, it did not do what the page claimed, and you had to work out which one
+was lying — the code or the prose. That is debugging. By the time I moved on to
+real issues in real repos, like the fixes I have merged into
+[Django-CRM](https://github.com/Django-CRM/Django-CRM), I had already been doing
+the work for a while under a smaller title.
 
-## The mistake I made first, and the filter I use now
+## I never looked for an issue to work on
 
-I initially tried to recreate projects that do not even run. Which was a big
-mistake.
+This is the part that surprised me most, looking back.
 
-Then I started only cloning the projects that had contributions, recent commits,
-a stable main branch, and so on.
+Almost every guide to getting into open source is about finding an issue.
+Good-first-issue labels. Curated lists for newcomers. Commenting on a thread and
+waiting for a maintainer to hand it to you.
 
-## Where that got me
+I did not do any of that. I search GitHub for projects I am actually curious
+about — agents, CRMs — or ones that look within reach when I come across them.
+GitHub topics, sometimes a list like the Django projects in the docs. Then I
+clone it and start working. And as I built, I contributed the bugs I ran into.
 
-And by doing smaller projects and recreating them, and then moving to medium
-level open source projects, I now have the confidence to take on even high level
-projects.
+Two of the projects on this site, AgentSEO and NanoBot, are open source projects
+I recreated that way. AgentSEO is not even the original name — that is just what
+I called my version.
 
-## How I find projects
+It is also why none of the standard complaints ever applied to me. Dead pull
+requests, maintainers who never reply, issues that sit for a year — those are
+symptoms of *queueing*. I was never in a queue. I was building something, it
+broke, and the fix went upstream.
 
-I usually search for projects using GitHub search, or from GitHub topics, and
-also from lists — like the Django projects listed in the docs.
+## Where it got me
 
-But mostly I search for projects I am curious about — like agents, or CRM
-projects. Or ones I think I can handle when I encounter them during a search,
-like AgentSEO and NanoBot.
+Smaller projects first. Recreating them, not just reading them — there is a
+difference, and the difference is where the learning is. Then medium-level open
+source. And now the high-level ones, the projects I opened at the start of this
+and knew I could not keep up with, no longer look closed to me.
 
-Both of those are open source projects I recreated. AgentSEO is not the
-original repo name — that is my name for it.
-
-<!--
-  Answered, and it reaches past the post: the home page lists both under
-  "Selected work" with descriptions of what the upstream projects do, which
-  presents recreations as original work. Needs fixing, and the same question
-  applies to the rest of the list — OpenCRM, Dataline, RAG Fusion and JobNext
-  all carry descriptions that read like upstream projects too. Asked.
-
-  Worth noting: recreating a project to understand it is the technique this
-  post is about, so saying so on the cards is both more accurate and more
-  interesting than implying they were originated.
--->
-
-## Why none of the usual annoyances happened
-
-The annoyances did not happen on contributions, because I contributed to active
-or maintained repos.
-
-And as I said — I just search for projects on GitHub and start working. As I
-built, I contributed on the bugs I found.
-
-<!--
-  The strongest point in the notes, and it reframes everything above it. Almost
-  all "how to get into open source" advice is about finding an issue to work on:
-  good-first-issue labels, curated lists, waiting to be assigned something.
-  Rohit never did that step. He built, and the bugs found him. Which is also why
-  the stock complaints never applied — he was never queued behind anyone.
-
-  It explains the six Django-CRM fixes without retelling them, too: all six are
-  the kind of thing you hit while running a system, not the kind you find by
-  reading a tracker.
--->
-
-## The lesson
-
-Practising and building projects is how you build confidence. And the courage to
-tackle real projects that solve real issues is itself an important learning.
+Same projects. Different person.
 
 ## This site is the example
 
-And this site is itself an example. It was created by combining ideas from a few
-open source codebases, with my own ideas sprinkled on them.
+The thing you are reading this on was built the same way: ideas taken from a few
+open source codebases, with my own sprinkled on top. I did not invent its
+structure. I read other people's, and worked out what I wanted.
 
-<!--
-  True, and checkable: the navbar, resume gate and posts index came from
-  Cheng's site; the About structure, GitHub activity block and dashed underline
-  from Peter's; the home page structure and type scale from Rahul Jain's. The
-  rocket, the gated resume's in-app decryption, the 404 trajectory and the RSS
-  pipeline are Rohit's.
--->
+Practising and building is how the confidence gets built. But the thing I would
+actually take from all of it is this: find the courage to tackle real projects
+that solve real issues. Not exercises, and not whichever repo looks most
+impressive from the outside. Something genuinely used, and genuinely broken in
+places.
 
-## Notes are complete
-
-Nothing outstanding. The arc runs end to end:
-
-needed to level up, everything was above my level, nothing in Django, half would
-not run, docs tell you what exists and the source tells you what it does, bad
-docs taught me that, a documentation fix merged and my name in the contributors
-list, typos then wrong examples then real issues, recent commits and visible
-contributions and a stable main branch, recreating smaller projects, and the
-confidence for high level ones.
-
-The spine of it: I never looked for an issue to work on. I built, and the bugs
-found me.
-
-Two things settled along the way — the summary line should say docs tell you
-what exists while the source tells you what it does, rather than one beating the
-other; and AgentSEO and NanoBot are open source projects I recreated, which the
-home page cards do not currently say.
+That is where the bugs are. And the bugs are the way in.
