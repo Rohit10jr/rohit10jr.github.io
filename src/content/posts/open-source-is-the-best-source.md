@@ -7,12 +7,12 @@ draft: false
 placeholder: true
 ---
 
-I started exploring open source because I knew I had to level up. I wanted to
-become a really good engineer, one who is useful and creates value.
+A lot of open source projects are at a very high level, a level most developers
+will never work at in their career. That is what I found almost immediately, and
+as a beginner it made it hard to know where to start.
 
-What I found almost immediately is that a lot of open source projects are at a
-very high level, a level most developers will never work at in their career. As
-a beginner that made it hard to know where to start.
+I had started exploring open source because I knew I had to level up. I wanted
+to become a really good engineer, one who is useful and creates value.
 
 ## Finding a project in Django
 
@@ -60,12 +60,19 @@ and when to use it. But the docs are how you find out it exists at all.
 
 ## The first pull request that got merged
 
-Reading documentation closely is how I found mistakes in it. I have found typos,
-outdated links and dead examples across various documentation. I sent a pull
-request to DRF and the maintainers merged it.
+Reading documentation closely is how I found mistakes in it. Broken links, links
+pointing at the wrong version, references to files that were not there, code
+examples that no longer ran.
+
+I sent a pull request to DRF. The maintainers merged it.
 
 I remember telling a friend my name was in the contributors list. It boosts your
 confidence.
+
+More went in after that, into
+[DRF](https://github.com/encode/django-rest-framework/pull/9698), [Django's own
+docs](https://github.com/django/django/pull/19697) and [Google's ADK
+docs](https://github.com/google/adk-docs/pull/357).
 
 ## The path
 
@@ -78,7 +85,8 @@ open source contributions.
 
 I have mostly seen people online advising you to find issues and work on them.
 But I search GitHub for projects I am curious about, like building autonomous
-agents or CRMs, or ones I think I can handle when I come across them. Sometimes
+agents or CRMs, or ones that look useful to me and within reach when I come
+across them. Sometimes
 I use GitHub topics, search with filters, or lists like the Django projects in
 the docs. Then I clone it, build and use it locally, and start working. I
 contribute the bugs I find while building.
@@ -94,14 +102,14 @@ was not waiting for anyone to assign me anything.
 
 Smaller projects first, recreating them. Then medium level open source projects.
 Now I have the confidence and courage to take on even the high level projects I
-could not keep up with, and was afraid of, at the start.
+was afraid of at the start and could not keep up with.
+
+Engaging with open source projects is a great way to learn. The community is
+also a real source of inspiration, and it puts things into perspective: how much
+there is still left to learn and work on.
 
 This site is an example of that. It combines ideas from a few open source
 codebases with my own ideas on them.
-
-The open source community is truly a great source of inspiration, and it also
-puts things into perspective: how much there is still left to learn, work on and
-progress through.
 
 Practising and building projects is how you build confidence, and the courage to
 tackle real projects that solve real issues is an important learning.
