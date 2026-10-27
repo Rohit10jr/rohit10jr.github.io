@@ -105,6 +105,18 @@ projects.
 I usually search for projects using GitHub search, or from GitHub topics, and
 also from lists — like the Django projects listed in the docs.
 
+But mostly I search for projects I am curious about — like agents, or CRM
+projects. Or ones I think I can handle when I encounter them during a search,
+like AgentSEO and NanoBot.
+
+<!--
+  Needs clarifying before drafting: AgentSEO and NanoClaw are listed on the home
+  page as Rohit's own projects. This note reads as though he encountered them
+  during a search, which would make them existing open source projects he
+  worked on or rebuilt rather than ones he originated. The distinction decides
+  how the project cards should be worded, so ask rather than assume.
+-->
+
 ## Still to record
 
 - The summary line. The notes now answer it: docs tell you what exists, the
