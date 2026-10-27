@@ -186,5 +186,8 @@ export const projects: Project[] = [
       'Self-hostable tool that plans SEO content and drafts posts, built to deploy in one command.',
     meta: 'Django · Redis · Docker',
     url: 'https://github.com/Rohit10jr/AgentSEO',
+    // Public, so it links; still being worked on, so it keeps the badge. The
+    // two flags are independent.
+    placeholder: true,
   },
 ]
