@@ -71,14 +71,36 @@ what it does and when to use it.
 
 But reading the docs is what helps you find out these exist in the first place.
 
+## The first one that got merged
+
+And by reading the docs I found some mistakes in the docs, which I made a PR for
+and it got merged.
+
+I still remember sharing it with my friend, telling him my name was in the
+contributions list. It boosts your confidence.
+
+<!--
+  The record, for the draft. Not Rohit's words — verified merged PRs that match
+  this account:
+    django/django#19697                    corrected code examples in topics docs
+    encode/django-rest-framework#9698      Django doc links to the stable version
+    encode/django-rest-framework#9693      broken Heroku JSON Schema link
+    google/adk-docs#357                    internal doc link on Output Key
+    google/adk-docs#341                    incorrect main.py reference in a guide
+
+  Worth noting for the draft: these are the fixes I argued should NOT get cards
+  on the home page, because individually they are small. In the post they are
+  the most important ones, because they are the way in. Small on a portfolio,
+  pivotal in the story.
+-->
+
 ## Still to record
 
 - The summary line. The notes now answer it: docs tell you what exists, the
   source tells you what it does and when to use it. Not one beating the other
 - How I tell a maintained repo from an unmaintained one before cloning it
 - How I found Django-CRM specifically, and whether it passed that test
-- What changed: the approach, the kind of issue I looked for, or the project
-- The first thing I actually submitted, and what I was thinking
+- What took me from documentation fixes to code fixes
 - Whether I went back to the high-level projects later
 - The remaining annoyances — labels, dead pull requests, maintainers who
   never reply
