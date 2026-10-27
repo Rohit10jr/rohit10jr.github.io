@@ -48,8 +48,23 @@ of the same thing to work.
 Which made me realise: clone the properly maintained repos, instead of fighting
 with repos that were not maintained properly.
 
+## Reading the docs, and what reading them is for
+
+Another thing I did was reading the docs thoroughly. Was it helpful? Well, that
+is how I found some bugs.
+
+But I would still say: reading everything and trying everything from the docs,
+you will still forget after some time if you do not use them regularly — and
+then you have to come back to the docs again anyway.
+
+So from that point of view, I think reading to get what is *there*, instead of
+trying everything out, is the better option.
+
 ## Still to record
 
+- Whether the summary line still holds. It currently says reading the source
+  beats reading the docs, but my own account is that reading the docs
+  thoroughly is how I found bugs
 - How I tell a maintained repo from an unmaintained one before cloning it
 - How I found Django-CRM specifically, and whether it passed that test
 - What changed: the approach, the kind of issue I looked for, or the project
