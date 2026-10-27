@@ -70,7 +70,8 @@ I remember telling a friend my name was in the contributors list. It boosts your
 confidence.
 
 More went in after that, into
-[DRF](https://github.com/encode/django-rest-framework/pull/9698), [Django's own
+[DRF](https://github.com/encode/django-rest-framework/pull/9698),
+[LangGraph](https://github.com/langchain-ai/langgraph/pull/4142), [Django's own
 docs](https://github.com/django/django/pull/19697) and [Google's ADK
 docs](https://github.com/google/adk-docs/pull/357).
 
