@@ -173,11 +173,6 @@ open source codebases, with my own ideas sprinkled on them.
   from Peter's; the home page structure and type scale from Rahul Jain's. The
   rocket, the gated resume's in-app decryption, the 404 trajectory and the RSS
   pipeline are Rohit's.
-
-  One caveat if this line goes in: the hero squiggle is Rahul's path data
-  verbatim — same `d`, same viewBox, same stroke width. Everything else is a
-  borrowed idea rather than borrowed code. A post making this claim invites
-  someone to check, so it is worth either redrawing it or naming it.
 -->
 
 ## Notes are complete

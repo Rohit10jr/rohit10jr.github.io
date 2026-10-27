@@ -21,7 +21,7 @@ export function Hero() {
               aria-hidden="true"
             >
               <path
-                d="M2 8 C 22 2, 42 12, 62 6 S 102 10, 118 5"
+                d="M3 10 C 14 3, 28 12, 44 7 C 58 3, 72 11, 86 6.5 C 98 3, 108 8, 117 4"
                 fill="none"
                 stroke="currentColor"
                 strokeLinecap="round"
