@@ -115,65 +115,75 @@ export function isExternalLink(href: string): boolean {
   return !href.startsWith('mailto:')
 }
 
-// These are provisional entries from the previous static site. Replace them
-// when Rohit provides newer project selections, live URLs, or stronger copy.
-// Placeholder set drawn from work in progress. Replace url/placeholder as
-// each repository becomes public.
+// Every entry links its repository. Six of them are private as of this commit,
+// so those links 404 for visitors until the repositories are published — a
+// deliberate choice, since publishing is imminent and the alternative was
+// carrying the URLs in comments nobody would remember to move.
+//
+// `placeholder: true` is separate: it drives the in-progress badge and tracks
+// whether the work is done, not whether the repository is visible. Only the
+// two entries still being built carry it; the field is simply absent on the
+// rest rather than set to false.
 export const projects: Project[] = [
   {
     title: 'OpenCRM',
     description:
       'Open-source CRM on Django REST Framework and SvelteKit. Multi-tenancy through PostgreSQL row-level security, JWT auth, and a REST surface across leads, accounts, opportunities and invoices.',
     meta: 'Django REST · PostgreSQL · SvelteKit',
-    placeholder: true,
-  },
-  {
-    title: 'NanoBot',
-    description:
-      'Ultra-light agent framework with tool execution, memory, multi-channel chat and support for several LLM providers.',
-    meta: 'Python · Agents · MCP',
-    placeholder: true,
-  },
-  {
-    title: 'DataLine',
-    description:
-      'Connects to CSV, Excel, SQLite, PostgreSQL, MySQL and Snowflake, turns plain questions into SQL, runs it, and charts the result.',
-    meta: 'FastAPI · React · SQL',
-    placeholder: true,
-  },
-  {
-    title: 'AgentSEO',
-    description:
-      'Self-hostable tool that plans SEO content and drafts posts, built to deploy in one command.',
-    meta: 'Django · Redis · Docker',
-    placeholder: true,
-  },
-  {
-    title: 'RAG engine',
-    description:
-      'Retrieval pipeline built around deep document understanding, producing citation-backed answers across mixed formats.',
-    meta: 'Python · Embeddings · RAG',
-    placeholder: true,
-  },
-  {
-    title: 'JobNext',
-    description:
-      'Job platform pairing seekers and employers, with OTP auth, resume parsing and semantic matching over pgvector.',
-    meta: 'Django · pgvector · React',
-    placeholder: true,
+    url: 'https://github.com/Rohit10jr/OpenCRM',
   },
   {
     title: 'Job Application Agent',
     description:
       'Agent that reads a profile, finds roles worth applying for, and handles the application on the user behalf.',
     meta: 'Agents · Automation',
+    url: 'https://github.com/Rohit10jr/agent-auto-apply',
     placeholder: true,
   },
   {
-    title: 'Fullchat',
+    title: 'NanoClaw',
     description:
-      'Real-time chat built on Django and WebSockets, the project that got me into backend work properly.',
-    meta: 'Django · WebSockets',
-    url: 'https://github.com/Rohit10jr/fullchat',
+      'Ultra-light agent framework with tool execution, memory, multi-channel chat and support for several LLM providers.',
+    meta: 'Python · Agents · MCP',
+    url: 'https://github.com/Rohit10jr/NanoClaw',
+  },
+  {
+    title: 'AI Business Consultant',
+    description:
+      'Agent system that works an engagement in stages — scoping, discovery, ranked hypotheses, investigation, synthesis and review — with a calibration loop and a guard that keeps client data out of the repository.',
+    meta: 'Python · Agents',
+    url: 'https://github.com/Rohit10jr/ai-business-consultant',
+    placeholder: true,
+  },
+  {
+    title: 'RAG Fusion',
+    description:
+      'Retrieval pipeline built around deep document understanding, producing citation-backed answers across mixed formats.',
+    meta: 'Python · Embeddings · RAG',
+    url: 'https://github.com/Rohit10jr/ragfusion',
+    placeholder: true,
+  },
+  {
+    // Points at the backend; the frontend lives in data-agent-frontend until
+    // the two are merged.
+    title: 'Dataline',
+    description:
+      'Connects to CSV, Excel, SQLite, PostgreSQL, MySQL and Snowflake, turns plain questions into SQL, runs it, and charts the result.',
+    meta: 'FastAPI · React · SQL',
+    url: 'https://github.com/Rohit10jr/agent-sql-schema',
+  },
+  {
+    title: 'JobNext',
+    description:
+      'Job platform pairing seekers and employers, with OTP auth, resume parsing and semantic matching over pgvector.',
+    meta: 'Django · pgvector · React',
+    url: 'https://github.com/Rohit10jr/jobnxt',
+  },
+  {
+    title: 'AgentSEO',
+    description:
+      'Self-hostable tool that plans SEO content and drafts posts, built to deploy in one command.',
+    meta: 'Django · Redis · Docker',
+    url: 'https://github.com/Rohit10jr/AgentSEO',
   },
 ]
