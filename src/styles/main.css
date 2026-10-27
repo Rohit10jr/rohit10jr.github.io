@@ -1203,6 +1203,23 @@ but flows inside a sentence: stays inline
   min-width: 0;
 }
 
+/* Heading on the left, feed on the right, baselines aligned. */
+.posts-hero {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+}
+
+.feed-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--muted);
+  transition: color 300ms ease;
+}
+
+.feed-link:hover {
+  color: var(--warm);
+}
+
 .page-hero h1 {
   max-width: 14ch;
 }
