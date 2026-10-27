@@ -7,44 +7,36 @@ draft: false
 placeholder: true
 ---
 
-> Placeholder content. This post is a stub so the layout and typography can be
-> checked before the real writing lands.
+> Raw notes, not a draft. Recorded as given so nothing is lost, and still
+> flagged `placeholder` — so it carries the in-progress badge and stays out of
+> the RSS feed until it is written.
 
-Documentation tells you what a library is supposed to do. The source tells you
-what it actually does. Most of the time those agree, and the interesting work
-starts where they do not.
+## Why I started
 
-## Reading before asking
+I initially started my exploration on open source because I knew I had to level
+up to have a shot at becoming a really good engineer — one who can be useful and
+create value.
 
-The first real Django bug I chased was not in my code. A queryset was returning
-duplicates and every answer I found online suggested `.distinct()` without
-explaining why. Opening the ORM source made the reason obvious in about ten
-minutes: the join was fanning out rows before the slice was applied.
+## What I found almost immediately
 
-That habit has been worth more than any tutorial. When something behaves oddly:
+There are a lot of open source projects at such a high level. A level at which
+most developers will never work in their career.
 
-- Find the function actually being called, not the one you assume is called
-- Read its immediate neighbours, not the whole file
-- Check the tests next to it, which usually document the edge cases
-- Only then search for someone else's explanation
+## The first obstacle: nothing in my own stack
 
-## Contributing is the fastest way to learn a codebase
+I did not find much in Django, the framework I needed to learn.
 
-Fixing a typo in documentation sounds trivial, but it forces you through the
-whole loop: fork, branch, local build, style checks, review. The next
-contribution is much cheaper because that scaffolding is already understood.
+## The second obstacle: the level
 
-```python
-# The change that taught me the most was three lines long.
-def get_queryset(self):
-    return super().get_queryset().select_related("account")
-```
+Once I found the repos, another issue came up. The projects, as I mentioned,
+were really high level — a level at which I knew I could not work or keep up as
+a beginner.
 
-Small patches also get reviewed properly. A maintainer will explain why a
-convention exists, and that explanation is worth more than the patch.
+## Still to record
 
-## What I am still working out
-
-Reading source is slow, and there is a real risk of disappearing into a library
-for a whole afternoon when the pragmatic answer was to work around it and move
-on. I have not found a clean rule for when to stop digging.
+- What happened next, and how I got from "I cannot keep up" to merged fixes
+- Whether I abandoned those projects or came back to them
+- What changed: the approach, the kind of issue I looked for, or the project
+- How I found Django-CRM specifically
+- The first thing I actually submitted, and what I was thinking
+- The annoyances — labels, dead pull requests, setup that does not work
