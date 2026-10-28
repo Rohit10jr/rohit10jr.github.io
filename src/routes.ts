@@ -5,8 +5,10 @@ export type RoutePath =
   | '/about'
   | '/resume'
   | '/posts'
+  | '/tags'
   | '/404'
   | `/posts/${string}`
+  | `/tags/${string}`
 
 export type RouteItem = {
   path: RoutePath
@@ -26,12 +28,17 @@ const TITLES: Record<string, string> = {
   '/about': `About — ${SITE.name}`,
   '/resume': `Resume — ${SITE.name}`,
   '/posts': `Posts — ${SITE.name}`,
+  '/tags': `Tags — ${SITE.name}`,
   '/404': `Not found — ${SITE.name}`,
 }
 
-export function routeTitle(route: RoutePath, postTitle?: string): string {
-  if (postTitle) {
-    return `${postTitle} — ${SITE.name}`
+/**
+ * `subject` is whatever the page is about — a post title, a tag — already
+ * phrased by the caller. This function only owns the suffix.
+ */
+export function routeTitle(route: RoutePath, subject?: string): string {
+  if (subject) {
+    return `${subject} — ${SITE.name}`
   }
 
   return TITLES[route] ?? TITLES['/']
@@ -40,6 +47,11 @@ export function routeTitle(route: RoutePath, postTitle?: string): string {
 /** Returns the slug when the route is a single post, otherwise null. */
 export function postSlug(route: RoutePath): string | null {
   return route.startsWith('/posts/') ? route.slice('/posts/'.length) : null
+}
+
+/** Returns the slug when the route is a single tag, otherwise null. */
+export function tagRouteSlug(route: RoutePath): string | null {
+  return route.startsWith('/tags/') ? route.slice('/tags/'.length) : null
 }
 
 export function normalizeRoute(pathname: string): RoutePath {
@@ -57,6 +69,13 @@ export function normalizeRoute(pathname: string): RoutePath {
   }
 
   if (trimmed.startsWith('/posts/') && trimmed.slice('/posts/'.length)) {
+    return trimmed as RoutePath
+  }
+
+  // Whether the tag exists is not decided here. routes.ts would have to import
+  // the posts to know, and the tag page already renders the not-found block for
+  // a slug that matches nothing, exactly as the post page does.
+  if (trimmed.startsWith('/tags/') && trimmed.slice('/tags/'.length)) {
     return trimmed as RoutePath
   }
 

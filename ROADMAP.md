@@ -28,10 +28,22 @@ RSS feed — remove that flag once a post is genuinely written:
 Adding a post is one markdown file; the build validates `title`, `date` and
 `summary` and fails if any is missing.
 
-**2. Tags.** Front matter already carries `tags`, and the data layer already
-parses them, but nothing renders them yet. Needs a tag index and per-tag pages.
-Both reference sites do this; Peter has `/tags/[tag]`, Cheng uses Hugo
-taxonomies.
+**2. Tags.** Done. `/tags` lists every tag with its post count, `/tags/<slug>`
+lists that tag's posts, and chips at the foot of each post are how anyone
+discovers tags exist. `tagSlug()` in `src/data/posts.ts` folds spelling
+variants together, so `Open Source` and `open source` share one page.
+
+The vocabulary is deliberately small: `building`, `learning`, `open source`.
+It started as six tags across three posts, each used once, so every tag page
+showed the single post you had just come from. Three tags that repeat group
+things; six that do not are decoration.
+
+Keep it that way by asking which existing tag fits a new post, not what the
+post is about. Add a fourth only when several posts need it, and avoid putting
+one tag on every post — a tag that matches everything filters nothing.
+
+A per-tag feed (`/tags/<slug>/rss.xml`) is now cheap to add, since the tag
+grouping and the feed generator already exist. Not worth it at this volume.
 
 **3. Search.** Only worth doing once there are enough posts to make scanning the
 list annoying. Two options:
@@ -43,11 +55,12 @@ list annoying. Two options:
 
 **4. RSS.** Done. `/rss.xml` is emitted by the markdown plugin from the same
 parse the pages use, and excludes anything flagged `placeholder` or `draft` —
-so the feed is valid and empty today and fills itself as posts become real.
-Autodiscovery is declared in `index.html`; there is no visible link to it yet.
+so it carries the one published post and fills itself as the others become
+real. Autodiscovery is declared in `index.html`, and the posts page carries a
+visible feed icon beside the heading.
 
-Sensible order is posts → tags → search, because tags and search only earn
-their place once there is volume.
+Sensible order was posts → tags → search. Search is the one still outstanding,
+and it is the one that most needs volume first.
 
 ## Hero illustration
 

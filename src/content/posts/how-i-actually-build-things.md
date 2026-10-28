@@ -2,7 +2,7 @@
 title: How I actually build things
 date: 2026-07-09
 summary: The loop I fall into on most projects, the tools that survived, and the parts that are still messy.
-tags: [workflow, tools]
+tags: [building]
 draft: false
 placeholder: true
 ---

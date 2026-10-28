@@ -2269,6 +2269,93 @@ no rule beneath it. */
   line-height: 1.6;
 }
 
+/* ---- Tags ---- */
+
+.tag-cloud,
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* The chips sit after the body, so they need separating from it the way the
+   next and previous links are. */
+.post-tags {
+  margin-top: 10px;
+}
+
+.tag-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 13px;
+  color: var(--ink);
+  font-size: 0.86rem;
+  text-decoration: none;
+  transition:
+    border-color 300ms ease,
+    color 300ms ease;
+}
+
+.tag-link:hover {
+  border-color: var(--warm);
+  color: var(--warm);
+}
+
+.tag-hash {
+  color: var(--muted);
+  font-family: var(--font-mono);
+}
+
+.tag-link:hover .tag-hash {
+  color: var(--warm);
+}
+
+/* The count is information, not decoration, so it stays legible rather than
+   being tucked away as a superscript. */
+.tag-count {
+  margin-left: 6px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+}
+
+/* The tag page carries .posts-page, so it already has the borderless hero and
+   the smaller heading. Only the two-column row is new. */
+.tags-page .page-hero {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.tags-page .page-hero h1 {
+  max-width: none;
+  font-size: 2rem;
+  line-height: 1.16;
+}
+
+/* Heading left, "all tags" right, baselines aligned. */
+.posts-page .page-hero:has(.tag-page-count) {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+}
+
+.tag-page-count {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.tags-page {
+  width: min(768px, 100%);
+  margin: 0 auto;
+  gap: 32px;
+}
+
 /* ---- Post navigation ---- */
 
 .post-nav {

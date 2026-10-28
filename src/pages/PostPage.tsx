@@ -1,9 +1,10 @@
 import { ArrowLeft } from 'lucide-react'
 import { NotFoundBlock } from '../components/NotFoundBlock'
 import { PostNav } from '../components/PostNav'
+import { TagLink } from '../components/TagLink'
 import { PageLink } from '../components/PageLink'
 import { ReadingProgress } from '../components/ReadingProgress'
-import { findPost, formatPostDate } from '../data/posts'
+import { findPost, formatPostDate, tagSlug } from '../data/posts'
 import type { RoutePath } from '../routes'
 
 type PostPageProps = {
@@ -49,6 +50,18 @@ export function PostPage({ slug, onNavigate }: PostPageProps) {
         className="post-body"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
+
+      {post.tags.length > 0 && (
+        <div className="post-tags">
+          {post.tags.map((name) => (
+            <TagLink
+              key={name}
+              tag={{ slug: tagSlug(name), name }}
+              onNavigate={onNavigate}
+            />
+          ))}
+        </div>
+      )}
 
       <PostNav slug={post.slug} onNavigate={onNavigate} />
     </article>
