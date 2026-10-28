@@ -6,6 +6,7 @@ export type RoutePath =
   | '/resume'
   | '/posts'
   | '/tags'
+  | '/search'
   | '/404'
   | `/posts/${string}`
   | `/tags/${string}`
@@ -29,6 +30,7 @@ const TITLES: Record<string, string> = {
   '/resume': `Resume — ${SITE.name}`,
   '/posts': `Posts — ${SITE.name}`,
   '/tags': `Tags — ${SITE.name}`,
+  '/search': `Search — ${SITE.name}`,
   '/404': `Not found — ${SITE.name}`,
 }
 
