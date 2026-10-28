@@ -70,9 +70,9 @@ first place. I sent [the pull
 request](https://github.com/langchain-ai/langgraph/pull/4142) and the
 maintainers merged it the same day.
 
-I remember telling a friend my name was in the contributors list. It was a one
-line change. It did more for my confidence than anything I had built on my
-own.
+I remember telling a friend my name was in the contributors list. It was one
+line of code, and it was the first time open source felt like something I could
+actually do.
 
 More went in after that, into
 [DRF](https://github.com/encode/django-rest-framework/pull/9698),
