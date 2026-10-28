@@ -1,7 +1,7 @@
 ---
 title: Open source is the best source
 date: 2026-10-27
-summary: Everything I found was above my level and half of it would not run. How I got from there to merged fixes, without looking for issues to work on.
+summary: Many of the projects I found were above my level. I never looked for an issue to work on. I built things and contributed the bugs I found.
 tags: [open source, learning]
 draft: false
 placeholder: true
@@ -22,8 +22,8 @@ that was also useful to me, took time.
 
 ## Getting it to run
 
-Cloning a random repo and running it locally took time as well, mostly because of dependency
-and version errors. Python errors from before I used multiple Python versions on
+Cloning a random repo and running it locally took time as well, mostly because
+of dependency and version errors. Python errors from before I used multiple Python versions on
 my laptop. Unsupported versions and deprecated packages. Sometimes two packages
 each need a different version of the same thing.
 
@@ -33,7 +33,7 @@ fighting with repos that are not maintained or outdated.
 ## What I check before cloning
 
 - Active repo
-- Proper documentation
+- Proper setup docs
 - Contributions from other people
 - Pinned dependencies or a lockfile
 
@@ -109,9 +109,8 @@ Smaller projects first, recreating them. Then medium level open source projects.
 Now I have the confidence and courage to take on even the high level projects I
 was afraid of at the start and could not keep up with.
 
-Engaging with open source projects is a great way to learn. The community is
-also a real source of inspiration, and it puts things into perspective: how much
-there is still left to learn and work on.
+The open source community is a real source of inspiration, and it puts things
+into perspective: how much there is still left to learn and work on.
 
 If I had to pass on one thing, it would be this: practising and building
 projects is what made me able to tackle real projects that solve real issues.
