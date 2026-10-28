@@ -45,13 +45,33 @@ one tag on every post — a tag that matches everything filters nothing.
 A per-tag feed (`/tags/<slug>/rss.xml`) is now cheap to add, since the tag
 grouping and the feed generator already exist. Not worth it at this volume.
 
-**3. Search.** Only worth doing once there are enough posts to make scanning the
-list annoying. Two options:
+**3. Search.** Done. `/search` matches titles, tags, summaries and bodies with
+Fuse, and keeps the query in the URL so a search is linkable. Fuse is imported
+on first use, so it lands in its own 26KB chunk rather than the main bundle.
 
-- Build a small `posts.json` at build time and filter it in the browser with
-  Fuse.js — fine for a few dozen posts
-- Pagefind, which indexes the built HTML and ships a static search bundle —
-  what to use if the archive grows
+Two decisions worth not relitigating:
+
+- **No build-time index file.** `posts` comes from an eager `import.meta.glob`,
+  so every body is already in the main bundle; a generated `search-index.json`
+  would ship a second copy of that text and add a fetch that could fall out of
+  step with it. `src/data/search.ts` strips the rendered HTML to plain text
+  instead
+- **Pagefind was ruled out, not overlooked.** It crawls built HTML, and the
+  build emits only `index.html` and `404.html` — this is a client-rendered app,
+  so Pagefind would index an empty shell. It becomes an option only if the site
+  gains prerendering
+
+The honest limitation: Fuse scores the single best match per field and ignores
+how often a term appears, so a passing mention ranks alongside a post that is
+about the thing, and the shorter post then wins on Fuse's length
+normalisation. Searching `django` today returns the stub above the post with a
+Django section in it, because the stub is shorter. Writing the stubs fixes it;
+a rule demoting placeholders would only hide it. Revisit if ranking still
+reads wrong once the posts are real — that is the point at which Pagefind plus
+prerendering earns the move.
+
+Worth adding later, cheaply: `⌘K` to open search from any page, which is the
+one thing the modal approach buys that a page does not.
 
 **4. RSS.** Done. `/rss.xml` is emitted by the markdown plugin from the same
 parse the pages use, and excludes anything flagged `placeholder` or `draft` —
@@ -59,8 +79,9 @@ so it carries the one published post and fills itself as the others become
 real. Autodiscovery is declared in `index.html`, and the posts page carries a
 visible feed icon beside the heading.
 
-Sensible order was posts → tags → search. Search is the one still outstanding,
-and it is the one that most needs volume first.
+Sensible order was posts → tags → search. Tags and search are both built, which
+leaves posts — the one that was always the real work, and the one that makes the
+other two worth having.
 
 ## Hero illustration
 
