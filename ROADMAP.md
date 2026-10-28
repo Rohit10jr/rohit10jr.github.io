@@ -33,9 +33,14 @@ lists that tag's posts, and chips at the foot of each post are how anyone
 discovers tags exist. `tagSlug()` in `src/data/posts.ts` folds spelling
 variants together, so `Open Source` and `open source` share one page.
 
-What is left is editorial, not code: six tags across three posts, each used
-once, which is too fine-grained to help anyone browse. Worth collapsing the
-vocabulary as more posts are written rather than inventing a tag per post.
+The vocabulary is deliberately small: `building`, `learning`, `open source`.
+It started as six tags across three posts, each used once, so every tag page
+showed the single post you had just come from. Three tags that repeat group
+things; six that do not are decoration.
+
+Keep it that way by asking which existing tag fits a new post, not what the
+post is about. Add a fourth only when several posts need it, and avoid putting
+one tag on every post — a tag that matches everything filters nothing.
 
 A per-tag feed (`/tags/<slug>/rss.xml`) is now cheap to add, since the tag
 grouping and the feed generator already exist. Not worth it at this volume.
