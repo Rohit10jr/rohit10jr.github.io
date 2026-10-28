@@ -2322,14 +2322,16 @@ no rule beneath it. */
   font-size: 0.74rem;
 }
 
-/* The tag page carries .posts-page, so it already has the borderless hero and
-   the smaller heading. Only the two-column row is new. */
-.tags-page .page-hero {
+/* The tag and search pages carry .posts-page, so they already have the
+   borderless hero and the smaller heading. Only the two-column row is new. */
+.tags-page .page-hero,
+.search-page .page-hero {
   border-bottom: 0;
   padding-bottom: 0;
 }
 
-.tags-page .page-hero h1 {
+.tags-page .page-hero h1,
+.search-page .page-hero h1 {
   max-width: none;
   font-size: 2rem;
   line-height: 1.16;
@@ -2756,6 +2758,99 @@ no rule beneath it. */
 .resume-education-entry time {
   color: var(--muted);
   font-size: 0.82rem;
+}
+
+/* ---- Search --------------------------------------------------------------
+   The field borrows .cv-input's shape so the site has one input, not two.
+   --------------------------------------------------------------------- */
+
+.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 13px;
+  color: var(--muted);
+  /* Clicking the icon should land in the field behind it. */
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  /* Room for the icon on the left and the clear button on the right. */
+  padding: 7px 44px 7px 42px;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.98rem;
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+}
+
+.search-input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* WebKit adds its own clear button to type="search", which would sit beside
+   ours. */
+.search-input::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.search-clear {
+  position: absolute;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  padding: 6px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 300ms ease;
+}
+
+.search-clear:hover {
+  color: var(--warm);
+}
+
+/* Reads as metadata about the list below it, like the tag page's count. */
+.search-status {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.search-empty {
+  margin: 0;
+  color: var(--ink);
+}
+
+.search-empty strong {
+  font-weight: 500;
+}
+
+/* The search page carries .posts-page for the borderless hero and the smaller
+   heading; the form, status and results stack at the same rhythm as the tag
+   index. */
+.search-page {
+  width: min(768px, 100%);
+  margin: 0 auto;
+  gap: 20px;
 }
 
 @media (prefers-reduced-motion: reduce) {

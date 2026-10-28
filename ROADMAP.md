@@ -45,13 +45,29 @@ one tag on every post — a tag that matches everything filters nothing.
 A per-tag feed (`/tags/<slug>/rss.xml`) is now cheap to add, since the tag
 grouping and the feed generator already exist. Not worth it at this volume.
 
-**3. Search.** Only worth doing once there are enough posts to make scanning the
-list annoying. Two options:
+**3. Search.** Done. `/search` matches titles, tags, summaries and bodies with
+Fuse, and keeps the query in the URL so a search is linkable. Fuse is imported
+on first use, so it lands in its own 26KB chunk rather than the main bundle.
 
-- Build a small `posts.json` at build time and filter it in the browser with
-  Fuse.js — fine for a few dozen posts
-- Pagefind, which indexes the built HTML and ships a static search bundle —
-  what to use if the archive grows
+Two decisions worth not relitigating:
+
+- **No build-time index file.** `posts` comes from an eager `import.meta.glob`,
+  so every body is already in the main bundle; a generated `search-index.json`
+  would ship a second copy of that text and add a fetch that could fall out of
+  step with it. `src/data/search.ts` strips the rendered HTML to plain text
+  instead
+- **Pagefind was ruled out, not overlooked.** It crawls built HTML, and the
+  build emits only `index.html` and `404.html` — this is a client-rendered app,
+  so Pagefind would index an empty shell. It becomes an option only if the site
+  gains prerendering
+
+The honest limitation: Fuse scores the single best match per field and ignores
+how often a term appears, so a passing mention ranks alongside a post that is
+about the thing, and the shorter post then wins on Fuse's length
+normalisation. Searching `django` today returns the stub above the post with a
+Django section in it, because the stub is shorter. Writing the stubs fixes it;
+a rule demoting placeholders would only hide it. The replacement is specced
+under **Better search** below, deliberately not built yet.
 
 **4. RSS.** Done. `/rss.xml` is emitted by the markdown plugin from the same
 parse the pages use, and excludes anything flagged `placeholder` or `draft` —
@@ -59,8 +75,9 @@ so it carries the one published post and fills itself as the others become
 real. Autodiscovery is declared in `index.html`, and the posts page carries a
 visible feed icon beside the heading.
 
-Sensible order was posts → tags → search. Search is the one still outstanding,
-and it is the one that most needs volume first.
+Sensible order was posts → tags → search. Tags and search are both built, which
+leaves posts — the one that was always the real work, and the one that makes the
+other two worth having.
 
 ## Hero illustration
 
@@ -68,8 +85,47 @@ Done. The hero carries an inline SVG rocket, animated with CSS
 `stroke-dashoffset` and static under `prefers-reduced-motion`, with a compact
 variant reused by the back-to-top button and the 404 page.
 
+## Better search
+
+Not now. `/search` works and is enough for three posts; this is what to build
+when it stops being enough. Two things are missing, and both are real:
+
+**1. Rank by how often a term appears.** Fuse scores the single best match in a
+field and never counts occurrences, so one passing mention ranks level with a
+post that is about the thing, and the shorter text then wins on length
+normalisation — see the `django` case above. Proper ranking weighs frequency
+against document length, which is what every real search engine does.
+
+**2. Show the matching text, with the match highlighted.** Results currently
+show each post's summary, which is the same text whatever was searched for. It
+should show the sentence the match was found in, with the term marked, so a
+result explains itself instead of asking you to open the post to find out why
+it matched.
+
+The likely answer is **Pagefind**, which does both out of the box — it ranks on
+frequency and returns highlighted excerpts, and `@pagefind/default-ui` renders
+them. It is what `steipete.me` uses (`src/pages/search.astro`), themed through
+`--pagefind-ui-*` variables.
+
+The blocker is structural, not a preference: Pagefind indexes built HTML, and
+this build emits only `index.html` and `404.html`, so there is nothing per-post
+for it to crawl. **It needs prerendering first** — each post rendered to its own
+HTML file at build time. That is the actual piece of work; adding Pagefind
+afterwards is the easy half. Prerendering would also mean posts stop shipping in
+the main bundle, which is the thing worth fixing by then anyway.
+
+Cheaper middle option if prerendering stays unattractive: keep Fuse, add
+`includeMatches: true`, and build excerpts from the match offsets by hand.
+That buys highlighting but not frequency ranking, and the ranking is the half
+that actually misorders results.
+
+Trigger for picking this up: ranking still reads wrong once the stub posts are
+real, or the archive passes roughly thirty posts.
+
 ## Later, unscheduled
 
+- `⌘K` to open search from anywhere, the one thing a modal buys that a page
+  does not
 - Resume: the CV source in `private/cv.html` is written for a specific
   application. It reads as a CV addressed to one employer, which is wrong for a
   page anyone with the passphrase can open. Worth a neutral pass

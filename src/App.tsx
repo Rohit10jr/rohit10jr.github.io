@@ -9,6 +9,7 @@ import { HomePage } from './pages/HomePage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { PostPage } from './pages/PostPage'
 import { PostsPage } from './pages/PostsPage'
+import { SearchPage } from './pages/SearchPage'
 import { TagPage } from './pages/TagPage'
 import { TagsPage } from './pages/TagsPage'
 import { ResumePage } from './pages/ResumePage'
@@ -93,6 +94,7 @@ export function App() {
         {route === '/resume' && <ResumePage />}
         {route === '/posts' && <PostsPage onNavigate={navigate} />}
         {route === '/tags' && <TagsPage onNavigate={navigate} />}
+        {route === '/search' && <SearchPage onNavigate={navigate} />}
         {tagSlugged && <TagPage slug={tagSlugged} onNavigate={navigate} />}
         {slug && <PostPage slug={slug} onNavigate={navigate} />}
         {route === '/404' && <NotFoundPage onNavigate={navigate} />}
