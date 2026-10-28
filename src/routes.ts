@@ -1,3 +1,5 @@
+import { SITE } from './data/site'
+
 export type RoutePath =
   | '/'
   | '/about'
@@ -18,17 +20,18 @@ export const routeItems: RouteItem[] = [
   { path: '/posts', label: 'Posts' },
 ]
 
+// Derived rather than written out, so the name appears once.
 const TITLES: Record<string, string> = {
-  '/': 'Rohit J — Engineer',
-  '/about': 'About — Rohit J',
-  '/resume': 'Resume — Rohit J',
-  '/posts': 'Posts — Rohit J',
-  '/404': 'Not found — Rohit J',
+  '/': SITE.title,
+  '/about': `About — ${SITE.name}`,
+  '/resume': `Resume — ${SITE.name}`,
+  '/posts': `Posts — ${SITE.name}`,
+  '/404': `Not found — ${SITE.name}`,
 }
 
 export function routeTitle(route: RoutePath, postTitle?: string): string {
   if (postTitle) {
-    return `${postTitle} — Rohit J`
+    return `${postTitle} — ${SITE.name}`
   }
 
   return TITLES[route] ?? TITLES['/']

@@ -1,5 +1,6 @@
 import { ArrowLeft } from 'lucide-react'
 import { NotFoundBlock } from '../components/NotFoundBlock'
+import { PostNav } from '../components/PostNav'
 import { PageLink } from '../components/PageLink'
 import { ReadingProgress } from '../components/ReadingProgress'
 import { findPost, formatPostDate } from '../data/posts'
@@ -48,6 +49,8 @@ export function PostPage({ slug, onNavigate }: PostPageProps) {
         className="post-body"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
+
+      <PostNav slug={post.slug} onNavigate={onNavigate} />
     </article>
   )
 }

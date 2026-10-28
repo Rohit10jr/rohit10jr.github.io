@@ -1,50 +1,118 @@
 ---
 title: Open source is the best source
-date: 2026-08-12
-summary: Reading the source beats reading the docs, and contributing beats both. Notes on what open source has actually taught me.
+date: 2026-10-27
+summary: Many of the projects I found were above my level. I never looked for an issue to work on. I built things and contributed the bugs I found.
 tags: [open source, learning]
 draft: false
-placeholder: true
+placeholder: false
 ---
 
-> Placeholder content. This post is a stub so the layout and typography can be
-> checked before the real writing lands.
+A lot of open source projects are at a very high level, a level most developers
+will never work at in their career. That is what I found almost immediately, and
+as a beginner it made it hard to know where to start.
 
-Documentation tells you what a library is supposed to do. The source tells you
-what it actually does. Most of the time those agree, and the interesting work
-starts where they do not.
+I had started exploring open source because I knew I had to level up. I wanted
+to become a really good engineer, one who is useful and creates value.
 
-## Reading before asking
+## Finding a project in Django
 
-The first real Django bug I chased was not in my code. A queryset was returning
-duplicates and every answer I found online suggested `.distinct()` without
-explaining why. Opening the ORM source made the reason obvious in about ten
-minutes: the join was fanning out rows before the slice was applied.
+I needed to learn Django, and there was not much open source in Django compared
+to other frameworks and languages. Finding a project I could keep up with, and
+that was also useful to me, took time.
 
-That habit has been worth more than any tutorial. When something behaves oddly:
+## Getting it to run
 
-- Find the function actually being called, not the one you assume is called
-- Read its immediate neighbours, not the whole file
-- Check the tests next to it, which usually document the edge cases
-- Only then search for someone else's explanation
+Cloning a random repo and running it locally took time as well, mostly because
+of dependency and version errors. Python errors from before I used multiple Python versions on
+my laptop. Unsupported versions and deprecated packages. Sometimes two packages
+each need a different version of the same thing.
 
-## Contributing is the fastest way to learn a codebase
+That made me realise I should clone properly maintained repos instead of
+fighting with repos that are not maintained or outdated.
 
-Fixing a typo in documentation sounds trivial, but it forces you through the
-whole loop: fork, branch, local build, style checks, review. The next
-contribution is much cheaper because that scaffolding is already understood.
+## What I check before cloning
 
-```python
-# The change that taught me the most was three lines long.
-def get_queryset(self):
-    return super().get_queryset().select_related("account")
-```
+- Active repo
+- Proper setup docs
+- Contributions from other people
+- Pinned dependencies or a lockfile
 
-Small patches also get reviewed properly. A maintainer will explain why a
-convention exists, and that explanation is worth more than the patch.
+A well maintained repo is the one that saves the most time. The dependency
+versions are already resolved and the documentation matches the code. You are
+not spending your first evening repairing the project before you can start.
 
-## What I am still working out
+All of that is visible before you clone anything. Earlier I tried to recreate
+projects that did not even run. That was a mistake.
 
-Reading source is slow, and there is a real risk of disappearing into a library
-for a whole afternoon when the pragmatic answer was to work around it and move
-on. I have not found a clean rule for when to stop digging.
+## Reading the docs, and reading the source
+
+I also used to read documentation thoroughly, and that is how I found some bugs.
+
+But reading everything and trying every example is not the most efficient thing
+to do. You forget things that you do not use regularly, and then you go back to
+the docs anyway. So I read to learn what is there, and come back for a deep dive
+when I need a detailed answer.
+
+Reading LangChain's early docs, which were not mature, is when I realised that
+reading source code is better than reading docs when you need to know exactly
+what the code does. Most frameworks explain in docstrings what something does
+and when to use it. But the docs are how you find out it exists at all.
+
+## The first pull request that got merged
+
+Reading documentation closely is how I found mistakes in it. Broken links, links
+pointing at the wrong version, references to files that were not there, code
+examples that no longer ran.
+
+The first one was a missing colon in a code example in LangGraph's docs, the
+same ecosystem whose documentation had pushed me into reading source in the
+first place. I sent [the pull
+request](https://github.com/langchain-ai/langgraph/pull/4142) and the
+maintainers merged it the same day.
+
+I remember telling a friend my name was in the contributors list. It was one
+line of code, and it was the first time open source felt like something I could
+actually do.
+
+More went in after that, into
+[DRF](https://github.com/encode/django-rest-framework/pull/9698),
+[Django](https://github.com/django/django/pull/19697) and [Google's
+ADK](https://github.com/google/adk-docs/pull/357) documentation.
+
+## The path
+
+From correcting typos in docs, to wrong examples, to raising issues, to solving
+real issues in open source projects like
+[Django-CRM](https://github.com/Django-CRM/Django-CRM). That has been my path on
+open source contributions.
+
+## I do not look for issues to work on
+
+I have mostly seen people online advising you to find issues and work on them.
+But I go looking myself, through GitHub topics, search with filters, or lists
+like the Django projects in the docs. I look for projects I am curious about,
+like agents or CRMs, or ones that look useful to me and within reach when I come
+across them. Then I clone it, build and use it locally, and start working on one
+feature at a time, breaking things down as small as they go. I contribute the
+bugs I find while building.
+
+Some of the projects in my portfolio were created this way, by recreating
+projects I like in order to learn and explore.
+
+I did not run into the problems people usually describe, like dead pull requests
+or maintainers who never reply, because I only worked on maintained repos and I
+was not waiting for anyone to assign me anything.
+
+## Where it got me
+
+Smaller projects first, recreating them. Then medium level open source projects.
+Now I have the confidence and courage to take on even the high level projects I
+was afraid of at the start and could not keep up with.
+
+The open source community is a real source of inspiration, and it puts things
+into perspective: how much there is still left to learn and work on.
+
+If I had to pass on one thing, it would be this: practising and building
+projects is what made me able to tackle real projects that solve real issues.
+And open source is what made that possible. It is still the best source I
+know.
