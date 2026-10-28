@@ -1,4 +1,5 @@
-import { Rss } from 'lucide-react'
+import { Rss, Tags } from 'lucide-react'
+import { PageLink } from '../components/PageLink'
 import { PostList } from '../components/PostList'
 import { posts } from '../data/posts'
 import type { RoutePath } from '../routes'
@@ -13,6 +14,14 @@ export function PostsPage({ onNavigate }: PostsPageProps) {
           <h1>All posts</h1>
           {/* A real file rather than a route, so it is a plain anchor and
               leaves the app deliberately. */}
+          <PageLink
+            className="feed-link"
+            to="/tags"
+            onNavigate={onNavigate}
+            ariaLabel="All tags"
+          >
+            <Tags aria-hidden="true" size={26} />
+          </PageLink>
           <a
             className="feed-link"
             href="/rss.xml"

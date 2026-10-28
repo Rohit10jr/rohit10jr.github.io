@@ -2,15 +2,23 @@ import { useEffect, useState } from 'react'
 import { BackToTop } from './components/BackToTop'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
-import { findPost } from './data/posts'
+import { findPost, findTag } from './data/posts'
 import { profile } from './data/profile'
 import { AboutPage } from './pages/AboutPage'
 import { HomePage } from './pages/HomePage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { PostPage } from './pages/PostPage'
 import { PostsPage } from './pages/PostsPage'
+import { TagPage } from './pages/TagPage'
+import { TagsPage } from './pages/TagsPage'
 import { ResumePage } from './pages/ResumePage'
-import { normalizeRoute, postSlug, routeTitle, type RoutePath } from './routes'
+import {
+  normalizeRoute,
+  postSlug,
+  routeTitle,
+  tagRouteSlug,
+  type RoutePath,
+} from './routes'
 
 type Theme = 'light' | 'dark'
 
@@ -35,16 +43,21 @@ export function App() {
   }, [theme])
 
   const slug = postSlug(route)
+  const tagSlugged = tagRouteSlug(route)
 
   useEffect(() => {
     const post = slug ? findPost(slug) : undefined
 
     // A slug matching no post renders the not-found block, so the tab should
     // say so rather than falling back to the home page title.
+    const tag = tagSlugged ? findTag(tagSlugged) : undefined
+
     document.title = post
       ? routeTitle(route, post.title)
-      : routeTitle(slug ? '/404' : route)
-  }, [route, slug])
+      : tag
+        ? routeTitle(route, `Tagged ${tag.name}`)
+        : routeTitle(slug || tagSlugged ? '/404' : route)
+  }, [route, slug, tagSlugged])
 
   useEffect(() => {
     function handlePopState() {
@@ -79,6 +92,8 @@ export function App() {
         {route === '/about' && <AboutPage />}
         {route === '/resume' && <ResumePage />}
         {route === '/posts' && <PostsPage onNavigate={navigate} />}
+        {route === '/tags' && <TagsPage onNavigate={navigate} />}
+        {tagSlugged && <TagPage slug={tagSlugged} onNavigate={navigate} />}
         {slug && <PostPage slug={slug} onNavigate={navigate} />}
         {route === '/404' && <NotFoundPage onNavigate={navigate} />}
       </main>
