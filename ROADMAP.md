@@ -66,12 +66,8 @@ how often a term appears, so a passing mention ranks alongside a post that is
 about the thing, and the shorter post then wins on Fuse's length
 normalisation. Searching `django` today returns the stub above the post with a
 Django section in it, because the stub is shorter. Writing the stubs fixes it;
-a rule demoting placeholders would only hide it. Revisit if ranking still
-reads wrong once the posts are real — that is the point at which Pagefind plus
-prerendering earns the move.
-
-Worth adding later, cheaply: `⌘K` to open search from any page, which is the
-one thing the modal approach buys that a page does not.
+a rule demoting placeholders would only hide it. The replacement is specced
+under **Better search** below, deliberately not built yet.
 
 **4. RSS.** Done. `/rss.xml` is emitted by the markdown plugin from the same
 parse the pages use, and excludes anything flagged `placeholder` or `draft` —
@@ -89,8 +85,47 @@ Done. The hero carries an inline SVG rocket, animated with CSS
 `stroke-dashoffset` and static under `prefers-reduced-motion`, with a compact
 variant reused by the back-to-top button and the 404 page.
 
+## Better search
+
+Not now. `/search` works and is enough for three posts; this is what to build
+when it stops being enough. Two things are missing, and both are real:
+
+**1. Rank by how often a term appears.** Fuse scores the single best match in a
+field and never counts occurrences, so one passing mention ranks level with a
+post that is about the thing, and the shorter text then wins on length
+normalisation — see the `django` case above. Proper ranking weighs frequency
+against document length, which is what every real search engine does.
+
+**2. Show the matching text, with the match highlighted.** Results currently
+show each post's summary, which is the same text whatever was searched for. It
+should show the sentence the match was found in, with the term marked, so a
+result explains itself instead of asking you to open the post to find out why
+it matched.
+
+The likely answer is **Pagefind**, which does both out of the box — it ranks on
+frequency and returns highlighted excerpts, and `@pagefind/default-ui` renders
+them. It is what `steipete.me` uses (`src/pages/search.astro`), themed through
+`--pagefind-ui-*` variables.
+
+The blocker is structural, not a preference: Pagefind indexes built HTML, and
+this build emits only `index.html` and `404.html`, so there is nothing per-post
+for it to crawl. **It needs prerendering first** — each post rendered to its own
+HTML file at build time. That is the actual piece of work; adding Pagefind
+afterwards is the easy half. Prerendering would also mean posts stop shipping in
+the main bundle, which is the thing worth fixing by then anyway.
+
+Cheaper middle option if prerendering stays unattractive: keep Fuse, add
+`includeMatches: true`, and build excerpts from the match offsets by hand.
+That buys highlighting but not frequency ranking, and the ranking is the half
+that actually misorders results.
+
+Trigger for picking this up: ranking still reads wrong once the stub posts are
+real, or the archive passes roughly thirty posts.
+
 ## Later, unscheduled
 
+- `⌘K` to open search from anywhere, the one thing a modal buys that a page
+  does not
 - Resume: the CV source in `private/cv.html` is written for a specific
   application. It reads as a CV addressed to one employer, which is wrong for a
   page anyone with the passphrase can open. Worth a neutral pass
