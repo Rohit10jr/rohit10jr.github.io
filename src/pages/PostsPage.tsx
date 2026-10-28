@@ -14,14 +14,6 @@ export function PostsPage({ onNavigate }: PostsPageProps) {
           <h1>All posts</h1>
           <PageLink
             className="feed-link"
-            to="/search"
-            onNavigate={onNavigate}
-            ariaLabel="Search posts"
-          >
-            <Search aria-hidden="true" size={26} />
-          </PageLink>
-          <PageLink
-            className="feed-link"
             to="/tags"
             onNavigate={onNavigate}
             ariaLabel="All tags"
@@ -38,6 +30,14 @@ export function PostsPage({ onNavigate }: PostsPageProps) {
           >
             <Rss aria-hidden="true" size={26} />
           </a>
+          <PageLink
+            className="feed-link search-link"
+            to="/search"
+            onNavigate={onNavigate}
+            ariaLabel="Search posts"
+          >
+            <Search aria-hidden="true" size={26} />
+          </PageLink>
         </div>
       </header>
 

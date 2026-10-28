@@ -1203,12 +1203,19 @@ but flows inside a sentence: stays inline
   min-width: 0;
 }
 
-/* The feed sits beside the heading rather than out at the margin, so it reads
-   as belonging to it. */
+/* Tags and the feed sit beside the heading rather than out at the margin, so
+   they read as belonging to it. Search is the exception: see .search-link. */
 .posts-hero-title {
   display: flex;
   align-items: center;
   gap: 14px;
+}
+
+/* Pushed to the far end of the row, away from the two links that describe this
+   page's contents — searching is a different kind of action, and the margin is
+   where a reader already looks for it. */
+.search-link {
+  margin-left: auto;
 }
 
 .feed-link {
