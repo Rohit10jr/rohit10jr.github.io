@@ -22,7 +22,7 @@ that was also useful to me, took time.
 
 ## Getting it to run
 
-Cloning a random repo and running it locally took time too. Mostly because of dependency
+Cloning a random repo and running it locally took time as well, mostly because of dependency
 and version errors. Python errors from before I used multiple Python versions on
 my laptop. Unsupported versions and deprecated packages. Sometimes two packages
 each need a different version of the same thing.
@@ -32,14 +32,14 @@ fighting with repos that are not maintained or outdated.
 
 ## What I check before cloning
 
-- Recent commits
+- Active repo
+- Proper documentation
 - Contributions from other people
-- A working main branch
 - Pinned dependencies or a lockfile
 
-The lockfile is the one that saves the most time. It means someone has already
-resolved the version conflicts and committed the answer, so you get the same
-install they have.
+A well maintained repo is the one that saves the most time. The dependency
+versions are already resolved and the documentation matches the code. You are
+not spending your first evening repairing the project before you can start.
 
 All of that is visible before you clone anything. Earlier I tried to recreate
 projects that did not even run. That was a mistake.
@@ -88,12 +88,12 @@ open source contributions.
 ## I do not look for issues to work on
 
 I have mostly seen people online advising you to find issues and work on them.
-But I search GitHub for projects I am curious about, like building autonomous
+But I search GitHub for projects I am curious about, like building
 agents or CRMs, or ones that look useful to me and within reach when I come
-across them. Sometimes
-I use GitHub topics, search with filters, or lists like the Django projects in
-the docs. Then I clone it, build and use it locally, and start working. I
-contribute the bugs I find while building.
+across them. Sometimes I use GitHub topics, search with filters, or lists like
+the Django projects in the docs. Then I clone it, build and use it locally, and
+start working on one feature at a time, breaking things down as small as they
+go. I contribute the bugs I find while building.
 
 Some of the projects in my portfolio were created this way, by recreating
 projects I like in order to learn and explore.
@@ -112,8 +112,5 @@ Engaging with open source projects is a great way to learn. The community is
 also a real source of inspiration, and it puts things into perspective: how much
 there is still left to learn and work on.
 
-This site is an example of that. It combines ideas from a few open source
-codebases with my own ideas on them.
-
-Practising and building projects is how you build confidence, and the courage to
-tackle real projects that solve real issues is an important learning.
+Practising and building projects is what got me there. If I had to pass on one
+thing, it would be this: tackle real projects that solve real issues.
