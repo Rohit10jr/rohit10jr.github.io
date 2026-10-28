@@ -122,7 +122,7 @@ export function isExternalLink(href: string): boolean {
 //
 // `placeholder: true` is separate: it drives the in-progress badge and tracks
 // whether the work is done, not whether the repository is visible. Only the
-// two entries still being built carry it; the field is simply absent on the
+// three entries still being built carry it; the field is simply absent on the
 // rest rather than set to false.
 export const projects: Project[] = [
   {
