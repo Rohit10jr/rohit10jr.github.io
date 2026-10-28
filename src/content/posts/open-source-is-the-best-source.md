@@ -70,8 +70,9 @@ first place. I sent [the pull
 request](https://github.com/langchain-ai/langgraph/pull/4142) and the
 maintainers merged it the same day.
 
-I remember telling a friend my name was in the contributors list. It boosts your
-confidence.
+I remember telling a friend my name was in the contributors list. It was a one
+line change. It did more for my confidence than anything I had built on my
+own.
 
 More went in after that, into
 [DRF](https://github.com/encode/django-rest-framework/pull/9698),
@@ -88,12 +89,12 @@ open source contributions.
 ## I do not look for issues to work on
 
 I have mostly seen people online advising you to find issues and work on them.
-But I search GitHub for projects I am curious about, like building
-agents or CRMs, or ones that look useful to me and within reach when I come
-across them. Sometimes I use GitHub topics, search with filters, or lists like
-the Django projects in the docs. Then I clone it, build and use it locally, and
-start working on one feature at a time, breaking things down as small as they
-go. I contribute the bugs I find while building.
+But I go looking myself, through GitHub topics, search with filters, or lists
+like the Django projects in the docs. I look for projects I am curious about,
+like agents or CRMs, or ones that look useful to me and within reach when I come
+across them. Then I clone it, build and use it locally, and start working on one
+feature at a time, breaking things down as small as they go. I contribute the
+bugs I find while building.
 
 Some of the projects in my portfolio were created this way, by recreating
 projects I like in order to learn and explore.
@@ -112,5 +113,7 @@ Engaging with open source projects is a great way to learn. The community is
 also a real source of inspiration, and it puts things into perspective: how much
 there is still left to learn and work on.
 
-Practising and building projects is what got me there. If I had to pass on one
-thing, it would be this: tackle real projects that solve real issues.
+If I had to pass on one thing, it would be this: practising and building
+projects is what made me able to tackle real projects that solve real issues.
+And open source is what made that possible. It is still the best source I
+know.
