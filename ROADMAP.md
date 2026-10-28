@@ -5,13 +5,23 @@ priority, not a schedule.
 
 ## Now
 
-**Finish the home page.** The rebuild is in place; the content is not.
+**Make the project links work.** The eight entries in `src/data/profile.ts` are
+the real projects now, but six of the repositories are private, so most of the
+cards link somewhere a visitor cannot follow. Checked against GitHub on
+2026-10-28:
 
-- Replace the project entries with real ones, and add URLs as repositories go
-  public. Drop `placeholder: true` from each in `src/data/profile.ts` when it
-  is no longer in progress. Note that three of the current entries map to
-  forks rather than own repositories (`Micropyramid-Django-CRM`, `ragflow`,
-  `ai-job-search`) and four have no public repository at all
+| Visibility | Repositories |
+| --- | --- |
+| Public | `agent-sql-schema` (Dataline), `AgentSEO` |
+| Private | `OpenCRM`, `NanoClaw`, `agent-auto-apply`, `ai-business-consultant`, `ragfusion`, `jobnxt` |
+
+Either make them public or drop the `url` on the ones staying private — a card
+without a link is better than a link that 404s. The broken links were accepted
+knowingly for now, so this is a pending decision rather than an oversight.
+
+`placeholder: true` is a separate question: it marks work still in progress,
+not repository visibility, and three entries carry it — Job Application Agent,
+AI Business Consultant and RAG Fusion. Drop it from each as the work lands.
 
 ## Next: writing
 
