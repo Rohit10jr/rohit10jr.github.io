@@ -4,7 +4,7 @@ date: 2026-10-27
 summary: Many of the projects I found were above my level. I never looked for an issue to work on. I built things and contributed the bugs I found.
 tags: [open source, learning]
 draft: false
-placeholder: true
+placeholder: false
 ---
 
 A lot of open source projects are at a very high level, a level most developers
