@@ -2,7 +2,7 @@
 title: Progress beats perfection
 date: 2026-07-28
 summary: Why I would rather ship a clear increment and take the feedback than polish something nobody has used yet.
-tags: [philosophy, process]
+tags: [building, learning]
 draft: false
 placeholder: true
 ---
